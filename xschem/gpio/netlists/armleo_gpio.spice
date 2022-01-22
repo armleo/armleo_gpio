@@ -1,0 +1,65 @@
+**.subckt armleo_gpio out_l vddio vssio oe_l in vdd vss pad esd_pad
+*.ipin out_l
+*.iopin vddio
+*.iopin vssio
+*.ipin oe_l
+*.opin in
+*.iopin vdd
+*.iopin vss
+*.iopin pad
+*.iopin esd_pad
+x2 vddio n1 weak_pgate n2 vssio armleo_gpio_lv2hv
+x6 esd_pad vss vss vdd vdd in sky130_fd_sc_hvl__buf_16
+x37 vddio n3 weak_ngate n4 vssio armleo_gpio_lv2hv
+XM1 pad strong_pgate vddio vddio sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4*12 m=4*12 
+XM2 pad strong_ngate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=4.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4*12 m=4*12 
+x1 weak_ngate vssio vssio vddio vddio m1_ngate_n sky130_fd_sc_hvl__inv_4
+x5 weak_pgate vssio vssio vddio vddio m1_pgate_n sky130_fd_sc_hvl__inv_4
+x3 m2_pgate_n vssio vssio vddio vddio strong_pgate sky130_fd_sc_hvl__inv_16
+x4 m2_pgate_n vssio vssio vddio vddio strong_pgate sky130_fd_sc_hvl__inv_16
+x9 m2_ngate_n vssio vssio vddio vddio strong_ngate sky130_fd_sc_hvl__inv_16
+x10 m2_ngate_n vssio vssio vddio vddio strong_ngate sky130_fd_sc_hvl__inv_16
+x11 m1_pgate_n vssio vssio vddio vddio m2_pgate_n sky130_fd_sc_hvl__buf_16
+x7 m1_ngate_n vssio vssio vddio vddio m2_ngate_n sky130_fd_sc_hvl__buf_16
+x8 n3 vss vss vdd vdd n4 sky130_fd_sc_hd__inv_4
+x12 n1 vss vss vdd vdd n2 sky130_fd_sc_hd__inv_4
+x14 oe_l vss vss vdd vdd n5 sky130_fd_sc_hd__inv_4
+x16 oe_l out_l vss vss vdd vdd n1 sky130_fd_sc_hd__nand2_4
+x17 out_l n5 vss vss vdd vdd n3 sky130_fd_sc_hd__nor2_4
+**.ends
+
+* expanding   symbol:  gpio/armleo_gpio_lv2hv.sym # of pins=5
+* sym_path: /home/armleo/Desktop/armleo_io/xschem/gpio/armleo_gpio_lv2hv.sym
+* sch_path: /home/armleo/Desktop/armleo_io/xschem/gpio/armleo_gpio_lv2hv.sch
+.subckt armleo_gpio_lv2hv  VDDH A Y A_N VSSH
+*.ipin A
+*.iopin VDDH
+*.iopin VSSH
+*.opin Y
+*.ipin A_N
+XM2 VSSH A_N Y VSSH sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM5 N1 A VSSH VSSH sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM4 VDDH Y N2 VDDH sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM7 net1 N1 VDDH VDDH sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM9 N1 A N2 VDDH sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM11 net1 A_N Y VDDH sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+.ends
+
+** flattened .save nodes
+.end

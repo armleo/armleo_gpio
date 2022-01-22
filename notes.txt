@@ -1,0 +1,50 @@
+# Op amp AC simulation
+python3 scripts/generate_makefile.py && make -f armleo.mk xschem/opamp/results/opamp_tt_ac_tb.simlog
+
+# Op Amp transition simulation
+python3 scripts/generate_makefile.py && make -f armleo.mk xschem/opamp/results/opamp_tt_tb.simlog
+
+# AC simulation plots
+load xschem/opamp/results/opamp_tt_ac_tb.raw;
+plot db(out_1);
+plot vp(out_1);
+
+# Transition simulation plot
+load xschem/opamp/results/opamp_tt_tb.raw;
+plot vgrow vref out_1 out_2 out_3 out_4 out_6;
+
+# Build pdk
+make -f pdk pdk
+
+# Some testbenches used "redux" versions of libs. This is just the .lib.spice file but with only the .lib/.endl of interest is inside it.
+
+
+python3 scripts/generate_makefile.py && make -f armleo.mk xschem/gpio/results/armleo_gpio_lp_tb.simlog
+
+  LD_LIBRARY_PATH=~/Desktop/klayout-v0.27.4/bin-release \
+  ~/Desktop/klayout-v0.27.4/bin-release/klayout \
+  -e -nn $PDK_ROOT/sky130A/libs.tech/klayout/sky130A.lyt  \
+  -l $PDK_ROOT/sky130A/libs.tech/klayout/sky130A.lyp  \
+  gds/armleo_io.gds
+
+magic -rcfile $PDK_ROOT/sky130A/libs.tech/magic/sky130A.magicrc
+
+python3 scripts/generate_makefile.py && make -f armleo.mk xschem/gpio/results/armleo_gpio.lvsrpt
+
+python3 scripts/generate_makefile.py && make -f armleo.mk xschem/gpio/results/armleo_gpio.drcrpt
+
+# From xschem directory
+xschem --rcfile $PDK_ROOT/sky130A/libs.tech/xschem/xschemrc
+
+DONE: Make nfet_driver x6
+DONE: Make nfet_driver x9
+DONE: Make nfet_driver x21
+
+TODO: Make nfet_driver_pdn
+TODO: Make nfet_driver_pup
+
+TODO: TEST PUP/PDN
+TODO: TEST PUP/PDN WEAK
+
+
+In future mention the issues with mcon having DRC on LI1

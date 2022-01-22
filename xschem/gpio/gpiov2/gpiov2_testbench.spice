@@ -1,0 +1,49 @@
+GPIOV2 speed test
+
+.temp -40
+.param vdd_volts=1.65
+.param vddio_volts=3.0
+
+
+.control
+tran 0.01ns 20ns
+write
+.endc
+
+
+.param mc_mm_switch=0
+
+.lib "/opt/pdk_root/sky130A/libs.tech/ngspice/sky130.lib.spice" ss
+.include "/opt/pdk_root/sky130A/libs.ref/sky130_fd_io/spice/sky130_fd_io.spice"
+
+
+v1 1 0 dc vdd_volts
+v2 3v3 0 dc vddio_volts
+
+
+Vin datain 0 dc 0 PULSE (0 vdd_volts 5ns 1ns 1ns 4ns 10ns)
+
+Xgpio AMUXBUS_A AMUXBUS_B
++ 0 0 ; ANALOG_EN ANALOG_POL enabled, polarity so that when OUT=0 then AMUXBUS_A is connected to pad
++ 0 ; ANALOG_SEL is AMUXBUS_A
++ 1 1 0 ; dm=110 -> Enable digital out powerful, dm=000 -> analog mode
++ 3v3 3v3 3v3 3v3 ; ENABLE_H ENABLE_INP_H ENABLE_VDDA_H ENABLE_VDDIO <- done
++ 0 3v3 0 ; ENABLE_VSWITCH_H HLD_H_N HLD_OVR <- done
++ 0 IN 0 0; IB_MODE_SEL IN IN_H INP_DIS  <- done
++ 0 datain PAD; OE_N OUT PAD <- done
++ PAD_A_ESD_0_H PAD_A_ESD_1_H PAD_A_NOESD_H 0 ; SLOW
++ TIE_HI_ESD TIE_LO_ESD 1 1 ; TIE_HI_ESD TIE_LO_ESD VCCD VCCHIB  <- done
++ 3v3 3v3 3v3 ; VDDA VDDIO VDDIO_Q <- done
++ 0 0 0 0; VSSA VSSD VSSIO VSSIO_Q <- done
++ 3v3 0 ; VSWITCH VTRIP_SEL <- done
++ sky130_fd_io__top_gpiov2
+
+
+* Connect capactitor to PAD
+r1 PAD END_PAD 0.1
+Cpadcap END_PAD 0 7f
+
+* 7f -> 7p
+
+Cin_load IN 0 20f
+

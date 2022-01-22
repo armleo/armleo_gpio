@@ -1,0 +1,45 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {}
+V {}
+S {}
+E {}
+C {devices/iopin.sym} -10 -240 0 0 {name=p1 lab=AMUXBUS_A}
+C {devices/iopin.sym} -10 -200 0 0 {name=p2 lab=AMUXBUS_B}
+C {devices/ipin.sym} 10 -160 0 0 {name=p4 lab=ANALOG_EN}
+C {devices/ipin.sym} 10 -120 0 0 {name=p5 lab=ANALOG_POL}
+C {devices/ipin.sym} 10 -80 0 0 {name=p6 lab=ANALOG_SEL}
+C {devices/ipin.sym} 10 -40 0 0 {name=p7 lab="DM[2]"}
+C {devices/ipin.sym} 10 0 0 0 {name=p8 lab="DM[1]"}
+C {devices/ipin.sym} 10 40 0 0 {name=p9 lab="DM[0]"}
+C {devices/ipin.sym} 10 80 0 0 {name=p10 lab=ENABLE_H}
+C {devices/ipin.sym} 10 120 0 0 {name=p11 lab=ENABLE_INP_H}
+C {devices/ipin.sym} 10 160 0 0 {name=p12 lab=ENABLE_VDDA_H}
+C {devices/ipin.sym} 10 200 0 0 {name=p13 lab=ENABLE_VDDIO}
+C {devices/ipin.sym} 10 240 0 0 {name=p14 lab=ENABLE_VSWITCH_H}
+C {devices/ipin.sym} 10 280 0 0 {name=p15 lab=HLD_H_N}
+C {devices/ipin.sym} 10 320 0 0 {name=p16 lab=HLD_OVR}
+C {devices/ipin.sym} 10 360 0 0 {name=p17 lab=IB_MODE_SEL}
+C {devices/ipin.sym} 10 400 0 0 {name=p3 lab=IN_DIS}
+C {devices/ipin.sym} 10 440 0 0 {name=p20 lab=OE_N}
+C {devices/ipin.sym} 10 480 0 0 {name=p21 lab=OUT}
+C {devices/ipin.sym} 620 0 0 0 {name=p22 lab=PAD}
+C {devices/ipin.sym} 10 520 0 0 {name=p23 lab=PAD_A_ESD_0_H}
+C {devices/opin.sym} 610 40 0 0 {name=p24 lab=IN}
+C {devices/opin.sym} 610 70 0 0 {name=p25 lab=IN_H}
+C {devices/ipin.sym} 10 560 0 0 {name=p18 lab=PAD_A_ESD_1_H}
+C {devices/ipin.sym} 10 600 0 0 {name=p19 lab=PAD_A_NOESD_H}
+C {devices/ipin.sym} 10 640 0 0 {name=p26 lab=SLOW}
+C {devices/ipin.sym} 10 680 0 0 {name=p27 lab=TIE_HI_ESD}
+C {devices/ipin.sym} 10 720 0 0 {name=p28 lab=TIE_LO_ESD}
+C {devices/iopin.sym} 90 -300 0 0 {name=p29 lab=VCCD}
+C {devices/iopin.sym} 170 -300 0 0 {name=p30 lab=VCCHIB}
+C {devices/iopin.sym} 270 -300 0 0 {name=p32 lab=VDDA}
+C {devices/iopin.sym} 350 -300 0 0 {name=p33 lab=VDDIO}
+C {devices/iopin.sym} 430 -300 0 0 {name=p34 lab=VDDIO_Q}
+C {devices/iopin.sym} 80 850 0 0 {name=p35 lab=VSSD}
+C {devices/iopin.sym} 160 850 0 0 {name=p37 lab=VSSIO}
+C {devices/iopin.sym} 240 850 0 0 {name=p38 lab=VSSIO_Q}
+C {devices/ipin.sym} 10 760 0 0 {name=p36 lab=VSWITCH}
+C {devices/ipin.sym} 10 800 0 0 {name=p39 lab=VTRIP_SEL}
+C {devices/iopin.sym} 0 850 0 0 {name=p31 lab=VSSA}

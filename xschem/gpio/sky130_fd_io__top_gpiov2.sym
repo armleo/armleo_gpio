@@ -1,0 +1,136 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=none
+format="@name @@AMUXBUS_A @@AMUXBUS_B @@ANALOG_EN @@ANALOG_POL
++ @@ANALOG_SEL @@DM2 @@DM1 @@DM0 @@ENABLE_H @@ENABLE_INP_H @@ENABLE_VDDA_H @@ENABLE_VDDIO
++ @@ENABLE_VSWITCH_H @@HLD_H_N @@HLD_OVR @@IB_MODE_SEL @@IN @@IN_H @@INP_DIS @@OE_N @@OUT @@PAD
++ @@PAD_A_ESD_0_H @@PAD_A_ESD_1_H @@PAD_A_NOESD_H @@SLOW @@TIE_HI_ESD @@TIE_LO_ESD @@VCCD @@VCCHIB
++ @@VDDA @@VDDIO @@VDDIO_Q @@VSSA @@VSSD @@VSSIO @@VSSIO_Q @@VSWITCH @@VTRIP_SEL @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -130 -260 130 -260 {}
+L 4 -130 260 130 260 {}
+L 4 -130 -260 -130 260 {}
+L 4 130 -260 130 260 {}
+L 4 -150 -250 -130 -250 {}
+L 4 -150 -230 -130 -230 {}
+L 4 -150 -210 -130 -210 {}
+L 4 -150 -190 -130 -190 {}
+L 4 130 30 150 30 {}
+L 4 -150 -170 -130 -170 {}
+L 4 -150 -150 -130 -150 {}
+L 4 130 -50 150 -50 {}
+L 4 130 -30 150 -30 {}
+L 4 -150 -130 -130 -130 {}
+L 4 -150 -110 -130 -110 {}
+L 4 -150 -90 -130 -90 {}
+L 4 -150 -70 -130 -70 {}
+L 4 -150 -50 -130 -50 {}
+L 4 -150 -30 -130 -30 {}
+L 4 -150 -10 -130 -10 {}
+L 4 -150 10 -130 10 {}
+L 4 -150 30 -130 30 {}
+L 4 -150 50 -130 50 {}
+L 4 -150 70 -130 70 {}
+L 4 -150 90 -130 90 {}
+L 4 -150 110 -130 110 {}
+L 4 -150 130 -130 130 {}
+L 4 -150 150 -130 150 {}
+L 4 -150 170 -130 170 {}
+L 4 -150 190 -130 190 {}
+L 4 -150 210 -130 210 {}
+L 4 -150 230 -130 230 {}
+L 7 -40 -280 -40 -260 {}
+L 7 -20 -280 -20 -260 {}
+L 7 0 -280 0 -260 {}
+L 7 20 -280 20 -260 {}
+L 7 40 -280 40 -260 {}
+L 7 130 -150 150 -150 {}
+L 7 130 -130 150 -130 {}
+L 7 40 260 40 280 {}
+L 7 20 260 20 280 {}
+L 7 0 260 0 280 {}
+L 7 -20 260 -20 280 {}
+B 5 -42.5 -282.5 -37.5 -277.5 {name=VCCHIB dir=inout }
+B 5 -22.5 -282.5 -17.5 -277.5 {name=VDDIO_Q dir=inout }
+B 5 -2.5 -282.5 2.5 -277.5 {name=VDDA dir=inout }
+B 5 17.5 -282.5 22.5 -277.5 {name=VCCD dir=inout }
+B 5 37.5 -282.5 42.5 -277.5 {name=VDDIO dir=inout }
+B 5 147.5 -152.5 152.5 -147.5 {name=AMUXBUS_A dir=inout }
+B 5 147.5 -132.5 152.5 -127.5 {name=AMUXBUS_B dir=inout }
+B 5 -152.5 -252.5 -147.5 -247.5 {name=ANALOG_EN dir=in }
+B 5 -152.5 -232.5 -147.5 -227.5 {name=ANALOG_POL dir=in }
+B 5 -152.5 -212.5 -147.5 -207.5 {name=ANALOG_SEL dir=in }
+B 5 -152.5 -192.5 -147.5 -187.5 {name=DM2 dir=in }
+B 5 147.5 27.5 152.5 32.5 {name=PAD dir=in }
+B 5 -152.5 -172.5 -147.5 -167.5 {name=DM1 dir=in }
+B 5 -152.5 -152.5 -147.5 -147.5 {name=DM0 dir=in }
+B 5 147.5 -52.5 152.5 -47.5 {name=IN dir=out }
+B 5 147.5 -32.5 152.5 -27.5 {name=IN_H dir=out }
+B 5 -152.5 -132.5 -147.5 -127.5 {name=ENABLE_H dir=in }
+B 5 -152.5 -112.5 -147.5 -107.5 {name=ENABLE_INP_H dir=in }
+B 5 -152.5 -92.5 -147.5 -87.5 {name=ENABLE_VDDA_H dir=in }
+B 5 -152.5 -72.5 -147.5 -67.5 {name=ENABLE_VDDIO dir=in }
+B 5 -152.5 -52.5 -147.5 -47.5 {name=ENABLE_VSWITCH_H dir=in }
+B 5 -152.5 -32.5 -147.5 -27.5 {name=HLD_H_N dir=in }
+B 5 -152.5 -12.5 -147.5 -7.5 {name=HLD_OVR dir=in }
+B 5 -152.5 7.5 -147.5 12.5 {name=IB_MODE_SEL dir=in }
+B 5 -152.5 27.5 -147.5 32.5 {name=INP_DIS dir=in }
+B 5 -152.5 47.5 -147.5 52.5 {name=OE_N dir=in }
+B 5 -152.5 67.5 -147.5 72.5 {name=OUT dir=in }
+B 5 -152.5 87.5 -147.5 92.5 {name=PAD_A_ESD_0_H dir=in }
+B 5 -152.5 107.5 -147.5 112.5 {name=PAD_A_ESD_1_H dir=in }
+B 5 -152.5 127.5 -147.5 132.5 {name=PAD_A_NOESD_H dir=in }
+B 5 -152.5 147.5 -147.5 152.5 {name=SLOW dir=in }
+B 5 -152.5 167.5 -147.5 172.5 {name=TIE_HI_ESD dir=in }
+B 5 -152.5 187.5 -147.5 192.5 {name=TIE_LO_ESD dir=in }
+B 5 -152.5 207.5 -147.5 212.5 {name=VSWITCH dir=in }
+B 5 -152.5 227.5 -147.5 232.5 {name=VTRIP_SEL dir=in }
+B 5 37.5 277.5 42.5 282.5 {name=VSSA dir=inout }
+B 5 17.5 277.5 22.5 282.5 {name=VSSIO_Q dir=inout }
+B 5 -2.5 277.5 2.5 282.5 {name=VSSIO dir=inout }
+B 5 -22.5 277.5 -17.5 282.5 {name=VSSD dir=inout }
+T {@symname} -46 -6 0 0 0.3 0.3 {}
+T {@name} 135 -272 0 0 0.2 0.2 {}
+T {VCCHIB} -44 -255 3 1 0.2 0.2 {}
+T {VDDIO_Q} -24 -255 3 1 0.2 0.2 {}
+T {VDDA} -4 -255 3 1 0.2 0.2 {}
+T {VCCD} 16 -255 3 1 0.2 0.2 {}
+T {VDDIO} 36 -255 3 1 0.2 0.2 {}
+T {AMUXBUS_A} 125 -154 0 1 0.2 0.2 {}
+T {AMUXBUS_B} 125 -134 0 1 0.2 0.2 {}
+T {ANALOG_EN} -125 -254 0 0 0.2 0.2 {}
+T {ANALOG_POL} -125 -234 0 0 0.2 0.2 {}
+T {ANALOG_SEL} -125 -214 0 0 0.2 0.2 {}
+T {DM2} -125 -194 0 0 0.2 0.2 {}
+T {PAD} 125 34 2 0 0.2 0.2 {}
+T {DM1} -125 -174 0 0 0.2 0.2 {}
+T {DM0} -125 -154 0 0 0.2 0.2 {}
+T {IN} 125 -54 0 1 0.2 0.2 {}
+T {IN_H} 125 -34 0 1 0.2 0.2 {}
+T {ENABLE_H} -125 -134 0 0 0.2 0.2 {}
+T {ENABLE_INP_H} -125 -114 0 0 0.2 0.2 {}
+T {ENABLE_VDDA_H} -125 -94 0 0 0.2 0.2 {}
+T {ENABLE_VDDIO} -125 -74 0 0 0.2 0.2 {}
+T {ENABLE_VSWITCH_H} -125 -54 0 0 0.2 0.2 {}
+T {HLD_H_N} -125 -34 0 0 0.2 0.2 {}
+T {HLD_OVR} -125 -14 0 0 0.2 0.2 {}
+T {IB_MODE_SEL} -125 6 0 0 0.2 0.2 {}
+T {INP_DIS} -125 26 0 0 0.2 0.2 {}
+T {OE_N} -125 46 0 0 0.2 0.2 {}
+T {OUT} -125 66 0 0 0.2 0.2 {}
+T {PAD_A_ESD_0_H} -125 86 0 0 0.2 0.2 {}
+T {PAD_A_ESD_1_H} -125 106 0 0 0.2 0.2 {}
+T {PAD_A_NOESD_H} -125 126 0 0 0.2 0.2 {}
+T {SLOW} -125 146 0 0 0.2 0.2 {}
+T {TIE_HI_ESD} -125 166 0 0 0.2 0.2 {}
+T {TIE_LO_ESD} -125 186 0 0 0.2 0.2 {}
+T {VSWITCH} -125 206 0 0 0.2 0.2 {}
+T {VTRIP_SEL} -125 226 0 0 0.2 0.2 {}
+T {VSSA} 44 255 1 1 0.2 0.2 {}
+T {VSSIO_Q} 24 255 1 1 0.2 0.2 {}
+T {VSSIO} 4 255 1 1 0.2 0.2 {}
+T {VSSD} -16 255 1 1 0.2 0.2 {}

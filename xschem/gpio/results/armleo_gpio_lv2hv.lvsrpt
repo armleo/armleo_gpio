@@ -1,0 +1,30 @@
+
+Equate elements:  no current cell.
+
+Equate elements:  no current cell.
+
+Subcircuit summary:
+Circuit 1: armleo_gpio_lv2hv               |Circuit 2: armleo_gpio_lv2hv               
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (4)           |sky130_fd_pr__pfet_g5v0d10v5 (4)           
+sky130_fd_pr__nfet_g5v0d10v5 (2)           |sky130_fd_pr__nfet_g5v0d10v5 (2)           
+Number of devices: 6                       |Number of devices: 6                       
+Number of nets: 8                          |Number of nets: 8                          
+---------------------------------------------------------------------------------------
+Resolving automorphisms by property value.
+Resolving automorphisms by pin name.
+Netlists match uniquely.
+Circuits match correctly.
+
+Subcircuit pins:
+Circuit 1: armleo_gpio_lv2hv               |Circuit 2: armleo_gpio_lv2hv               
+-------------------------------------------|-------------------------------------------
+VSSH                                       |VSSH                                       
+VDDH                                       |VDDH                                       
+Y                                          |Y                                          
+A_N                                        |A_N                                        
+A                                          |A                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes armleo_gpio_lv2hv and armleo_gpio_lv2hv are equivalent.
+Circuits match uniquely.

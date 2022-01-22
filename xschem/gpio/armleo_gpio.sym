@@ -1,0 +1,42 @@
+v {xschem version=2.9.9 file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+
+T {@symname} -67.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -72 0 0 0.2 0.2 {}
+L 4 -130 -60 130 -60 {}
+L 4 -130 60 130 60 {}
+L 4 -130 -60 -130 60 {}
+L 4 130 -60 130 60 {}
+B 5 147.5 -52.5 152.5 -47.5 {name=vdd dir=inout }
+L 7 130 -50 150 -50 {}
+T {vdd} 125 -54 0 1 0.2 0.2 {}
+B 5 147.5 -32.5 152.5 -27.5 {name=vddio dir=inout }
+L 7 130 -30 150 -30 {}
+T {vddio} 125 -34 0 1 0.2 0.2 {}
+B 5 147.5 -12.5 152.5 -7.5 {name=in dir=out }
+L 4 130 -10 150 -10 {}
+T {in} 125 -14 0 1 0.2 0.2 {}
+B 5 147.5 7.5 152.5 12.5 {name=pad dir=inout }
+L 7 130 10 150 10 {}
+T {pad} 125 6 0 1 0.2 0.2 {}
+B 5 -152.5 -52.5 -147.5 -47.5 {name=oe_l dir=in }
+L 4 -150 -50 -130 -50 {}
+T {oe_l} -125 -54 0 0 0.2 0.2 {}
+B 5 -152.5 -32.5 -147.5 -27.5 {name=out_l dir=in }
+L 4 -150 -30 -130 -30 {}
+T {out_l} -125 -34 0 0 0.2 0.2 {}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=med_enable dir=in }
+L 4 -150 -10 -130 -10 {}
+T {med_enable} -125 -14 0 0 0.2 0.2 {}
+B 5 -152.5 7.5 -147.5 12.5 {name=strong_enable dir=in }
+L 4 -150 10 -130 10 {}
+T {strong_enable} -125 6 0 0 0.2 0.2 {}
+B 5 147.5 27.5 152.5 32.5 {name=vssio dir=inout }
+L 7 130 30 150 30 {}
+T {vssio} 125 26 0 1 0.2 0.2 {}
+B 5 147.5 47.5 152.5 52.5 {name=vss dir=inout }
+L 7 130 50 150 50 {}
+T {vss} 125 46 0 1 0.2 0.2 {}

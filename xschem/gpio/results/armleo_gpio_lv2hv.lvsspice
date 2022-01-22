@@ -1,0 +1,11 @@
+* NGSPICE file created from armleo_gpio_lv2hv.ext - technology: sky130A
+
+.subckt armleo_gpio_lv2hv A_N A Y VSSH VDDH
+X0 a_481_358# Y VDDH VDDH sky130_fd_pr__pfet_g5v0d10v5 ad=5.8e+11p pd=3.16e+06u as=5.8e+11p ps=5.16e+06u w=1e+06u l=500000u
+X1 VDDH a_217_2223# a_481_2165# VDDH sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=2.9e+11p ps=2.58e+06u w=1e+06u l=500000u
+X2 VSSH A a_217_2223# VSSH sky130_fd_pr__nfet_g5v0d10v5 ad=5.8e+11p pd=3.16e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=500000u
+X3 a_481_2165# A_N Y VDDH sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=2.9e+11p ps=2.58e+06u w=1e+06u l=500000u
+X4 a_217_2223# A a_481_358# VDDH sky130_fd_pr__pfet_g5v0d10v5 ad=2.9e+11p pd=2.58e+06u as=0p ps=0u w=1e+06u l=500000u
+X5 Y A_N VSSH VSSH sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.58e+06u as=0p ps=0u w=1e+06u l=500000u
+.ends
+

@@ -1,0 +1,8 @@
+*.out
+*.data
+*.raw
+*.rawpex
+*.simlog
+*.pexsimlog
+*.pexspice
+

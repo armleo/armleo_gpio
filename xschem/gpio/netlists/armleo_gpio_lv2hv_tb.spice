@@ -1,0 +1,69 @@
+**.subckt armleo_gpio_lv2hv_tb
+V1 datain GND 0 PULSE(0 vdd_volts 5ns 1ns 1ns 4ns 10ns)
+V2 VPWR GND vdd_volts
+x1 VDDIO datain net1 net3 GND armleo_gpio_lv2hv
+V3 VDDIO GND vddio_volts
+x2 net1 VGND VGND VDDIO VDDIO net2 sky130_fd_sc_hvl__inv_1
+x3 net1 VGND VGND VDDIO VDDIO net2 sky130_fd_sc_hvl__inv_1
+x4 net1 VGND VGND VDDIO VDDIO net2 sky130_fd_sc_hvl__inv_1
+x5 net1 VGND VGND VDDIO VDDIO net2 sky130_fd_sc_hvl__inv_1
+x6 datain GND GND VPWR VPWR net3 sky130_fd_sc_hd__inv_8
+**** begin user architecture code
+
+.temp 125
+.param vdd_volts=1.65
+.param vddio_volts=3.0
+
+
+.control
+tran 0.01ns 20ns
+write
+exit
+.endc
+
+
+.param mc_mm_switch=0
+
+
+.lib "/opt/pdk_root/sky130A/libs.tech/ngspice/sky130.lib.spice" ss
+.include "/opt/pdk_root/sky130A/libs.ref/sky130_fd_io/spice/sky130_fd_io.spice"
+.include "/opt/pdk_root/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"
+.include "/opt/pdk_root/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice"
+
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  gpio/armleo_gpio_lv2hv.sym # of pins=5
+* sym_path: /home/armleo/Desktop/armleo_sky130_ip/xschem/gpio/armleo_gpio_lv2hv.sym
+* sch_path: /home/armleo/Desktop/armleo_sky130_ip/xschem/gpio/armleo_gpio_lv2hv.sch
+.subckt armleo_gpio_lv2hv  VDDH A Y A_N VSSH
+*.ipin A
+*.iopin VDDH
+*.iopin VSSH
+*.opin Y
+*.ipin A_N
+XM2 VSSH A_N Y VSSH sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM5 N1 A VSSH VSSH sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM4 VDDH Y N2 VDDH sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM7 net1 N1 VDDH VDDH sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM9 N1 A N2 VDDH sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM11 net1 A_N Y VDDH sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+.ends
+
+.GLOBAL GND
+** flattened .save nodes
+.end

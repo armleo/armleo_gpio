@@ -1,0 +1,89 @@
+
+cell_sch=$(wildcard xschem/gpio/*.sch)
+cell_sch_sym=$(cell_sch) $(wildcard xschem/gpio/*.sym)
+cell_spice=$(subst .sch,.spice,$(subst xschem/gpio/,xschem/gpio/netlists/,$(cell_sch)))
+drcrpts=$(subst .sch,.drcrpt,$(subst xschem/gpio/,xschem/gpio/results/,$(cell_sch)))
+cell_pexspice=$(subst .sch,.pexspice,$(subst xschem/gpio/,xschem/gpio/netlists/,$(cell_sch)))
+tb_sch=$(wildcard xschem/gpio/testbenches/*.sch)
+tb_netlists=$(subst .sch,.spice,$(subst xschem/gpio/testbenches/,xschem/gpio/netlists/,${tb_sch}))
+tb_sim_touches=$(subst .sch,.sim_touch,$(subst xschem/gpio/testbenches/,xschem/gpio/results/,${tb_sch}))
+
+CHECKS=mkdir -p xschem/gpio/results; mkdir -p temp/;
+
+SHELL:=/bin/bash
+
+.PHONY: armleo_tests drc
+
+armleo_tests: $(tb_sim_touches) drc
+drc: $(drcrpts)
+
+
+.PRECIOUS: xschem/gpio/results/%.sim_touch
+xschem/gpio/results/%.sim_touch: xschem/gpio/netlists/%.spice armleo.mk
+	$(CHECKS)
+	cd xschem && ngspice -r "../$(subst .sim_touch,.raw,$@)" -o "../$(subst .sim_touch,.log,$@)" "../$<" && cd -
+	touch $@
+
+# Note: output path is relative to xschem's run directory
+.PRECIOUS: xschem/gpio/netlists/%.spice
+xschem/gpio/netlists/%.spice: xschem/gpio/%.sch armleo.mk $(cell_sch_sym)
+	$(CHECKS)
+	cd xschem && xschem -q -n $(subst xschem/,,$<) -o gpio/netlists/ && cd -
+
+xschem/gpio/netlists/%.spice: xschem/gpio/testbenches/%.sch armleo.mk
+	$(CHECKS)
+	cd xschem && xschem -q -n $(subst xschem/,,$<) -o gpio/netlists/ && cd -
+
+.PRECIOUS: xschem/gpio/results/%.drcrpt
+xschem/gpio/results/%.drcrpt: gds/armleo_io.gds armleo.mk scripts/magic_drc.tcl
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/armleo_io.gds \
+		TOP_CELL=$(basename $@) \
+		OUTPUT_RPT_FILE=../$(basename $@).drcrpt \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_drc.tcl\
+	&& cd -
+
+.PRECIOUS: xschem/gpio/results/%.lvsspice
+xschem/gpio/results/%.lvsspice: gds/armleo_io.gds armleo.mk scripts/magic_lvs.tcl
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/armleo_io.gds \
+		TOP_CELL=$(notdir $(basename $@)) \
+		OUTPUT_FILE=../$(basename $@).lvsspice \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_lvs.tcl\
+	&& cd -
+
+xschem/gpio/results/%.netgenrpt: xschem/gpio/results/%.lvsspice xschem/gpio/netlists/%.spice armleo.mk
+	$(CHECKS)
+	cd temp && \
+		netgen -batch lvs "../xschem/my_nand_tb.spice my_nand" "../netgen/my_nand.lvs.spice my_nand" $PDK_ROOT/sky130A/libs.tech/netgen/sky130A_setup.tcl my_nand.comp.out
+	&& cd -
+
+.PRECIOUS: xschem/gpio/results/%.pexspice
+xschem/gpio/results/%.pexspice: gds/armleo_io.gds armleo.mk scripts/magic_pex.tcl
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/armleo_io.gds \
+		TOP_CELL=$(basename $@) \
+		OUTPUT_RPT_FILE=../$(basename $@).pexspice \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_pex.tcl\
+	&& cd -
+
+xschem/gpio/results/%.pextbspice: $(cell_pexspice) $(tb_netlists)
+	# todo: For each testbench
+	# todo:     For each pexspice call python script which replaces subckt
+	
+
+# python3 scripts/create_pex_tb.py $(basename $@).pexspice $(basename $@).pextbspice
+
+clean:
+	rm -rf temp
+	rm -rf xschem/gpio/results
+
+# TODO: Target .drc.rpts: Run Magic DRC
+# TODO: Target .pex.raw: .pex.spice and .tb_pex.pex.spice
+# TODO: Target .pex.spice: do PEX on the layout using Magic, TODO: Write Magic VLSI script
+# TODO: Target .tb_pex.pex.spice is generated from original testbench and then replaced the top cell with our PEX cell
+# TODO: Target .lvs.spice: is generated from running LVS extraction on the layout, TODO: Write Magic VLSI script
+# TODO: Target .comp.out: .lvs.spice Run Netgen on TB and the LVS
