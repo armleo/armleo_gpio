@@ -1,4 +1,4 @@
-def_target = "armleo.mk"
+def_target = "Makefile"
 
 def define_component_targets(all_targets, component, lvs_tb, module="gpio"):
 	all_targets.append(f"xschem/{module}/results/{component}.drcrpt")
