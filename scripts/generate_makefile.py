@@ -102,7 +102,7 @@ def define_gds_to_lef(all_targets, component, gds_name, lef_name, script_name="s
 	&& cd -
 """
 
-with open("armleo.mk", "w+") as f:
+with open("Makefile", "w+") as f:
 	all_targets = []
 	defs = ""
 	defs = defs + (define_component_targets(all_targets, "armleo_gpio", "armleo_gpio_tb")) + "\n"

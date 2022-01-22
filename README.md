@@ -156,18 +156,18 @@ if(oe_l == 0) -> PAD = hi-z;
 if(oe_l && out) -> PAD = HIGH;
 if(oe_l && !out) -> PAD = LOW;
 
-
 "Weak" mode is always active.
 
 To activate "medium" power mode, pull med_enable high
 
 To activate "strong" power mode, pull med_enable and strong_enable high
 
+# Generating lef
+First generate makefile then use makefile to create the lef
 
-if(PUP) then PAD is connected to VDDIO w/ 1k-2k ohm resistor
-if(PDN) then PAD is connected to VSSIO w/ 1k-2k ohm resistor
-
-PUP and PDN can be controlled at the same time as out/oe so, care need to be taken to not enable drivers and PDN/PUP at the same time. They control pull-up and pull-down of around 1k-2k ohm. PUP and PDN are independed of out_l and oe_l.
+```
+python3 scripts/generate_makefile.py && make lef/armleo_gpio.lef
+```
 
 # License
 

@@ -1,145 +1,263 @@
-# SPDX-FileCopyrightText: 2020 Efabless Corporation
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-# SPDX-License-Identifier: Apache-2.0
+CLEAN_TARGETS=
+CHECKS=mkdir -p xschem/gpio/results; mkdir -p temp/;
+.ONESHELL:
+all: xschem/gpio/results/armleo_gpio.drcrpt \
+xschem/gpio/results/armleo_gpio.lvsrpt \
+xschem/gpio/results/armleo_gpio.pexspice \
+xschem/gpio/results/armleo_gpio_lv2hv.drcrpt \
+xschem/gpio/results/armleo_gpio_lv2hv.lvsrpt \
+xschem/gpio/results/armleo_gpio_lv2hv.pexspice \
+xschem/gpio/results/armleo_gpio_tb.simlog \
+xschem/gpio/results/armleo_gpio_worst_tb.simlog \
+xschem/gpio/results/armleo_gpio_tb_caravel.simlog \
+xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.simlog \
+xschem/gpio/results/armleo_gpio_lv2hv_tb.simlog \
+lef/armleo_gpio.lef
 
-CARAVEL_ROOT?=$(PWD)/caravel
-PRECHECK_ROOT?=${HOME}/mpw_precheck
-SIM ?= RTL
 
-# Install lite version of caravel, (1): caravel-lite, (0): caravel
-CARAVEL_LITE?=1
+CLEAN_TARGETS+=
+.PRECIOUS: gpio/netlists/armleo_gpio.spice
+xschem/gpio/netlists/armleo_gpio.spice: xschem/gpio/armleo_gpio.sch armleo.mk
+	$(CHECKS)
+	cd xschem \
+		&& xschem --rcfile ${PDK_ROOT}/sky130A/libs.tech/xschem/xschemrc -q -n gpio/armleo_gpio.sch -o gpio/netlists/ \
+	&& cd -
+	
 
-ifeq ($(CARAVEL_LITE),1) 
-	CARAVEL_NAME := caravel-lite
-	CARAVEL_REPO := https://github.com/efabless/caravel-lite
-	CARVEL_TAG := 'rc-8'
-else
-	CARAVEL_NAME := caravel
-	CARAVEL_REPO := https://github.com/efabless/caravel
-	CARVEL_TAG := 'rc-8'
-endif
+.PRECIOUS: xschem/gpio/results/armleo_gpio.drcrpt
+xschem/gpio/results/armleo_gpio.drcrpt: gds/user_analog_project_wrapper.gds  armleo.mk scripts/magic_drc.tcl
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/user_analog_project_wrapper.gds \
+		TOP_CELL=armleo_gpio \
+		OUTPUT_RPT_FILE=../xschem/gpio/results/armleo_gpio.drcrpt \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_drc.tcl\
+	&& cd -
 
-# Include Caravel Makefile Targets
-.PHONY: % : check-caravel
-%: 
-	export CARAVEL_ROOT=$(CARAVEL_ROOT) && $(MAKE) -f $(CARAVEL_ROOT)/Makefile $@
+.PRECIOUS: xschem/gpio/results/armleo_gpio.lvsspice
+xschem/gpio/results/armleo_gpio.lvsspice: gds/user_analog_project_wrapper.gds armleo.mk  scripts/magic_lvs.tcl
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/user_analog_project_wrapper.gds \
+		TOP_CELL=armleo_gpio \
+		OUTPUT_FILE=../xschem/gpio/results/armleo_gpio.lvsspice \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_lvs.tcl\
+	&& cd -
 
-# Verify Target for running simulations
-.PHONY: verify
-verify:
-	cd ./verilog/dv/ && \
-	export SIM=${SIM} && \
-		$(MAKE) -j$(THREADS)
+.PRECIOUS: xschem/gpio/results/armleo_gpio.lvsrpt
+xschem/gpio/results/armleo_gpio.lvsrpt: xschem/gpio/results/armleo_gpio.lvsspice xschem/gpio/netlists/armleo_gpio_tb.spice armleo.mk
+	$(CHECKS)
+	cd temp && \
+		netgen -batch lvs \
+			"../xschem/gpio/results/armleo_gpio.lvsspice armleo_gpio" \
+			"../xschem/gpio/netlists/armleo_gpio_tb.spice armleo_gpio" \
+			${PDK_ROOT}/sky130A/libs.tech/netgen/sky130A_setup.tcl ../xschem/gpio/results/armleo_gpio.lvsrpt \
+	&& cd -
 
-# Install DV setup
-.PHONY: simenv
-simenv:
-	docker pull efabless/dv_setup:latest
+.PRECIOUS: xschem/gpio/results/armleo_gpio.pexspice
+xschem/gpio/results/armleo_gpio.pexspice: gds/user_analog_project_wrapper.gds armleo.mk scripts/magic_pex.tcl 
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/user_analog_project_wrapper.gds \
+		TOP_CELL=armleo_gpio \
+		OUTPUT_FILE=../xschem/gpio/results/armleo_gpio.pexspice \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_pex.tcl\
+	&& cd -
 
-PATTERNS=$(shell cd verilog/dv && find * -maxdepth 0 -type d)
-DV_PATTERNS = $(foreach dv, $(PATTERNS), verify-$(dv))
-TARGET_PATH=$(shell pwd)
-VERIFY_COMMAND="cd ${TARGET_PATH}/verilog/dv/$* && export SIM=${SIM} && make"
-$(DV_PATTERNS): verify-% : ./verilog/dv/% 
-	docker run -v ${TARGET_PATH}:${TARGET_PATH} -v ${PDK_ROOT}:${PDK_ROOT} \
-                -v ${CARAVEL_ROOT}:${CARAVEL_ROOT} \
-                -e TARGET_PATH=${TARGET_PATH} -e PDK_ROOT=${PDK_ROOT} \
-                -e CARAVEL_ROOT=${CARAVEL_ROOT} \
-                -u $(id -u $$USER):$(id -g $$USER) efabless/dv_setup:latest \
-                sh -c $(VERIFY_COMMAND)
-				
-# Openlane Makefile Targets
-BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
-.PHONY: $(BLOCKS)
-$(BLOCKS): %:
-	cd openlane && $(MAKE) $*
+	
 
-# Install caravel
-.PHONY: install
-install:
-	@echo "Installing $(CARAVEL_NAME).."
-	@git clone -b $(CARVEL_TAG) $(CARAVEL_REPO) $(CARAVEL_ROOT)
 
-# Create symbolic links to caravel's main files
-.PHONY: simlink
-simlink: check-caravel
-### Symbolic links relative path to $CARAVEL_ROOT 
-	$(eval MAKEFILE_PATH := $(shell realpath --relative-to=openlane $(CARAVEL_ROOT)/openlane/Makefile))
-	mkdir -p openlane
-	cd openlane &&\
-	ln -sf $(MAKEFILE_PATH) Makefile
+CLEAN_TARGETS+=
+.PRECIOUS: gpio/netlists/armleo_gpio_lv2hv.spice
+xschem/gpio/netlists/armleo_gpio_lv2hv.spice: xschem/gpio/armleo_gpio_lv2hv.sch armleo.mk
+	$(CHECKS)
+	cd xschem \
+		&& xschem --rcfile ${PDK_ROOT}/sky130A/libs.tech/xschem/xschemrc -q -n gpio/armleo_gpio_lv2hv.sch -o gpio/netlists/ \
+	&& cd -
+	
 
-# Update Caravel
-.PHONY: update_caravel
-update_caravel: check-caravel
-	cd $(CARAVEL_ROOT)/ && git checkout $(CARVEL_TAG) && git pull
+.PRECIOUS: xschem/gpio/results/armleo_gpio_lv2hv.drcrpt
+xschem/gpio/results/armleo_gpio_lv2hv.drcrpt: gds/user_analog_project_wrapper.gds  armleo.mk scripts/magic_drc.tcl
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/user_analog_project_wrapper.gds \
+		TOP_CELL=armleo_gpio_lv2hv \
+		OUTPUT_RPT_FILE=../xschem/gpio/results/armleo_gpio_lv2hv.drcrpt \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_drc.tcl\
+	&& cd -
 
-# Uninstall Caravel
-.PHONY: uninstall
-uninstall: 
-	rm -rf $(CARAVEL_ROOT)
+.PRECIOUS: xschem/gpio/results/armleo_gpio_lv2hv.lvsspice
+xschem/gpio/results/armleo_gpio_lv2hv.lvsspice: gds/user_analog_project_wrapper.gds armleo.mk  scripts/magic_lvs.tcl
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/user_analog_project_wrapper.gds \
+		TOP_CELL=armleo_gpio_lv2hv \
+		OUTPUT_FILE=../xschem/gpio/results/armleo_gpio_lv2hv.lvsspice \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_lvs.tcl\
+	&& cd -
 
-# Install Openlane
-.PHONY: openlane
-openlane: 
-	cd openlane && $(MAKE) openlane
+.PRECIOUS: xschem/gpio/results/armleo_gpio_lv2hv.lvsrpt
+xschem/gpio/results/armleo_gpio_lv2hv.lvsrpt: xschem/gpio/results/armleo_gpio_lv2hv.lvsspice xschem/gpio/netlists/armleo_gpio_lv2hv_tb.spice armleo.mk
+	$(CHECKS)
+	cd temp && \
+		netgen -batch lvs \
+			"../xschem/gpio/results/armleo_gpio_lv2hv.lvsspice armleo_gpio_lv2hv" \
+			"../xschem/gpio/netlists/armleo_gpio_lv2hv_tb.spice armleo_gpio_lv2hv" \
+			${PDK_ROOT}/sky130A/libs.tech/netgen/sky130A_setup.tcl ../xschem/gpio/results/armleo_gpio_lv2hv.lvsrpt \
+	&& cd -
 
-# Install Pre-check
-# Default installs to the user home directory, override by "export PRECHECK_ROOT=<precheck-installation-path>"
-.PHONY: precheck
-precheck:
-	@git clone https://github.com/efabless/mpw_precheck.git --depth=1 $(PRECHECK_ROOT)
-	@docker pull efabless/mpw_precheck:latest
+.PRECIOUS: xschem/gpio/results/armleo_gpio_lv2hv.pexspice
+xschem/gpio/results/armleo_gpio_lv2hv.pexspice: gds/user_analog_project_wrapper.gds armleo.mk scripts/magic_pex.tcl 
+	$(CHECKS)
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/user_analog_project_wrapper.gds \
+		TOP_CELL=armleo_gpio_lv2hv \
+		OUTPUT_FILE=../xschem/gpio/results/armleo_gpio_lv2hv.pexspice \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/magic_pex.tcl\
+	&& cd -
 
-.PHONY: run-precheck
-run-precheck: check-precheck check-pdk check-caravel
-	$(eval INPUT_DIRECTORY := $(shell pwd))
-	cd $(PRECHECK_ROOT) && \
-	docker run -e INPUT_DIRECTORY=$(INPUT_DIRECTORY) -e PDK_ROOT=$(PDK_ROOT) -e CARAVEL_ROOT=$(CARAVEL_ROOT) -v $(PRECHECK_ROOT):$(PRECHECK_ROOT) -v $(INPUT_DIRECTORY):$(INPUT_DIRECTORY) -v $(PDK_ROOT):$(PDK_ROOT) -v $(CARAVEL_ROOT):$(CARAVEL_ROOT) \
-	-u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/mpw_precheck:latest bash -c "cd $(PRECHECK_ROOT) ; python3 mpw_precheck.py --pdk_root $(PDK_ROOT) --input_directory $(INPUT_DIRECTORY) --caravel_root $(CARAVEL_ROOT)"
+	
 
-# Install PDK using OL's Docker Image
-.PHONY: pdk-nonnative
-pdk-nonnative: skywater-pdk skywater-library skywater-timing open_pdks
-	docker run --rm -v $(PDK_ROOT):$(PDK_ROOT) -v $(CARAVEL_ROOT):$(CARAVEL_ROOT) -e CARAVEL_ROOT=$(CARAVEL_ROOT) -e PDK_ROOT=$(PDK_ROOT) -u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/openlane:current sh -c "cd $(CARAVEL_ROOT); make build-pdk; make gen-sources"
+	
+.PRECIOUS: gpio/netlists/armleo_gpio_tb.spice
+xschem/gpio/netlists/armleo_gpio_tb.spice: xschem/gpio/testbenches/armleo_gpio_tb.sch armleo.mk
+	$(CHECKS)
+	cd xschem \
+		&& xschem --rcfile ${PDK_ROOT}/sky130A/libs.tech/xschem/xschemrc -q -n gpio/testbenches/armleo_gpio_tb.sch -o gpio/netlists/ \
+	&& cd -
 
-# Clean 
-.PHONY: clean
-clean:
-	cd ./verilog/dv/ && \
-		$(MAKE) -j$(THREADS) clean
+.PRECIOUS: xschem/gpio/results/armleo_gpio_tb.simlog
+xschem/gpio/results/armleo_gpio_tb.simlog: xschem/gpio/netlists/armleo_gpio_tb.spice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_tb.raw" -o "../xschem/gpio/results/armleo_gpio_tb.simlog" "../xschem/gpio/netlists/armleo_gpio_tb.spice"
+	cd -
 
-check-caravel:
-	@if [ ! -d "$(CARAVEL_ROOT)" ]; then \
-		echo "Caravel Root: "$(CARAVEL_ROOT)" doesn't exists, please export the correct path before running make. "; \
-		exit 1; \
-	fi
+.PRECIOUS: xschem/gpio/netlists/armleo_gpio_tb.pexspice
+xschem/gpio/netlists/armleo_gpio_tb.pexspice: xschem/gpio/results/armleo_gpio.pexspice xschem/gpio/netlists/armleo_gpio_tb.spice armleo.mk
+	python3 scripts/make_pextb.py armleo_gpio xschem/gpio/results/armleo_gpio.pexspice xschem/gpio/netlists/armleo_gpio_tb.spice xschem/gpio/netlists/armleo_gpio_tb.pexspice
 
-check-precheck:
-	@if [ ! -d "$(PRECHECK_ROOT)" ]; then \
-		echo "Pre-check Root: "$(PRECHECK_ROOT)" doesn't exists, please export the correct path before running make. "; \
-		exit 1; \
-	fi
+.PRECIOUS: xschem/gpio/results/armleo_gpio_tb.pexsimlog
+xschem/gpio/results/armleo_gpio_tb.pexsimlog: xschem/gpio/netlists/armleo_gpio_tb.pexspice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_tb.pexraw" -o "../xschem/gpio/results/armleo_gpio_tb.pexsimlog" "../xschem/gpio/netlists/armleo_gpio_tb.pexspice"
+	cd -
+	
 
-check-pdk:
-	@if [ ! -d "$(PDK_ROOT)" ]; then \
-		echo "PDK Root: "$(PDK_ROOT)" doesn't exists, please export the correct path before running make. "; \
-		exit 1; \
-	fi
+	
+.PRECIOUS: gpio/netlists/armleo_gpio_worst_tb.spice
+xschem/gpio/netlists/armleo_gpio_worst_tb.spice: xschem/gpio/testbenches/armleo_gpio_worst_tb.sch armleo.mk
+	$(CHECKS)
+	cd xschem \
+		&& xschem --rcfile ${PDK_ROOT}/sky130A/libs.tech/xschem/xschemrc -q -n gpio/testbenches/armleo_gpio_worst_tb.sch -o gpio/netlists/ \
+	&& cd -
 
-.PHONY: help
-help:
-	cd $(CARAVEL_ROOT) && $(MAKE) help 
-	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
+.PRECIOUS: xschem/gpio/results/armleo_gpio_worst_tb.simlog
+xschem/gpio/results/armleo_gpio_worst_tb.simlog: xschem/gpio/netlists/armleo_gpio_worst_tb.spice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_worst_tb.raw" -o "../xschem/gpio/results/armleo_gpio_worst_tb.simlog" "../xschem/gpio/netlists/armleo_gpio_worst_tb.spice"
+	cd -
+
+.PRECIOUS: xschem/gpio/netlists/armleo_gpio_worst_tb.pexspice
+xschem/gpio/netlists/armleo_gpio_worst_tb.pexspice: xschem/gpio/results/armleo_gpio.pexspice xschem/gpio/netlists/armleo_gpio_worst_tb.spice armleo.mk
+	python3 scripts/make_pextb.py armleo_gpio xschem/gpio/results/armleo_gpio.pexspice xschem/gpio/netlists/armleo_gpio_worst_tb.spice xschem/gpio/netlists/armleo_gpio_worst_tb.pexspice
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_worst_tb.pexsimlog
+xschem/gpio/results/armleo_gpio_worst_tb.pexsimlog: xschem/gpio/netlists/armleo_gpio_worst_tb.pexspice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_worst_tb.pexraw" -o "../xschem/gpio/results/armleo_gpio_worst_tb.pexsimlog" "../xschem/gpio/netlists/armleo_gpio_worst_tb.pexspice"
+	cd -
+	
+
+	
+.PRECIOUS: gpio/netlists/armleo_gpio_tb_caravel.spice
+xschem/gpio/netlists/armleo_gpio_tb_caravel.spice: xschem/gpio/testbenches/armleo_gpio_tb_caravel.sch armleo.mk
+	$(CHECKS)
+	cd xschem \
+		&& xschem --rcfile ${PDK_ROOT}/sky130A/libs.tech/xschem/xschemrc -q -n gpio/testbenches/armleo_gpio_tb_caravel.sch -o gpio/netlists/ \
+	&& cd -
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_tb_caravel.simlog
+xschem/gpio/results/armleo_gpio_tb_caravel.simlog: xschem/gpio/netlists/armleo_gpio_tb_caravel.spice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_tb_caravel.raw" -o "../xschem/gpio/results/armleo_gpio_tb_caravel.simlog" "../xschem/gpio/netlists/armleo_gpio_tb_caravel.spice"
+	cd -
+
+.PRECIOUS: xschem/gpio/netlists/armleo_gpio_tb_caravel.pexspice
+xschem/gpio/netlists/armleo_gpio_tb_caravel.pexspice: xschem/gpio/results/armleo_gpio.pexspice xschem/gpio/netlists/armleo_gpio_tb_caravel.spice armleo.mk
+	python3 scripts/make_pextb.py armleo_gpio xschem/gpio/results/armleo_gpio.pexspice xschem/gpio/netlists/armleo_gpio_tb_caravel.spice xschem/gpio/netlists/armleo_gpio_tb_caravel.pexspice
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_tb_caravel.pexsimlog
+xschem/gpio/results/armleo_gpio_tb_caravel.pexsimlog: xschem/gpio/netlists/armleo_gpio_tb_caravel.pexspice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_tb_caravel.pexraw" -o "../xschem/gpio/results/armleo_gpio_tb_caravel.pexsimlog" "../xschem/gpio/netlists/armleo_gpio_tb_caravel.pexspice"
+	cd -
+	
+
+	
+.PRECIOUS: gpio/netlists/armleo_gpio_lv2hv_tb_1v8.spice
+xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.spice: xschem/gpio/testbenches/armleo_gpio_lv2hv_tb_1v8.sch armleo.mk
+	$(CHECKS)
+	cd xschem \
+		&& xschem --rcfile ${PDK_ROOT}/sky130A/libs.tech/xschem/xschemrc -q -n gpio/testbenches/armleo_gpio_lv2hv_tb_1v8.sch -o gpio/netlists/ \
+	&& cd -
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.simlog
+xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.simlog: xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.spice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.raw" -o "../xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.simlog" "../xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.spice"
+	cd -
+
+.PRECIOUS: xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.pexspice
+xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.pexspice: xschem/gpio/results/armleo_gpio_lv2hv.pexspice xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.spice armleo.mk
+	python3 scripts/make_pextb.py armleo_gpio_lv2hv xschem/gpio/results/armleo_gpio_lv2hv.pexspice xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.spice xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.pexspice
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.pexsimlog
+xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.pexsimlog: xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.pexspice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.pexraw" -o "../xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.pexsimlog" "../xschem/gpio/netlists/armleo_gpio_lv2hv_tb_1v8.pexspice"
+	cd -
+	
+
+	
+.PRECIOUS: gpio/netlists/armleo_gpio_lv2hv_tb.spice
+xschem/gpio/netlists/armleo_gpio_lv2hv_tb.spice: xschem/gpio/testbenches/armleo_gpio_lv2hv_tb.sch armleo.mk
+	$(CHECKS)
+	cd xschem \
+		&& xschem --rcfile ${PDK_ROOT}/sky130A/libs.tech/xschem/xschemrc -q -n gpio/testbenches/armleo_gpio_lv2hv_tb.sch -o gpio/netlists/ \
+	&& cd -
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_lv2hv_tb.simlog
+xschem/gpio/results/armleo_gpio_lv2hv_tb.simlog: xschem/gpio/netlists/armleo_gpio_lv2hv_tb.spice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_lv2hv_tb.raw" -o "../xschem/gpio/results/armleo_gpio_lv2hv_tb.simlog" "../xschem/gpio/netlists/armleo_gpio_lv2hv_tb.spice"
+	cd -
+
+.PRECIOUS: xschem/gpio/netlists/armleo_gpio_lv2hv_tb.pexspice
+xschem/gpio/netlists/armleo_gpio_lv2hv_tb.pexspice: xschem/gpio/results/armleo_gpio_lv2hv.pexspice xschem/gpio/netlists/armleo_gpio_lv2hv_tb.spice armleo.mk
+	python3 scripts/make_pextb.py armleo_gpio_lv2hv xschem/gpio/results/armleo_gpio_lv2hv.pexspice xschem/gpio/netlists/armleo_gpio_lv2hv_tb.spice xschem/gpio/netlists/armleo_gpio_lv2hv_tb.pexspice
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_lv2hv_tb.pexsimlog
+xschem/gpio/results/armleo_gpio_lv2hv_tb.pexsimlog: xschem/gpio/netlists/armleo_gpio_lv2hv_tb.pexspice  armleo.mk
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_lv2hv_tb.pexraw" -o "../xschem/gpio/results/armleo_gpio_lv2hv_tb.pexsimlog" "../xschem/gpio/netlists/armleo_gpio_lv2hv_tb.pexspice"
+	cd -
+	
+
+lef/armleo_gpio.lef: gds/user_analog_project_wrapper.gds armleo.mk scripts/armleo_gpio_lef.tcl
+	cd temp && \
+		MAGIC_GDS_FILE=../gds/user_analog_project_wrapper.gds \
+		MAGIC_LEF_FILE=../lef/armleo_gpio.lef \
+		TOP_CELL=armleo_gpio \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -dnull -noconsole ../scripts/armleo_gpio_lef.tcl\
+	&& cd -
+
