@@ -21,11 +21,11 @@ make -f pdk pdk
 
 python3 scripts/generate_makefile.py && make -f armleo.mk xschem/gpio/results/armleo_gpio_lp_tb.simlog
 
-  LD_LIBRARY_PATH=~/Desktop/klayout-v0.27.4/bin-release \
-  ~/Desktop/klayout-v0.27.4/bin-release/klayout \
-  -e -nn $PDK_ROOT/sky130A/libs.tech/klayout/sky130A.lyt  \
-  -l $PDK_ROOT/sky130A/libs.tech/klayout/sky130A.lyp  \
-  gds/armleo_io.gds
+LD_LIBRARY_PATH=~/Desktop/klayout-v0.27.4/bin-release \
+~/Desktop/klayout-v0.27.4/bin-release/klayout \
+-e -nn $PDK_ROOT/sky130A/libs.tech/klayout/sky130A.lyt  \
+-l $PDK_ROOT/sky130A/libs.tech/klayout/sky130A.lyp  \
+gds/user_analog_project_wrapper.gds
 
 magic -rcfile $PDK_ROOT/sky130A/libs.tech/magic/sky130A.magicrc
 
