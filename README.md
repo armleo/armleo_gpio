@@ -169,6 +169,14 @@ First generate makefile then use makefile to create the lef
 python3 scripts/generate_makefile.py && make lef/armleo_gpio.lef
 ```
 
+# Versions
+
+OpenLane: 2021.11.23_01.42.34
+Magic VLSI: 8.3.253
+KLayout: v0.27.4
+Open_PDKs: 1.0.264
+
+
 # License
 
 Currently nobody has rights to use this cell. But it might or might not be published under GPL license and be available for dual licensing.
