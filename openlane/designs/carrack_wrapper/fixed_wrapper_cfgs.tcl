@@ -25,7 +25,10 @@ set ::env(DIE_AREA) "0 0 2540.96 3195.985"
 
 set ::env(RUN_CVC) 0
 
-
+set ::env(BOTTOM_MARGIN_MULT) 20
+set ::env(TOP_MARGIN_MULT) 20
+set ::env(LEFT_MARGIN_MULT) 100
+set ::env(RIGHT_MARGIN_MULT) 100
 
 # set ::env(VDD_NETS) "vccd1"
 # set ::env(GND_NETS) "vssd1"
