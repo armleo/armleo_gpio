@@ -59,9 +59,9 @@ proc fix_rounding_error_pt {pt} {
 # POWER
 #-------------------------------------
 
-# place_pin -pin_name "vssd1" -layer met3 -location [list $core_area_x [expr 944.15000 - $origin_y]] -pin_size [list 12.30000 74.00000]
+#place_pin -pin_name "vssd1" -layer met3 -location [list $core_area_x [expr 944.15000 - $origin_y]] -pin_size [list 12.30000 74.00000]
 
-# place_pin -pin_name "vccd1" -layer met3 -location [list $core_area_x [expr 3185.92000 - $origin_y]] -pin_size [list 12.30000 74.00000]
+#place_pin -pin_name "vccd1" -layer met3 -location [list $core_area_x [expr 3185.92000 - $origin_y]] -pin_size [list 12.30000 74.00000]
 
 
 

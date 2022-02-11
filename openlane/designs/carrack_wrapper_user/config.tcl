@@ -25,6 +25,10 @@ set ::env(PL_BASIC_PLACEMENT) 1
 set ::env(FP_DEF_TEMPLATE) $script_dir/../carrack_wrapper/carrack_wrapper.fp.def
 
 # set ::env(FP_DEF_TEMPLATE) $script_dir/4-ioPlacer.def
+#set ::env(BOTTOM_MARGIN_MULT) 200
+#set ::env(TOP_MARGIN_MULT) 200
+#set ::env(LEFT_MARGIN_MULT) 300
+#set ::env(RIGHT_MARGIN_MULT) 300
 
 set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET)  "wb_clk_i"

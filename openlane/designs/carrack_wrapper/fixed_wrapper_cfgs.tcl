@@ -27,9 +27,10 @@ set ::env(RUN_CVC) 0
 
 
 
-set ::env(VDD_NETS) "vccd1"
-set ::env(GND_NETS) "vssd1"
+# set ::env(VDD_NETS) "vccd1"
+# set ::env(GND_NETS) "vssd1"
 
+set ::env(FP_PDN_CORE_RING) 1
 
 # Pin Configurations. DON'T TOUCH
 #set ::unit 2.4
@@ -40,8 +41,6 @@ set ::env(GND_NETS) "vssd1"
 #set ::env(FP_IO_HTHICKNESS_MULT) 4
 
 # Power & Pin Configurations. DON'T TOUCH.
-set ::env(FP_PDN_CORE_RING) 0
-
-#set ::env(VDD_NETS) [list {vccd1}]
-#set ::env(GND_NETS) [list {vssd1}]
-#set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
+set ::env(VDD_NETS) [list {vccd1}]
+set ::env(GND_NETS) [list {vssd1}]
+set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"

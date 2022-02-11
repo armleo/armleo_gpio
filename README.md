@@ -181,6 +181,18 @@ It is not recommended, but if you want to regenerate the DEF, then run following
 
 Then in generated DEF fix so that every pin's location is aligned to 5nm. Good luck! I tried to fix all of the pin locations in script, but it still gives a wrong DEF. There is no way too check if all fixed. But some you can find if you search for: `9 )` and `4 )` and `9 2000 ) N ;`
 
+# DRC check of user_analog_project_wrapper
+
+```
+cp ../armleo_sky130_ip/gds/user_analog_project_wrapper.gds designs/carrack_wrapper
+
+# From make mount:
+./flow.tcl -drc -design carrack_wrapper -magicrc $PDK_ROOT/sky130A/libs.tech/magic/sky130A.magicrc -report designs/carrack_wrapper/drc.rpt -gds designs/carrack_wrapper/user_analog_project_wrapper.gds
+```
+
+
+There is no LVS script. It is what it is.
+
 # Versions
 
 OpenLane: 2021.11.23_01.42.34  
