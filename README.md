@@ -162,6 +162,8 @@ To activate "medium" power mode, pull med_enable high
 
 To activate "strong" power mode, pull med_enable and strong_enable high
 
+The io_oeb corresponding to the fastio has to be pulled high to disable caravan's chip io. If however fastio_oe_l is low (deactivated driver) then io_oeb can be low (active). Note that oeb is inverted, so low value means active driver.
+
 # Generating lef
 First generate makefile then use makefile to create the lef
 
@@ -171,10 +173,10 @@ python3 scripts/generate_makefile.py && make lef/armleo_gpio.lef
 
 # Running OpenLane
 
-Copy both designs from OpenLane/designs to designs of 2021.11.23_01.42.34 (this is only tested version) version of OpenLane.
+Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane.
 
 Modify carrack_wrapper_user as you wish. Then run it: `./flow.tcl -design carrack_wrapper_user -tag carrack_wrapper_user -overwrite`
-Then copy from final GDS to the user_analog_project_wrapper manualy.
+Then copy from final GDS to the user_analog_project_wrapper manualy. Place it the wrapper at (189.52um, 137um). Now run the drc check below.
 
 # Remaking the templat def
 It is not recommended, but if you want to regenerate the DEF, then run following `./flow.tcl -interactive -file designs/carrack_wrapper/interactive.tcl`
