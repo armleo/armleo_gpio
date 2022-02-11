@@ -24,17 +24,33 @@ set core_area_y 3195.985
 set origin_x 189.52
 set origin_y 137
 
-set analog_pin_size 25
-lappend analog_pin_size 8.5
-
-set clamp_pin_size 11
-lappend clamp_pin_size 8.5
-
-set power_pin_size 24
-lappend power_pin_size 8.3
-
 set pin_width 0.56
-set pin_length 6.40
+set pin_length 4
+set pin_min_width 2
+
+set met2_pin_width 0.28
+set met3_pin_width 0.6
+
+set offset_x [expr $pin_length/2]
+set offset_y [expr $pin_length/2]
+
+# See: https://github.com/The-OpenROAD-Project/OpenLane/issues/912
+proc fix_rounding_error {num} {
+    set return_value [expr round($num * 200) / 200.0]
+    
+    if {$return_value != $num} {puts "$return_value != $num"}
+    return $return_value
+}
+
+
+proc fix_rounding_error_pt {pt} {
+    return [list [fix_rounding_error [lindex $pt 0]] [fix_rounding_error [lindex $pt 1]]]
+}
+
+# IO placer defaults
+# 1000 = 1um
+# LAYER met3 ( -2000 -300 ) ( 2000 300 )
+# LAYER met2 ( -140 -2000 ) ( 140 2000 )
 
 # 2917.85000-246
 
@@ -43,9 +59,9 @@ set pin_length 6.40
 # POWER
 #-------------------------------------
 
-place_pin -pin_name "vssd1" -layer met3 -location [list $core_area_x [expr 944.15000 - $origin_y]] -pin_size [list 12.30000 74.00000]
+# place_pin -pin_name "vssd1" -layer met3 -location [list $core_area_x [expr 944.15000 - $origin_y]] -pin_size [list 12.30000 74.00000]
 
-place_pin -pin_name "vccd1" -layer met3 -location [list $core_area_x [expr 3185.92000 - $origin_y]] -pin_size [list 12.30000 74.00000]
+# place_pin -pin_name "vccd1" -layer met3 -location [list $core_area_x [expr 3185.92000 - $origin_y]] -pin_size [list 12.30000 74.00000]
 
 
 
@@ -68,7 +84,7 @@ set start_x [expr 257.03000 - $origin_x]
 set current_x $start_x
 
 foreach pin $south_east_pins {
-	place_pin -pin_name $pin -layer met2 -location [list $current_x 0] -pin_size [list $pin_width $pin_length]
+	place_pin -pin_name $pin -layer met2 -location [fix_rounding_error_pt [list $current_x $offset_y]] -pin_size [fix_rounding_error_pt [list $met2_pin_width $pin_length]]
 	set current_x [expr $current_x + 5.91]
 }
 
@@ -86,7 +102,7 @@ set start_x [expr 2710 - $origin_x]
 set current_x $start_x
 
 foreach pin $south_west_pins {
-	place_pin -pin_name $pin -layer met2 -location [list $current_x 0] -pin_size [list $pin_width $pin_length]
+	place_pin -pin_name $pin -layer met2 -location [fix_rounding_error_pt [list $current_x $offset_y]] -pin_size [fix_rounding_error_pt [list $met2_pin_width $pin_length]]
 	set current_x [expr $current_x - 5.91]
 }
 
@@ -106,7 +122,7 @@ set start_y 240.76000
 set current_y [expr $start_y - $origin_y]
 
 foreach pin $east_pins {
-	place_pin -pin_name $pin -layer met3 -location [list $core_area_x $current_y] -pin_size [list $pin_length $pin_width]
+	place_pin -pin_name $pin -layer met3 -location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] $current_y]] -pin_size [fix_rounding_error_pt [list $pin_length $met3_pin_width]]
 	set current_y [expr $current_y + 5.91]
 }
 
@@ -121,7 +137,7 @@ set current_y $start_y
 
 
 foreach pin $east_pins_2 {
-	place_pin -pin_name $pin -layer met3 -location [list $core_area_x $current_y] -pin_size [list $pin_length $pin_width]
+	place_pin -pin_name $pin -layer met3 -location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] $current_y]] -pin_size [fix_rounding_error_pt [list $pin_length $met3_pin_width]]
 	set current_y [expr $current_y + 5.91]
 }
 
@@ -132,19 +148,30 @@ set fastio_bases [list 1318.11500 1540.22500 1766.33500 1998.44500 2220.55500 24
 
 set fastio_idx 0
 
+# set oe_out_width 1
+# set fastio_med_enable 1.48
+# set in_width $pin_mid_width
+set med_enable_width $met2_pin_width
+set oe_out_width $met2_pin_width
+
+# TODO: Change to met2:
+set in_width $met2_pin_width
+# set caravan_io_width $pin_min_width
+set caravan_io_width $met3_pin_width
+
 foreach fastio_base_offseted $fastio_bases {
 	set fastio_base [expr $fastio_base_offseted - $origin_y]
 
 	place_pin -pin_name fastio_oe_l[$fastio_idx] -layer met2 \
-		-location [list $core_area_x [expr $fastio_base+9.51]] -pin_size [list $pin_length 1]
+		-location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] [expr $fastio_base + 9.01 + (1.0 / 2)]]] -pin_size [fix_rounding_error_pt [list $pin_length $oe_out_width]]
 	place_pin -pin_name fastio_out_l[$fastio_idx] -layer met2 \
-		-location [list $core_area_x [expr $fastio_base+11.27]] -pin_size [list $pin_length 1]
+		-location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] [expr $fastio_base + 19.5 + (1.0 / 2)]]] -pin_size [fix_rounding_error_pt [list $pin_length $oe_out_width]]
 	place_pin -pin_name fastio_med_enable[$fastio_idx] -layer met2 \
-		-location [list $core_area_x [expr $fastio_base + 42.69 + (1.48 / 2)]] -pin_size [list $pin_length 1.48]
+		-location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] [expr $fastio_base + 42.69 + (1.48 / 2)]]] -pin_size [fix_rounding_error_pt [list $pin_length $med_enable_width]]
 	place_pin -pin_name fastio_strong_enable[$fastio_idx] -layer met2 \
-		-location [list $core_area_x [expr $fastio_base + 59.24 + (1.48 / 2)]] -pin_size [list $pin_length 1.48]
+		-location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] [expr $fastio_base + 59.24 + (1.48 / 2)]]] -pin_size [fix_rounding_error_pt [list $pin_length $med_enable_width]]
 	place_pin -pin_name fastio_in[$fastio_idx] -layer met2 \
-		-location [list $core_area_x [expr $fastio_base + 67.005 + 0.28]] -pin_size [list $pin_length 0.56000]
+		-location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] [expr $fastio_base + 69.785 + 0.28]]] -pin_size [fix_rounding_error_pt [list $pin_length $in_width]]
 	incr fastio_idx
 }
 
@@ -157,11 +184,11 @@ foreach gpio_base_offseted $gpio_bases {
 	set gpio_base [expr $gpio_base_offseted - $origin_y]
 
 	place_pin -pin_name io_in[$gpio_idx] -layer met3 \
-		-location [list $core_area_x [expr $gpio_base + 0]] -pin_size [list $pin_length 0.56]
+		-location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] [expr $gpio_base + 0]]] -pin_size [list $pin_length $caravan_io_width]
 	place_pin -pin_name io_out[$gpio_idx] -layer met3 \
-		-location [list $core_area_x [expr $gpio_base + 5.91]] -pin_size [list $pin_length 0.56]
+		-location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] [expr $gpio_base + 5.91]]] -pin_size [list $pin_length $caravan_io_width]
 	place_pin -pin_name io_oeb[$gpio_idx] -layer met3 \
-		-location [list $core_area_x [expr $gpio_base + 5.91 + 5.91]] -pin_size [list $pin_length 0.56]
+		-location [fix_rounding_error_pt [list [expr $core_area_x-$offset_x] [expr $gpio_base + 5.91 + 5.91]]] -pin_size [list $pin_length $caravan_io_width]
 	
 	incr gpio_idx
 }
@@ -181,15 +208,15 @@ foreach fastio_base_offseted $fastio_bases {
 	set fastio_base [expr $fastio_base_offseted - $origin_x]
 
 	place_pin -pin_name fastio_oe_l[$fastio_idx] -layer met2 \
-		-location [list [expr $fastio_base+9.51] $core_area_y] -pin_size [list 1 $pin_length]
+		-location [fix_rounding_error_pt [list [expr $fastio_base + 9.01 + (1.0 / 2)] [expr $core_area_y-$offset_y]]] -pin_size [list $oe_out_width $pin_length]
 	place_pin -pin_name fastio_out_l[$fastio_idx] -layer met2 \
-		-location [list [expr $fastio_base+11.27] $core_area_y] -pin_size [list 1 $pin_length]
+		-location [fix_rounding_error_pt [list [expr $fastio_base + 19.5 + (1.0 / 2)] [expr $core_area_y-$offset_y]]] -pin_size [list $oe_out_width $pin_length]
 	place_pin -pin_name fastio_med_enable[$fastio_idx] -layer met2 \
-		-location [list [expr $fastio_base + 42.69 + (1.48 / 2)] $core_area_y] -pin_size [list 1.48 $pin_length]
+		-location [fix_rounding_error_pt [list [expr $fastio_base + 42.69 + (1.48 / 2)] [expr $core_area_y-$offset_y]]] -pin_size [list $med_enable_width $pin_length]
 	place_pin -pin_name fastio_strong_enable[$fastio_idx] -layer met2 \
-		-location [list [expr $fastio_base + 59.24 + (1.48 / 2)] $core_area_y] -pin_size [list 1.48 $pin_length]
+		-location [fix_rounding_error_pt [list [expr $fastio_base + 59.24 + (1.48 / 2)] [expr $core_area_y-$offset_y]]] -pin_size [list $med_enable_width $pin_length]
 	place_pin -pin_name fastio_in[$fastio_idx] -layer met2 \
-		-location [list [expr $fastio_base + 67.005 + 0.28] $core_area_y] -pin_size [list 0.56000 $pin_length]
+		-location [fix_rounding_error_pt [list [expr $fastio_base + 69.785 + 0.28] [expr $core_area_y-$offset_y]]] -pin_size [list $in_width $pin_length]
 	incr fastio_idx
 }
 
@@ -208,15 +235,15 @@ foreach fastio_base_offseted $fastio_bases {
 	set fastio_base [expr $fastio_base_offseted - $origin_x + 88.24000 - 35.72]
 
 	place_pin -pin_name fastio_oe_l[$fastio_idx] -layer met2 \
-		-location [list 0 [expr $fastio_base+9.01 + (1.0 / 2)]] -pin_size [list $pin_length 1]
+		-location [fix_rounding_error_pt [list $offset_x [expr $fastio_base + 9.01 + (1.0 / 2)]]] -pin_size [list $pin_length $oe_out_width]
 	place_pin -pin_name fastio_out_l[$fastio_idx] -layer met2 \
-		-location [list 0 [expr $fastio_base + 10.77 + (1.0 / 2)]] -pin_size [list $pin_length 1]
+		-location [fix_rounding_error_pt [list $offset_x [expr $fastio_base + 19.5 + (1.0 / 2)]]] -pin_size [list $pin_length $oe_out_width]
 	place_pin -pin_name fastio_med_enable[$fastio_idx] -layer met2 \
-		-location [list 0 [expr $fastio_base + 42.69 + (1.48 / 2)]] -pin_size [list $pin_length 1.48]
+		-location [fix_rounding_error_pt [list $offset_x [expr $fastio_base + 42.69 + (1.48 / 2)]]] -pin_size [list $pin_length $med_enable_width]
 	place_pin -pin_name fastio_strong_enable[$fastio_idx] -layer met2 \
-		-location [list 0 [expr $fastio_base + 59.24 + (1.48 / 2)]] -pin_size [list $pin_length 1.48]
+		-location [fix_rounding_error_pt [list $offset_x [expr $fastio_base + 59.24 + (1.48 / 2)]]] -pin_size [list $pin_length $med_enable_width]
 	place_pin -pin_name fastio_in[$fastio_idx] -layer met2 \
-		-location [list 0 [expr $fastio_base + 67.115 + (0.56 / 2)]] -pin_size [list $pin_length 0.56]
+		-location [fix_rounding_error_pt [list $offset_x [expr $fastio_base + 69.785 + (0.56 / 2)]]] -pin_size [list $pin_length $in_width]
 	incr fastio_idx
 }
 
@@ -229,14 +256,15 @@ foreach gpio_base_offseted $gpio_bases {
 	set gpio_base [expr $gpio_base_offseted - $origin_y]
 
 	place_pin -pin_name io_in[$gpio_idx] -layer met3 \
-		-location [list 0 [expr $gpio_base + 0]] -pin_size [list $pin_length 0.56]
+		-location [fix_rounding_error_pt [list $offset_x [expr $gpio_base + 0]]] -pin_size [list $pin_length $caravan_io_width]
 	place_pin -pin_name io_out[$gpio_idx] -layer met3 \
-		-location [list 0 [expr $gpio_base - 5.91]] -pin_size [list $pin_length 0.56]
+		-location [fix_rounding_error_pt [list $offset_x [expr $gpio_base - 5.91]]] -pin_size [list $pin_length $caravan_io_width]
 	place_pin -pin_name io_oeb[$gpio_idx] -layer met3 \
-		-location [list 0 [expr $gpio_base - 5.91 - 5.91]] -pin_size [list $pin_length 0.56]
+		-location [fix_rounding_error_pt [list $offset_x [expr $gpio_base - 5.91 - 5.91]]] -pin_size [list $pin_length $caravan_io_width]
 	
 	incr gpio_idx
 }
 
 
 write_def $::env(SAVE_DEF)
+

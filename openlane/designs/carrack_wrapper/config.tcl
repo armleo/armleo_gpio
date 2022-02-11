@@ -32,10 +32,10 @@ set ::env(CLOCK_NET)  "wb_clk_i"
 
 set ::env(CLOCK_PERIOD) "10"
 
-set ::env(DIODE_INSERTION_STRATEGY) 0
-set ::env(SYNTH_DEFINES) "USE_POWER_PINS"
+# set ::env(DIODE_INSERTION_STRATEGY) 0
+# set ::env(SYNTH_DEFINES) "USE_POWER_PINS"
 
-set ::env(MAGIC_WRITE_FULL_LEF) 1
+# set ::env(MAGIC_WRITE_FULL_LEF) 1
 
 set ::env(VERILOG_FILES) "\
 	$script_dir/src/carrack_wrapper.v"

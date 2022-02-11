@@ -169,12 +169,24 @@ First generate makefile then use makefile to create the lef
 python3 scripts/generate_makefile.py && make lef/armleo_gpio.lef
 ```
 
+# Running OpenLane
+
+Copy both designs from OpenLane/designs to designs of 2021.11.23_01.42.34 (this is only tested version) version of OpenLane.
+
+Modify carrack_wrapper_user as you wish. Then run it: `./flow.tcl -design carrack_wrapper_user -tag carrack_wrapper_user -overwrite`
+Then copy from final GDS to the user_analog_project_wrapper manualy.
+
+# Remaking the templat def
+It is not recommended, but if you want to regenerate the DEF, then run following `./flow.tcl -interactive -file designs/carrack_wrapper/interactive.tcl`
+
+Then in generated DEF fix so that every pin's location is aligned to 5nm. Good luck! I tried to fix all of the pin locations in script, but it still gives a wrong DEF. There is no way too check if all fixed. But some you can find if you search for: `9 )` and `4 )` and `9 2000 ) N ;`
+
 # Versions
 
-OpenLane: 2021.11.23_01.42.34
-Magic VLSI: 8.3.253
-KLayout: v0.27.4
-Open_PDKs: 1.0.264
+OpenLane: 2021.11.23_01.42.34  
+Magic VLSI: 8.3.253  
+KLayout: v0.27.4  
+Open_PDKs: 1.0.264  
 
 
 # License

@@ -30,6 +30,12 @@ remove_components -input $::env(CURRENT_DEF)
 # set ::env(SAVE_DEF) [index_file $::env(ioPlacer_tmp_file_tag).def]
 puts "$::env(SAVE_DEF)"
 try_catch openroad -exit $script_dir/or_ioplace.tcl |& tee $::env(TERMINAL_OUTPUT) ioPlacer_log_file_tag.log
+
+
+set script_dir [file dirname [file normalize [info script]]]
+puts "Copying def to: $script_dir/carrack_wrapper.fp.def"
+file copy -force $::env(SAVE_DEF) "$script_dir/carrack_wrapper.fp.def"
+
 set_def $::env(SAVE_DEF)
 
 # rename "duplicate" pins
