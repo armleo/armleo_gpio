@@ -164,13 +164,6 @@ To activate "strong" power mode, pull med_enable and strong_enable high
 
 The io_oeb corresponding to the fastio has to be pulled high to disable caravan's chip io. If however fastio_oe_l is low (deactivated driver) then io_oeb can be low (active). Note that oeb is inverted, so low value means active driver.
 
-# Generating lef
-First generate makefile then use makefile to create the lef
-
-```
-python3 scripts/generate_makefile.py && make lef/armleo_gpio.lef
-```
-
 # Running OpenLane
 
 Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane.
@@ -201,6 +194,14 @@ OpenLane: 2021.11.23_01.42.34
 Magic VLSI: 8.3.253  
 KLayout: v0.27.4  
 Open_PDKs: 1.0.264  
+
+
+# Generating lef
+First generate makefile then use makefile to create the lef
+
+```
+python3 scripts/generate_makefile.py && make lef/armleo_gpio.lef
+```
 
 
 # License
