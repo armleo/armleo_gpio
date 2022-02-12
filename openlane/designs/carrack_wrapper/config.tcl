@@ -20,20 +20,13 @@ source $script_dir/fixed_wrapper_cfgs.tcl
 set ::env(CURRENT_SDC) $::env(BASE_SDC_FILE)
 set ::env(DESIGN_NAME) carrack_wrapper
 
-
-set ::env(GLB_RT_OBS) "met1 0 0 $::env(DIE_AREA),\
-					   met2 0 0 $::env(DIE_AREA),\
-					   met3 0 0 $::env(DIE_AREA),\
-					   met4 0 0 $::env(DIE_AREA),\
-					   met5 0 0 $::env(DIE_AREA)"
-
 set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET)  "wb_clk_i"
 
 set ::env(CLOCK_PERIOD) "10"
 
 # set ::env(DIODE_INSERTION_STRATEGY) 0
-# set ::env(SYNTH_DEFINES) "USE_POWER_PINS"
+set ::env(SYNTH_DEFINES) "EMPTY_WRAPPER"
 
 # set ::env(MAGIC_WRITE_FULL_LEF) 1
 

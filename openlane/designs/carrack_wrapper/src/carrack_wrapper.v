@@ -38,8 +38,15 @@ module carrack_wrapper(
     output [27:0] fastio_med_enable
 );
 
+`ifdef EMPTY_WRAPPER
+// We are creating following net to force yosys to actually process this module. Otherwise it generates an empty synthesis netlist
+(* keep *) wire some_net = 0;
+`endif
+
+`ifndef EMPTY_WRAPPER
 assign fastio_oe_l[19:0] = 0;
-assign fastio_oe_l[27:21] = 0;
+assign fastio_oe_l[23:21] = 0;
+assign fastio_oe_l[27:25] = 0;
 
 assign fastio_out_l[19:0] = 0;
 assign fastio_out_l[27:21] = 0;
@@ -51,15 +58,19 @@ assign fastio_med_enable[19:0] = 0;
 assign fastio_med_enable[27:21] = 0;
 
 assign io_out = 0;
-assign io_oeb = ~(32'h0);
+assign io_oeb[15:0] = ~(32'h0);
+assign io_oeb[26:17] = ~(32'h0);
 
 
 // [20 is DUT for test chip)
-buf input18_to_output_buffer(fastio_out_l[20], fastio_in[18]);
-buf input19_to_oe_buffer(fastio_oe_l[20], fastio_in[19]);
-buf input20_to_med_buffer(fastio_strong_enable[20], fastio_in[21]);
-buf input21_to_strong_buffer(fastio_med_enable[20], fastio_in[22]);
-buf input23_to_io_oeb(io_oeb[16], fastio_in[23]);
+assign fastio_out_l[20]= fastio_in[18];
+assign fastio_oe_l[20] = fastio_in[19];
+assign fastio_strong_enable[20] = fastio_in[21];
+assign fastio_med_enable[20] = fastio_in[22];
+assign io_oeb[16] = fastio_in[23];
+
+assign fastio_out_l[24] = user_clock2;
+`endif
 
 endmodule
 

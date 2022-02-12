@@ -1,5 +1,11 @@
 # base origin in user_analog_wrapper 246 137
 
+proc place_pin_trace {args} {
+	puts "$args"
+}
+
+trace add execution place_pin enter place_pin_trace
+
 if {[catch {read_lef $::env(MERGED_LEF)} errmsg]} {
     puts stderr $errmsg
     exit 1
@@ -36,9 +42,7 @@ set offset_y [expr $pin_length/2]
 
 # See: https://github.com/The-OpenROAD-Project/OpenLane/issues/912
 proc fix_rounding_error {num} {
-    set return_value [expr round($num * 200) / 200.0]
-    
-    if {$return_value != $num} {puts "$return_value != $num"}
+    set return_value [expr round(($num) * 1000 / 5) / 200.0 + 0.0004]
     return $return_value
 }
 
@@ -84,10 +88,13 @@ set start_x [expr 257.03000 - $origin_x]
 set current_x $start_x
 
 foreach pin $south_east_pins {
-	place_pin -pin_name $pin -layer met2 -location [fix_rounding_error_pt [list $current_x $offset_y]] -pin_size [fix_rounding_error_pt [list $met2_pin_width $pin_length]]
+	set coordinates [fix_rounding_error_pt [list $current_x $offset_y]]
+	puts "AAAA -> $coordinates $pin"
+	place_pin -pin_name $pin -layer met2 -location $coordinates -pin_size [fix_rounding_error_pt [list $met2_pin_width $pin_length]]
 	set current_x [expr $current_x + 5.91]
 }
 
+# place_pin -pin_name "wbs_sel_i[1]" -layer met2 -location [list 516.67 2.0] -pin_size [list $met2_pin_width $pin_length]
 
 
 set south_west_pins {

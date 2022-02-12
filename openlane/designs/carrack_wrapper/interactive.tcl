@@ -23,20 +23,38 @@ verilog_elaborate
 
 init_floorplan
 
+place_io
+
+# This creates a placed IO saved to save_def
+
+set_def $::env(SAVE_DEF)
+
 # making it "empty"
 remove_nets -input $::env(CURRENT_DEF)
 remove_components -input $::env(CURRENT_DEF)
 
-# set ::env(SAVE_DEF) [index_file $::env(ioPlacer_tmp_file_tag).def]
-puts "$::env(SAVE_DEF)"
+set ::env(SAVE_DEF) $script_dir/or_ioplaced.def
+
+# Do place pins and save to save_def
 try_catch openroad -exit $script_dir/or_ioplace.tcl |& tee $::env(TERMINAL_OUTPUT) ioPlacer_log_file_tag.log
 
+set ::env(CURRENT_DEF) $::env(SAVE_DEF)
 
-set script_dir [file dirname [file normalize [info script]]]
+remove_nets -input $::env(CURRENT_DEF)
+remove_components -input $::env(CURRENT_DEF)
+
+puts $::env(CURRENT_DEF)
+
+
+# remove nets from pins
+# exec -- "sed" "-i" "s/ + NET zero_ / /g" "$::env(CURRENT_DEF)"
+# exec -- "sed" "-i" "s/ + NET one_ / /g" "$::env(CURRENT_DEF)"
+# exec python3 pin_net_assign_reset.py $::env(CURRENT_DEF)
+ 
 puts "Copying def to: $script_dir/carrack_wrapper.fp.def"
-file copy -force $::env(SAVE_DEF) "$script_dir/carrack_wrapper.fp.def"
+file copy -force $::env(CURRENT_DEF) "$script_dir/carrack_wrapper.fp.def"
 
-set_def $::env(SAVE_DEF)
+set_def $::env(CURRENT_DEF)
 
 # rename "duplicate" pins
 #exec /bin/bash $script_dir/../../utils/rename_pins.sh $::env(SAVE_DEF) "io_analog_1_4,io_analog_1_5,io_analog_1_6,vdda1_1,vdda1_2,vdda1_3,vdda2_1,vssa1_1,vssa1_2,vssa1_3,vssa2_1,vccd1_1,vccd2_1,vssd1_1,vssd2_1" "io_analog\[4\],io_analog\[5\],io_analog\[6\],vdda1,vdda1,vdda1,vdda2,vssa1,vssa1,vssa1,vssa2,vccd1,vccd2,vssd1,vssd2"
