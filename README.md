@@ -143,11 +143,6 @@ tdelay1_strong      =  2.062123e-09 targ=  1.925621e-07 trig=  1.905000e-07
 ```
 
 
-# Integration
-Use Caravan and connect top most 11 pads' NOESD pins to this armleo_gpio's PAD. Same can be done to all other pins with noesd available to user project. Connect VDDIO/VSSIO to VDDA1/VSSA1 with a ring. Pins facing center need to be connected to logic. Example is work in progress
-
-Warning: Keep in mind this ESD and GPIO cells are yet to be tested.
-
 # Usage
 
 oe_l enables drivers; out_l controls output driver
@@ -168,8 +163,14 @@ The io_oeb corresponding to the fastio has to be pulled high to disable caravan'
 
 Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane.
 
-Modify carrack_wrapper_user as you wish. Then run it: `./flow.tcl -design carrack_wrapper_user -tag carrack_wrapper_user -overwrite`
-Then copy from final GDS to the user_analog_project_wrapper manualy. Place it the wrapper at (189.52um, 137um). Now run the drc check below.
+1. Modify carrack_wrapper_user as you wish. Then run it: `./flow.tcl -design carrack_wrapper_user -tag carrack_wrapper_user -overwrite`
+2. Then copy from final GDS to the user_analog_project_wrapper manualy.
+3. Place it the wrapper at (189.52um, 137um).
+4. Connect power rings
+
+Now run the drc check below.
+
+TODO: Add LVS check
 
 # Remaking the templat def
 It is not recommended, but if you want to regenerate the DEF, then run following `./flow.tcl -interactive -file designs/carrack_wrapper/interactive.tcl`
