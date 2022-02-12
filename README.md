@@ -161,7 +161,7 @@ The io_oeb corresponding to the fastio has to be pulled high to disable caravan'
 
 # Running OpenLane
 
-Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane.
+Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane. `make test` of openlane should pass successfully before proceeding. HD std cell library has to be built and set to default.
 
 1. Modify carrack_wrapper_user as you wish. Then run it: `./flow.tcl -design carrack_wrapper_user -tag carrack_wrapper_user -overwrite`
 2. Then copy from final GDS to the user_analog_project_wrapper manualy.
