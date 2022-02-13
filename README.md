@@ -172,6 +172,11 @@ Now run the drc check below.
 
 TODO: Add LVS check
 
+To monitor:
+```
+top -d 1 -b | grep -i --line-buffered 'wish\|openroad\|magic\|klayout\|netgen' >>somefile
+```
+
 # Remaking the templat def
 It is not recommended, but if you want to regenerate the DEF, then run following `./flow.tcl -interactive -file designs/carrack_wrapper/interactive.tcl`
 
