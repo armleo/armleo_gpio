@@ -1,6 +1,46 @@
 # Armleo IP Repository
 Armleo's IP repository. Currently includes GPIO cell.
 
+# Running OpenLane
+
+Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane. `make test` of openlane should pass successfully before proceeding. HD std cell library has to be built and set to default.
+
+1. Modify carrack_wrapper_user as you wish. Then run it: `./flow.tcl -design carrack_wrapper_user -tag carrack_wrapper_user -overwrite`
+2. Then copy from final GDS to the user_analog_project_wrapper manualy.
+3. Place it the wrapper at (189.52um, 137um).
+4. Connect power rings
+5. Run the DRC check below. You will have to pass DRC check for tape-out afterwards anyway.
+
+To monitor resource usage:
+```
+top -d 1 -b | grep -i --line-buffered 'wish\|openroad\|magic\|klayout\|netgen' >>somefile
+```
+
+
+# License
+
+Available for licensing. It might or might not be published under GPL license in the future. This repository is provided for evaluation purposes only, if you need this cell for tape-out reach out to me.
+
+# Pin Usage
+
+`oe_l` enables drivers; `out_l` controls output driver
+
+```
+if(oe_l == 0) -> PAD = hi-z;
+if(oe_l && out) -> PAD = HIGH;
+if(oe_l && !out) -> PAD = LOW;
+```
+
+"Weak" mode is always active.
+
+To activate "medium" power mode, pull `med_enable` high
+
+To activate "strong" power mode, pull `med_enable` and `strong_enable` high
+
+The `io_oeb` corresponding to the fastio has to be pulled high to disable caravan's chip io. If however `fastio_oe_l` is low (deactivated driver) then `io_oeb` can be low (active). Note that `io_oeb` is inverted, so low value means active driver, while `oe_l` is NOT inverted, so low value means disabled driver.
+
+# Measurements
+
 Measurements for best, 6pf:
 
 ```
@@ -143,46 +183,14 @@ tdelay1_strong      =  2.062123e-09 targ=  1.925621e-07 trig=  1.905000e-07
 ```
 
 
-# Usage
 
-oe_l enables drivers; out_l controls output driver
-
-if(oe_l == 0) -> PAD = hi-z;
-if(oe_l && out) -> PAD = HIGH;
-if(oe_l && !out) -> PAD = LOW;
-
-"Weak" mode is always active.
-
-To activate "medium" power mode, pull med_enable high
-
-To activate "strong" power mode, pull med_enable and strong_enable high
-
-The io_oeb corresponding to the fastio has to be pulled high to disable caravan's chip io. If however fastio_oe_l is low (deactivated driver) then io_oeb can be low (active). Note that oeb is inverted, so low value means active driver.
-
-# Running OpenLane
-
-Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane. `make test` of openlane should pass successfully before proceeding. HD std cell library has to be built and set to default.
-
-1. Modify carrack_wrapper_user as you wish. Then run it: `./flow.tcl -design carrack_wrapper_user -tag carrack_wrapper_user -overwrite`
-2. Then copy from final GDS to the user_analog_project_wrapper manualy.
-3. Place it the wrapper at (189.52um, 137um).
-4. Connect power rings
-
-Now run the drc check below.
-
-TODO: Add LVS check
-
-To monitor:
-```
-top -d 1 -b | grep -i --line-buffered 'wish\|openroad\|magic\|klayout\|netgen' >>somefile
-```
-
-# Remaking the templat def
+# For developers
+## Remaking the templat def
 It is not recommended, but if you want to regenerate the DEF, then run following `./flow.tcl -interactive -file designs/carrack_wrapper/interactive.tcl`
 
 Then in generated DEF fix so that every pin's location is aligned to 5nm. Good luck! I tried to fix all of the pin locations in script, but it still gives a wrong DEF. There is no way too check if all fixed. But some you can find if you search for: `9 )` and `4 )` and `9 2000 ) N ;`
 
-# DRC check of user_analog_project_wrapper
+## DRC check of user_analog_project_wrapper
 
 ```
 cp ../armleo_sky130_ip/gds/user_analog_project_wrapper.gds designs/carrack_wrapper
@@ -194,7 +202,7 @@ cp ../armleo_sky130_ip/gds/user_analog_project_wrapper.gds designs/carrack_wrapp
 
 There is no LVS script. It is what it is.
 
-# Versions
+## Versions
 
 OpenLane: 2021.11.23_01.42.34  
 Magic VLSI: 8.3.253  
@@ -208,9 +216,4 @@ First generate makefile then use makefile to create the lef
 ```
 python3 scripts/generate_makefile.py && make lef/armleo_gpio.lef
 ```
-
-
-# License
-
-Currently nobody has rights to use this cell. But it might or might not be published under GPL license and be available for dual licensing.
 
