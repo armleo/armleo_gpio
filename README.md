@@ -22,9 +22,11 @@ top -d 1 -b | grep -i --line-buffered 'wish\|openroad\|magic\|klayout\|netgen' >
 ```
 
 Tempalte:
+
 ![Cell Picture](docs/ring.png)
 
 
+Logic analyzer pins are not available in the current template. Stay tuned for future versions.
 
 # License
 
