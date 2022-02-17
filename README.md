@@ -1,7 +1,12 @@
 # Armleo IP Repository
 Armleo's IP repository. Currently includes GPIO cell.
 
-# Running OpenLane
+![Cell Picture](docs/cell.png)
+
+
+
+# Running OpenLane for DEF template
+Don't want to make a analog design? We got you covered. OpenLane can be used for PnR or DEF file can be used with other tools to generate a final chip layout.
 
 Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane. `make test` of openlane should pass successfully before proceeding. HD std cell library has to be built and set to default.
 
@@ -15,6 +20,10 @@ To monitor resource usage:
 ```
 top -d 1 -b | grep -i --line-buffered 'wish\|openroad\|magic\|klayout\|netgen' >>somefile
 ```
+
+Tempalte:
+![Cell Picture](docs/ring.png)
+
 
 
 # License
