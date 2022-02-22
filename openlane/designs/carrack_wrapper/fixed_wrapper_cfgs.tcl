@@ -25,15 +25,21 @@ set ::env(DIE_AREA) "0 0 2540.96 3195.985"
 
 set ::env(RUN_CVC) 0
 
-set ::env(BOTTOM_MARGIN_MULT) 20
-set ::env(TOP_MARGIN_MULT) 20
-set ::env(LEFT_MARGIN_MULT) 100
-set ::env(RIGHT_MARGIN_MULT) 100
+#set ::env(BOTTOM_MARGIN_MULT) 20
+#set ::env(TOP_MARGIN_MULT) 20
+#set ::env(LEFT_MARGIN_MULT) 100
+#set ::env(RIGHT_MARGIN_MULT) 100
+
+set ::env(BOTTOM_MARGIN_MULT) 0
+set ::env(TOP_MARGIN_MULT) 0
+set ::env(LEFT_MARGIN_MULT) 0
+set ::env(RIGHT_MARGIN_MULT) 0
 
 # set ::env(VDD_NETS) "vccd1"
 # set ::env(GND_NETS) "vssd1"
-
+# set ::env(DESIGN_IS_CORE) 1
 set ::env(FP_PDN_CORE_RING) 1
+# set ::env(GLB_RT_MAXLAYER) 6
 
 # Pin Configurations. DON'T TOUCH
 #set ::unit 2.4

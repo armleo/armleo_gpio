@@ -48,3 +48,19 @@ TODO: TEST PUP/PDN WEAK
 
 
 In future mention the issues with mcon having DRC on LI1
+
+
+To run flow to generate a netlist:
+
+./flow.tcl -design carrack_wrapper_lvs -overwrite -tag carrack_wrapper_netlist_gen
+
+
+To run an LVS.
+1. Copy the GDS
+cp gds/user_analog_project_wrapper.gds ../OpenLane_mpw5a/designs/carrack_wrapper_lvs/
+
+2. Copy the LVS netlist, remove buffers and CONB
+
+3. Run LVS
+./flow.tcl -design carrack_wrapper_lvs -lvs -gds ./designs/carrack_wrapper_lvs/user_analog_project_wrapper.gds -net ./designs/carrack_wrapper_lvs/lvs_netlist.v
+

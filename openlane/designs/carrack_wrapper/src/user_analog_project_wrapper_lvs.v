@@ -121,13 +121,13 @@ module user_analog_project_wrapper (
 `ifdef POWER_PINS
 
 assign io_clamp_high[2] = vdda2;
-assign io_clamp_low[2] = vdda2;
+assign io_clamp_low[2] = vssa2;
 
 assign io_clamp_high[1] = vdda2;
-assign io_clamp_low[1] = vdda2;
+assign io_clamp_low[1] = vssa2;
 
 assign io_clamp_high[0] = vdda2;
-assign io_clamp_low[0] = vdda2;
+assign io_clamp_low[0] = vssa2;
 `endif
 
 
@@ -139,7 +139,7 @@ wire [27:0] fastio_med_enable;
 wire [27:0] fastio_pad;
 
 carrack_wrapper wrp (
-    `ifdef POWER_PINS
+    `ifdef USE_POWER_PINS
         .vccd1(vccd1),
         .vssd1(vssd1),
     `endif
@@ -186,31 +186,24 @@ armleo_gpio fastio``pad_num`` ( \
 
 `fastio(0)
 assign fastio_pad[0] = gpio_noesd[0];
-assign fastio_pad[0] = gpio_analog[0];
 
 `fastio(1)
 assign fastio_pad[1] = gpio_noesd[1];
-assign fastio_pad[1] = gpio_analog[1];
 
 `fastio(2)
 assign fastio_pad[2] = gpio_noesd[2];
-assign fastio_pad[2] = gpio_analog[2];
 
 `fastio(3)
 assign fastio_pad[3] = gpio_noesd[3];
-assign fastio_pad[3] = gpio_analog[3];
 
 `fastio(4)
 assign fastio_pad[4] = gpio_noesd[4];
-assign fastio_pad[4] = gpio_analog[4];
 
 `fastio(5)
 assign fastio_pad[5] = gpio_noesd[5];
-assign fastio_pad[5] = gpio_analog[5];
 
 `fastio(6)
 assign fastio_pad[6] = gpio_noesd[6];
-assign fastio_pad[6] = gpio_analog[6];
 
 `fastio(7)
 assign fastio_pad[7] = io_analog[0];
@@ -247,43 +240,33 @@ assign fastio_pad[17] = io_analog[10];
 
 `fastio(18)
 assign fastio_pad[18] = gpio_noesd[7];
-assign fastio_pad[18] = gpio_analog[7];
 
 `fastio(19)
 assign fastio_pad[19] = gpio_noesd[8];
-assign fastio_pad[19] = gpio_analog[8];
 
 `fastio(20)
 assign fastio_pad[20] = gpio_noesd[9];
-assign fastio_pad[20] = gpio_analog[9];
 
 `fastio(21)
 assign fastio_pad[21] = gpio_noesd[10];
-assign fastio_pad[21] = gpio_analog[10];
 
 `fastio(22)
 assign fastio_pad[22] = gpio_noesd[11];
-assign fastio_pad[22] = gpio_analog[11];
 
 `fastio(23)
 assign fastio_pad[23] = gpio_noesd[12];
-assign fastio_pad[23] = gpio_analog[12];
 
 `fastio(24)
 assign fastio_pad[24] = gpio_noesd[13];
-assign fastio_pad[24] = gpio_analog[13];
 
 `fastio(25)
 assign fastio_pad[25] = gpio_noesd[14];
-assign fastio_pad[25] = gpio_analog[14];
 
 `fastio(26)
 assign fastio_pad[26] = gpio_noesd[15];
-assign fastio_pad[26] = gpio_analog[15];
 
 `fastio(27)
 assign fastio_pad[27] = gpio_noesd[16];
-assign fastio_pad[27] = gpio_analog[16];
 
 
 endmodule	// user_analog_project_wrapper
@@ -294,6 +277,12 @@ endmodule	// user_analog_project_wrapper
 
 (* blackbox *)
 module armleo_gpio(
+`ifdef USE_POWER_PINS
+    inout vdd,
+    inout vss,
+    inout vddio,
+    inout vssio,
+`endif
     input out_l,
     input oe_l,
     
