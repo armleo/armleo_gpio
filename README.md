@@ -207,7 +207,10 @@ Then in generated DEF fix so that every pin's location is aligned to 5nm. Good l
 cp ../armleo_sky130_ip/gds/user_analog_project_wrapper.gds designs/carrack_wrapper
 
 # From make mount:
-./flow.tcl -drc -design carrack_wrapper -magicrc $PDK_ROOT/sky130A/libs.tech/magic/sky130A.magicrc -report designs/carrack_wrapper/drc.rpt -gds designs/carrack_wrapper/user_analog_project_wrapper.gds
+./flow.tcl -drc -design carrack_wrapper -magicrc $PDK_ROOT/sky130A/libs.tech/magic/sky130A.magicrc -report designs/carrack_wrapper/drc.rpt -gds designs/carrack_wrapper_lvs/user_analog_project_wrapper.gds
+
+# For LVS:
+./flow.tcl -design carrack_wrapper_lvs -lvs -gds ./designs/carrack_wrapper_lvs/user_analog_project_wrapper.gds -net ./designs/carrack_wrapper_lvs/lvs_netlist.v
 ```
 
 
