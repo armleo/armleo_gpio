@@ -196,7 +196,7 @@ tdelay1_strong      =  2.062123e-09 targ=  1.925621e-07 trig=  1.905000e-07
 
 
 # For developers
-## Remaking the templat def
+## Remaking the template def
 It is not recommended, but if you want to regenerate the DEF, then run following `./flow.tcl -interactive -file designs/carrack_wrapper/interactive.tcl`
 
 Then in generated DEF fix so that every pin's location is aligned to 5nm. Good luck! I tried to fix all of the pin locations in script, but it still gives a wrong DEF. There is no way too check if all fixed. But some you can find if you search for: `9 )` and `4 )` and `9 2000 ) N ;`

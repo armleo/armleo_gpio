@@ -1,4 +1,4 @@
-def_target = "Makefile"
+def_target = "uncompress Makefile"
 
 def define_component_targets(all_targets, component, lvs_tb, module="gpio"):
 	all_targets.append(f"xschem/{module}/results/{component}.drcrpt")
@@ -127,6 +127,76 @@ with open("Makefile", "w+") as f:
 	#defs = defs + (define_testbench_targets(all_targets, "current_source", "current_source", "opamp")) + "\n"
 	#defs = defs + (define_component_targets(all_targets, "armleo_gpio_lp", "armleo_gpio_lp_tb")) + "\n"
 	#defs = defs + (define_testbench_targets(all_targets, "armleo_gpio_lp_tb", "armleo_gpio_lp")) + "\n"
+	defs = defs + """
+# cannot commit files larger than 100 MB to GitHub
+FILE_SIZE_LIMIT_MB = 20
+
+# Commands to be used to compress/uncompress files
+# they must operate **in place** (otherwise, modify the target to delete the
+# intermediate file/archive)
+COMPRESS ?= gzip -n --best
+UNCOMPRESS ?= gzip -d
+ARCHIVE_EXT ?= gz
+
+# The following variables are to build static pattern rules
+
+# Needed to rebuild archives that were previously split
+SPLIT_FILES := $(shell find . -type f -name "*.$(ARCHIVE_EXT).00.split")
+SPLIT_FILES_SOURCES := $(basename $(basename $(basename $(SPLIT_FILES))))
+
+# Needed to uncompress the existing archives
+ARCHIVES := $(shell find . -type f -name "*.$(ARCHIVE_EXT)")
+ARCHIVE_SOURCES := $(basename $(ARCHIVES))
+
+# Needed to compress and split files/archives that are too large
+LARGE_FILES := $(shell find ./gds -type f -name "*.gds")
+# LARGE_FILES += $(shell find ./gds -type f -size +$(FILE_SIZE_LIMIT_MB)M -not -path "./.git/*" -not -path "./gds/*" -not -path "./oas/*" -not -path "./openlane/*")
+LARGE_FILES_GZ := $(addsuffix .$(ARCHIVE_EXT), $(LARGE_FILES))
+LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
+# consider splitting existing archives
+LARGE_FILES_GZ_SPLIT += $(addsuffix .00.split, $(ARCHIVES))
+
+#####
+$(LARGE_FILES_GZ): %.$(ARCHIVE_EXT): %
+	@if ! [ $(suffix $<) = ".$(ARCHIVE_EXT)" ]; then\\
+		$(COMPRESS) $< > /dev/null &&\\
+		echo "$< -> $@";\\
+	fi
+
+$(LARGE_FILES_GZ_SPLIT): %.$(ARCHIVE_EXT).00.split: %.$(ARCHIVE_EXT)
+	@if [ -n "$$(find "$<" -prune -size +$(FILE_SIZE_LIMIT_MB)M)" ]; then\\
+		split $< -b $(FILE_SIZE_LIMIT_MB)M $<. -d &&\\
+		rm $< &&\\
+		for file in $$(ls $<.*); do mv "$$file" "$$file.split"; done &&\\
+		echo -n "$< -> $$(ls $<.*.split)" | tr '\\n' ' ' && echo "";\\
+	fi
+
+# This target compresses all files larger than $(FILE_SIZE_LIMIT_MB) MB
+.PHONY: compress
+compress: $(LARGE_FILES_GZ) $(LARGE_FILES_GZ_SPLIT)
+	@echo "Files larger than $(FILE_SIZE_LIMIT_MB) MBytes are compressed!"
+
+
+
+#####
+$(ARCHIVE_SOURCES): %: %.$(ARCHIVE_EXT)
+	@$(UNCOMPRESS) $<
+	@echo "$< -> $@"
+
+.SECONDEXPANSION:
+$(SPLIT_FILES_SOURCES): %: $$(sort $$(wildcard %.$(ARCHIVE_EXT).*.split))
+	@cat $? > $@.$(ARCHIVE_EXT)
+	@rm $?
+	@echo "$? -> $@.$(ARCHIVE_EXT)"
+	@$(UNCOMPRESS) $@.$(ARCHIVE_EXT)
+	@echo "$@.$(ARCHIVE_EXT) -> $@"
+
+
+.PHONY: uncompress
+uncompress: $(SPLIT_FILES_SOURCES) $(ARCHIVE_SOURCES)
+	@echo "All files are uncompressed!"
+"""
+	
 	f.write("CLEAN_TARGETS=\nCHECKS=mkdir -p xschem/gpio/results; mkdir -p temp/;\n.ONESHELL:\n");
 	f.write("all: ")
 	f.write(" \\\n".join(all_targets))

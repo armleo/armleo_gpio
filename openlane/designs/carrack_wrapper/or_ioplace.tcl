@@ -31,7 +31,7 @@ set origin_x 189.52
 set origin_y 137
 
 set pin_width 0.56
-set pin_length 4
+set pin_length 0.5
 set pin_min_width 2
 
 set met2_pin_width 0.28
