@@ -261,66 +261,67 @@ X42 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w
 X43 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
 .ends
 
-.subckt armleo_gpio vddio vssio vss vdd pad in oe_l out_l strong_enable med_enable
+.subckt armleo_gpio vddio vssio vss vdd out_l in pad oe_l strong_enable med_enable
 Xarmleo_gpio_lv2hv_4 armleo_gpio_lv2hv_4/A_N armleo_gpio_lv2hv_4/A armleo_gpio_lv2hv_4/Y
 + vssio vddio armleo_gpio_lv2hv
 Xarmleo_gpio_lv2hv_5 armleo_gpio_lv2hv_5/A_N armleo_gpio_lv2hv_5/A armleo_gpio_lv2hv_5/Y
 + vssio vddio armleo_gpio_lv2hv
-Xarmleo_gpio_pfet_driver_x21_0 sky130_fd_sc_hvl__inv_16_5/Y vddio pad armleo_gpio_pfet_driver_x21
-Xarmleo_gpio_pfet_driver_x6_0 sky130_fd_sc_hvl__inv_16_1/Y vddio pad armleo_gpio_pfet_driver_x6
-Xsky130_fd_sc_hd__nand2_4_0 vss vdd sky130_fd_sc_hd__inv_4_1/A oe_l strong_enable
-+ vss vdd sky130_fd_sc_hd__nand2_4
-Xsky130_fd_sc_hvl__inv_4_0 vssio vddio sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_lv2hv_2/Y
+Xarmleo_gpio_pfet_driver_x21_0 sky130_fd_sc_hvl__inv_16_2/Y vddio pad armleo_gpio_pfet_driver_x21
+Xarmleo_gpio_pfet_driver_x6_0 sky130_fd_sc_hvl__inv_16_4/Y vddio pad armleo_gpio_pfet_driver_x6
+Xsky130_fd_sc_hd__nand2_4_0 vss vdd armleo_gpio_lv2hv_4/A sky130_fd_sc_hd__inv_4_0/Y
++ out_l sky130_fd_sc_hd__nand2_4_0/VNB vdd sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hvl__inv_4_0 vssio vddio sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_lv2hv_0/Y
 + vssio vddio sky130_fd_sc_hvl__inv_4
-Xsky130_fd_sc_hd__nand2_4_1 vss vdd armleo_gpio_lv2hv_1/A sky130_fd_sc_hd__inv_4_1/Y
-+ out_l vss vdd sky130_fd_sc_hd__nand2_4
-Xsky130_fd_sc_hvl__inv_4_1 vssio vddio sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_lv2hv_3/Y
+Xsky130_fd_sc_hd__nand2_4_1 vss vdd sky130_fd_sc_hd__inv_4_0/A oe_l strong_enable
++ sky130_fd_sc_hd__nand2_4_1/VNB vdd sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hvl__inv_4_1 vssio vddio sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_lv2hv_1/Y
 + vssio vddio sky130_fd_sc_hvl__inv_4
-Xsky130_fd_sc_hd__nand2_4_3 vss vdd sky130_fd_sc_hd__inv_4_4/A oe_l med_enable vss
+Xsky130_fd_sc_hd__nand2_4_3 vss vdd armleo_gpio_lv2hv_3/A sky130_fd_sc_hd__inv_4_1/Y
++ out_l sky130_fd_sc_hd__nand2_4_3/VNB vdd sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hd__nand2_4_2 vss vdd sky130_fd_sc_hd__inv_4_1/A oe_l med_enable sky130_fd_sc_hd__nand2_4_2/VNB
 + vdd sky130_fd_sc_hd__nand2_4
-Xsky130_fd_sc_hd__nand2_4_2 vss vdd armleo_gpio_lv2hv_2/A sky130_fd_sc_hd__inv_4_4/Y
-+ out_l vss vdd sky130_fd_sc_hd__nand2_4
 Xsky130_fd_sc_hvl__inv_4_2 vssio vddio sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_lv2hv_4/Y
 + vssio vddio sky130_fd_sc_hvl__inv_4
-Xsky130_fd_sc_hd__nand2_4_4 vss vdd armleo_gpio_lv2hv_3/A oe_l out_l vss vdd sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hd__nand2_4_4 vss vdd armleo_gpio_lv2hv_2/A oe_l out_l sky130_fd_sc_hd__nand2_4_4/VNB
++ vdd sky130_fd_sc_hd__nand2_4
 Xsky130_fd_sc_hvl__inv_4_3 vssio vddio sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_lv2hv_5/Y
 + vssio vddio sky130_fd_sc_hvl__inv_4
-Xsky130_fd_sc_hvl__inv_4_4 vssio vddio sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_lv2hv_0/Y
+Xsky130_fd_sc_hvl__inv_4_4 vssio vddio sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_lv2hv_2/Y
 + vssio vddio sky130_fd_sc_hvl__inv_4
-Xsky130_fd_sc_hd__inv_4_0 vdd vss armleo_gpio_lv2hv_5/A_N armleo_gpio_lv2hv_5/A vss
-+ vdd sky130_fd_sc_hd__inv_4
-Xsky130_fd_sc_hvl__inv_4_5 vssio vddio sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_lv2hv_1/Y
+Xsky130_fd_sc_hd__inv_4_0 vdd vss sky130_fd_sc_hd__inv_4_0/Y sky130_fd_sc_hd__inv_4_0/A
++ sky130_fd_sc_hd__inv_4_0/VNB vdd sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hvl__inv_4_5 vssio vddio sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_lv2hv_3/Y
 + vssio vddio sky130_fd_sc_hvl__inv_4
 Xsky130_fd_sc_hd__inv_4_1 vdd vss sky130_fd_sc_hd__inv_4_1/Y sky130_fd_sc_hd__inv_4_1/A
-+ vss vdd sky130_fd_sc_hd__inv_4
++ sky130_fd_sc_hd__inv_4_1/VNB vdd sky130_fd_sc_hd__inv_4
 Xarmleo_gpio_ggnmos_0 pad vddio vssio armleo_gpio_ggnmos
-Xsky130_fd_sc_hd__inv_4_2 vdd vss armleo_gpio_lv2hv_1/A_N armleo_gpio_lv2hv_1/A vss
+Xsky130_fd_sc_hd__inv_4_2 vdd vss armleo_gpio_lv2hv_4/A_N armleo_gpio_lv2hv_4/A sky130_fd_sc_hd__inv_4_2/VNB
 + vdd sky130_fd_sc_hd__inv_4
 Xsky130_fd_sc_hd__inv_4_3 vdd vss armleo_gpio_lv2hv_2/A_N armleo_gpio_lv2hv_2/A vss
 + vdd sky130_fd_sc_hd__inv_4
-Xsky130_fd_sc_hd__inv_4_4 vdd vss sky130_fd_sc_hd__inv_4_4/Y sky130_fd_sc_hd__inv_4_4/A
-+ vss vdd sky130_fd_sc_hd__inv_4
-Xsky130_fd_sc_hd__inv_4_5 vdd vss sky130_fd_sc_hd__inv_4_5/Y oe_l vss vdd sky130_fd_sc_hd__inv_4
-Xarmleo_gpio_pfet_driver_x9_0 sky130_fd_sc_hvl__inv_16_0/Y vddio pad armleo_gpio_pfet_driver_x9
-Xsky130_fd_sc_hd__inv_4_6 vdd vss armleo_gpio_lv2hv_3/A_N armleo_gpio_lv2hv_3/A vss
+Xsky130_fd_sc_hd__inv_4_4 vdd vss armleo_gpio_lv2hv_3/A_N armleo_gpio_lv2hv_3/A sky130_fd_sc_hd__inv_4_4/VNB
 + vdd sky130_fd_sc_hd__inv_4
-Xsky130_fd_sc_hd__inv_4_8 vdd vss armleo_gpio_lv2hv_4/A_N armleo_gpio_lv2hv_4/A vss
+Xsky130_fd_sc_hd__inv_4_5 vdd vss armleo_gpio_lv2hv_1/A_N armleo_gpio_lv2hv_1/A vss
 + vdd sky130_fd_sc_hd__inv_4
-Xsky130_fd_sc_hd__inv_4_7 vdd vss armleo_gpio_lv2hv_0/A_N armleo_gpio_lv2hv_0/A vss
+Xarmleo_gpio_pfet_driver_x9_0 sky130_fd_sc_hvl__inv_16_5/Y vddio pad armleo_gpio_pfet_driver_x9
+Xsky130_fd_sc_hd__inv_4_6 vdd vss armleo_gpio_lv2hv_0/A_N armleo_gpio_lv2hv_0/A sky130_fd_sc_hd__inv_4_6/VNB
 + vdd sky130_fd_sc_hd__inv_4
-Xsky130_fd_sc_hd__nor2_4_0 vss vdd armleo_gpio_lv2hv_5/A out_l sky130_fd_sc_hd__inv_4_4/A
+Xsky130_fd_sc_hd__inv_4_7 vdd vss sky130_fd_sc_hd__inv_4_7/Y oe_l vss vdd sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__inv_4_8 vdd vss armleo_gpio_lv2hv_5/A_N armleo_gpio_lv2hv_5/A vss
++ vdd sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__nor2_4_0 vss vdd armleo_gpio_lv2hv_1/A out_l sky130_fd_sc_hd__inv_4_0/A
 + vss vdd sky130_fd_sc_hd__nor2_4
 Xsky130_fd_sc_hvl__inv_16_1 sky130_fd_sc_hvl__inv_16_1/Y sky130_fd_sc_hvl__inv_4_1/Y
 + vddio vssio vssio vddio sky130_fd_sc_hvl__inv_16
 Xsky130_fd_sc_hvl__inv_16_0 sky130_fd_sc_hvl__inv_16_0/Y sky130_fd_sc_hvl__inv_4_0/Y
 + vddio vssio vssio vddio sky130_fd_sc_hvl__inv_16
-Xsky130_fd_sc_hd__nor2_4_1 vss vdd armleo_gpio_lv2hv_0/A out_l sky130_fd_sc_hd__inv_4_5/Y
-+ vss vdd sky130_fd_sc_hd__nor2_4
+Xsky130_fd_sc_hd__nor2_4_1 vss vdd armleo_gpio_lv2hv_0/A out_l sky130_fd_sc_hd__inv_4_1/A
++ sky130_fd_sc_hd__nor2_4_1/VNB vdd sky130_fd_sc_hd__nor2_4
 Xsky130_fd_sc_hvl__inv_16_2 sky130_fd_sc_hvl__inv_16_2/Y sky130_fd_sc_hvl__inv_4_2/Y
 + vddio vssio vssio vddio sky130_fd_sc_hvl__inv_16
-Xsky130_fd_sc_hd__nor2_4_2 vss vdd armleo_gpio_lv2hv_4/A out_l sky130_fd_sc_hd__inv_4_1/A
+Xsky130_fd_sc_hd__nor2_4_2 vss vdd armleo_gpio_lv2hv_5/A out_l sky130_fd_sc_hd__inv_4_7/Y
 + vss vdd sky130_fd_sc_hd__nor2_4
-Xarmleo_gpio_nfet_driver_x6_0 sky130_fd_sc_hvl__inv_16_4/Y pad vssio armleo_gpio_nfet_driver_x6
+Xarmleo_gpio_nfet_driver_x6_0 sky130_fd_sc_hvl__inv_16_3/Y pad vssio armleo_gpio_nfet_driver_x6
 Xsky130_fd_sc_hvl__inv_16_3 sky130_fd_sc_hvl__inv_16_3/Y sky130_fd_sc_hvl__inv_4_3/Y
 + vddio vssio vssio vddio sky130_fd_sc_hvl__inv_16
 Xsky130_fd_sc_hvl__inv_16_4 sky130_fd_sc_hvl__inv_16_4/Y sky130_fd_sc_hvl__inv_4_4/Y
@@ -328,14 +329,14 @@ Xsky130_fd_sc_hvl__inv_16_4 sky130_fd_sc_hvl__inv_16_4/Y sky130_fd_sc_hvl__inv_4
 Xsky130_fd_pr__res_generic_l1_J5CL4C_0 sky130_fd_sc_hvl__buf_16_0/A pad sky130_fd_pr__res_generic_l1_J5CL4C
 Xsky130_fd_sc_hvl__inv_16_5 sky130_fd_sc_hvl__inv_16_5/Y sky130_fd_sc_hvl__inv_4_5/Y
 + vddio vssio vssio vddio sky130_fd_sc_hvl__inv_16
-Xarmleo_gpio_nfet_driver_x21_0 sky130_fd_sc_hvl__inv_16_2/Y pad vssio armleo_gpio_nfet_driver_x21
+Xarmleo_gpio_nfet_driver_x21_0 sky130_fd_sc_hvl__inv_16_1/Y pad vssio armleo_gpio_nfet_driver_x21
 Xarmleo_gpio_lv2hv_0 armleo_gpio_lv2hv_0/A_N armleo_gpio_lv2hv_0/A armleo_gpio_lv2hv_0/Y
 + vssio vddio armleo_gpio_lv2hv
 Xarmleo_gpio_lv2hv_1 armleo_gpio_lv2hv_1/A_N armleo_gpio_lv2hv_1/A armleo_gpio_lv2hv_1/Y
 + vssio vddio armleo_gpio_lv2hv
 Xarmleo_gpio_lv2hv_2 armleo_gpio_lv2hv_2/A_N armleo_gpio_lv2hv_2/A armleo_gpio_lv2hv_2/Y
 + vssio vddio armleo_gpio_lv2hv
-Xarmleo_gpio_nfet_driver_x9_0 sky130_fd_sc_hvl__inv_16_3/Y pad vssio armleo_gpio_nfet_driver_x9
+Xarmleo_gpio_nfet_driver_x9_0 sky130_fd_sc_hvl__inv_16_0/Y pad vssio armleo_gpio_nfet_driver_x9
 Xarmleo_gpio_lv2hv_3 armleo_gpio_lv2hv_3/A_N armleo_gpio_lv2hv_3/A armleo_gpio_lv2hv_3/Y
 + vssio vddio armleo_gpio_lv2hv
 Xsky130_fd_sc_hvl__buf_16_0 vss in vdd sky130_fd_sc_hvl__buf_16_0/A vss vdd sky130_fd_sc_hvl__buf_16

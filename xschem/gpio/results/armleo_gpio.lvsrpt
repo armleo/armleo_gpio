@@ -216,27 +216,87 @@ sky130_fd_pr__nfet_g5v0d10v5 (3)           |sky130_fd_pr__nfet_g5v0d10v5 (3)
 sky130_fd_pr__res_generic_l1 (1)           |sky130_fd_pr__res_generic_l1 (1)           
 sky130_fd_sc_hvl__buf_16 (1)               |sky130_fd_sc_hvl__buf_16 (1)               
 Number of devices: 44                      |Number of devices: 44                      
-Number of nets: 46                         |Number of nets: 46                         
+Number of nets: 57 **Mismatch**            |Number of nets: 46 **Mismatch**            
 ---------------------------------------------------------------------------------------
-Resolving automorphisms by property value.
-Netlists match uniquely.
-Netlists match uniquely.
-Circuits match correctly.
-
-Subcircuit pins:
+NET mismatches: Class fragments follow (with fanout counts):
 Circuit 1: armleo_gpio                     |Circuit 2: armleo_gpio                     
--------------------------------------------|-------------------------------------------
-out_l                                      |out_l                                      
-in                                         |in                                         
-med_enable                                 |med_enable                                 
-strong_enable                              |strong_enable                              
-oe_l                                       |oe_l                                       
-pad                                        |pad                                        
-vddio                                      |vddio                                      
-vss                                        |vss                                        
-vdd                                        |vdd                                        
-vssio                                      |vssio                                      
+
 ---------------------------------------------------------------------------------------
-Cell pin lists are equivalent.
-Device classes armleo_gpio and armleo_gpio are equivalent.
-Circuits match uniquely.
+Net: vss                                   |Net: vss                                   
+  sky130_fd_sc_hd__nand2_4/VGND = 5        |  sky130_fd_sc_hvl__buf_16/VGND = 1        
+  sky130_fd_sc_hd__inv_4/VGND = 9          |  sky130_fd_sc_hvl__buf_16/VNB = 1         
+  sky130_fd_sc_hd__inv_4/VNB = 4           |  sky130_fd_sc_hd__inv_4/VGND = 9          
+  sky130_fd_sc_hd__nor2_4/VGND = 3         |  sky130_fd_sc_hd__inv_4/VNB = 9           
+  sky130_fd_sc_hd__nor2_4/VNB = 2          |  sky130_fd_sc_hd__nand2_4/VGND = 5        
+  sky130_fd_sc_hvl__buf_16/VGND = 1        |  sky130_fd_sc_hd__nand2_4/VNB = 5         
+  sky130_fd_sc_hvl__buf_16/VNB = 1         |  sky130_fd_sc_hd__nor2_4/VGND = 3         
+                                           |  sky130_fd_sc_hd__nor2_4/VNB = 3          
+                                           |                                           
+Net: sky130_fd_sc_hd__nand2_4_4/VNB        |(no matching net)                          
+  sky130_fd_sc_hd__nand2_4/VNB = 1         |                                           
+                                           |                                           
+Net: sky130_fd_sc_hd__inv_4_6/VNB          |(no matching net)                          
+  sky130_fd_sc_hd__inv_4/VNB = 1           |                                           
+                                           |                                           
+Net: sky130_fd_sc_hd__nor2_4_1/VNB         |(no matching net)                          
+  sky130_fd_sc_hd__nor2_4/VNB = 1          |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: vdd                                   |Net: vdd                                   
+  sky130_fd_sc_hd__nand2_4/VPWR = 5        |  sky130_fd_sc_hvl__buf_16/VPWR = 1        
+  sky130_fd_sc_hd__nand2_4/VPB = 5         |  sky130_fd_sc_hvl__buf_16/VPB = 1         
+  sky130_fd_sc_hd__inv_4/VPWR = 9          |  sky130_fd_sc_hd__inv_4/VPWR = 9          
+  sky130_fd_sc_hd__inv_4/VPB = 9           |  sky130_fd_sc_hd__inv_4/VPB = 9           
+  sky130_fd_sc_hd__nor2_4/VPWR = 3         |  sky130_fd_sc_hd__nand2_4/VPWR = 5        
+  sky130_fd_sc_hd__nor2_4/VPB = 3          |  sky130_fd_sc_hd__nand2_4/VPB = 5         
+  sky130_fd_sc_hvl__buf_16/VPWR = 1        |  sky130_fd_sc_hd__nor2_4/VPWR = 3         
+  sky130_fd_sc_hvl__buf_16/VPB = 1         |  sky130_fd_sc_hd__nor2_4/VPB = 3          
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: vddio                                 |Net: vddio                                 
+  armleo_gpio_lv2hv/VDDH = 6               |  armleo_gpio_lv2hv/VDDH = 6               
+  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 3   |  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 3   
+  sky130_fd_pr__pfet_g5v0d10v5/4 = 3       |  sky130_fd_pr__pfet_g5v0d10v5/4 = 3       
+  sky130_fd_sc_hvl__inv_4/VPWR = 6         |  sky130_fd_sc_hvl__inv_4/VPWR = 6         
+  sky130_fd_sc_hvl__inv_4/VPB = 6          |  sky130_fd_sc_hvl__inv_4/VPB = 6          
+  sky130_fd_sc_hvl__inv_16/VPWR = 6        |  sky130_fd_sc_hvl__inv_16/VPWR = 6        
+  sky130_fd_sc_hvl__inv_16/VPB = 6         |  sky130_fd_sc_hvl__inv_16/VPB = 6         
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: oe_l                                  |Net: oe_l                                  
+  sky130_fd_sc_hd__nand2_4/A = 3           |  sky130_fd_sc_hd__inv_4/A = 1             
+  sky130_fd_sc_hd__inv_4/A = 1             |  sky130_fd_sc_hd__nand2_4/A = 3           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: out_l                                 |Net: out_l                                 
+  sky130_fd_sc_hd__nand2_4/B = 3           |  sky130_fd_sc_hd__nand2_4/B = 3           
+  sky130_fd_sc_hd__nor2_4/A = 3            |  sky130_fd_sc_hd__nor2_4/A = 3            
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: pad                                   |Net: pad                                   
+  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 3   |  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 3   
+  sky130_fd_pr__esd_nfet_g5v0d10v5/(1|3) = |  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 3   
+  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 3   |  sky130_fd_pr__res_generic_l1/(end_a|end_ 
+  sky130_fd_pr__res_generic_l1/(end_a|end_ |  sky130_fd_pr__esd_nfet_g5v0d10v5/(1|3) = 
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: vssio                                 |Net: vssio                                 
+  armleo_gpio_lv2hv/VSSH = 6               |  armleo_gpio_lv2hv/VSSH = 6               
+  sky130_fd_sc_hvl__inv_4/VGND = 6         |  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 3   
+  sky130_fd_sc_hvl__inv_4/VNB = 6          |  sky130_fd_pr__nfet_g5v0d10v5/4 = 3       
+  sky130_fd_pr__esd_nfet_g5v0d10v5/2 = 1   |  sky130_fd_sc_hvl__inv_4/VGND = 6         
+  sky130_fd_pr__esd_nfet_g5v0d10v5/(1|3) = |  sky130_fd_sc_hvl__inv_4/VNB = 6          
+  sky130_fd_pr__esd_nfet_g5v0d10v5/4 = 1   |  sky130_fd_sc_hvl__inv_16/VGND = 6        
+  sky130_fd_sc_hvl__inv_16/VGND = 6        |  sky130_fd_sc_hvl__inv_16/VNB = 6         
+  sky130_fd_sc_hvl__inv_16/VNB = 6         |  sky130_fd_pr__esd_nfet_g5v0d10v5/2 = 1   
+  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 3   |  sky130_fd_pr__esd_nfet_g5v0d10v5/(1|3) = 
+  sky130_fd_pr__nfet_g5v0d10v5/4 = 3       |  sky130_fd_pr__esd_nfet_g5v0d10v5/4 = 1   
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Netlists do not match.
