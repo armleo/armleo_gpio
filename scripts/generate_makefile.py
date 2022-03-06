@@ -113,6 +113,7 @@ with open("Makefile", "w+") as f:
 	defs = defs + (define_testbench_targets(all_targets, "armleo_gpio_tb_caravel", "armleo_gpio")) + "\n"
 	defs = defs + (define_testbench_targets(all_targets, "armleo_gpio_lv2hv_tb_1v8", "armleo_gpio_lv2hv")) + "\n"
 	defs = defs + (define_testbench_targets(all_targets, "armleo_gpio_lv2hv_tb", "armleo_gpio_lv2hv")) + "\n"
+	defs = defs + (define_testbench_targets(all_targets, "armleo_gpio_esd_tb", "armleo_gpio")) + "\n"
 	defs = defs + (define_gds_to_lef(all_targets, "armleo_gpio", "gds/user_analog_project_wrapper.gds", "lef/armleo_gpio.lef")) + "\n"
 	
 	#defs = defs + (define_component_targets(all_targets, "opamp", "opamp_tt_tb", "opamp")) + "\n"

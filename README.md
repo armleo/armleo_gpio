@@ -11,10 +11,11 @@ Don't want to make a analog design? We got you covered. OpenLane can be used for
 Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34 version of OpenLane. `make test` of openlane should pass successfully before proceeding. HD std cell library has to be built and set to default.
 
 1. Modify carrack_wrapper_user as you wish. Then run it: `./flow.tcl -design carrack_wrapper_user -tag carrack_wrapper_user -overwrite`
-2. Then copy from final GDS to the user_analog_project_wrapper manualy.
-3. Place it the wrapper at (189.52um, 137um).
-4. Connect power rings
-5. Run the DRC check below. You will have to pass DRC check for tape-out afterwards anyway.
+2. Run: `make uncompress` to decompress GDS. Use `make compress` to then compress it before sending to git.
+3. Then copy from final GDS to the user_analog_project_wrapper manualy.
+4. Place it the wrapper at (189.52um, 137um).
+5. Connect power rings
+6. Run the DRC check below. You will have to pass DRC check for tape-out afterwards anyway.
 
 To monitor resource usage:
 ```

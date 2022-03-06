@@ -12,6 +12,7 @@ xschem/gpio/results/armleo_gpio_worst_tb.simlog \
 xschem/gpio/results/armleo_gpio_tb_caravel.simlog \
 xschem/gpio/results/armleo_gpio_lv2hv_tb_1v8.simlog \
 xschem/gpio/results/armleo_gpio_lv2hv_tb.simlog \
+xschem/gpio/results/armleo_gpio_esd_tb.simlog \
 lef/armleo_gpio.lef
 
 
@@ -253,6 +254,33 @@ xschem/gpio/results/armleo_gpio_lv2hv_tb.pexsimlog: xschem/gpio/netlists/armleo_
 	cd -
 	
 
+	
+.PRECIOUS: gpio/netlists/armleo_gpio_esd_tb.spice
+xschem/gpio/netlists/armleo_gpio_esd_tb.spice: xschem/gpio/testbenches/armleo_gpio_esd_tb.sch uncompress Makefile
+	$(CHECKS)
+	cd xschem \
+		&& xschem --rcfile ${PDK_ROOT}/sky130A/libs.tech/xschem/xschemrc -q -n gpio/testbenches/armleo_gpio_esd_tb.sch -o gpio/netlists/ \
+	&& cd -
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_esd_tb.simlog
+xschem/gpio/results/armleo_gpio_esd_tb.simlog: xschem/gpio/netlists/armleo_gpio_esd_tb.spice  uncompress Makefile
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_esd_tb.raw" -o "../xschem/gpio/results/armleo_gpio_esd_tb.simlog" "../xschem/gpio/netlists/armleo_gpio_esd_tb.spice"
+	cd -
+
+.PRECIOUS: xschem/gpio/netlists/armleo_gpio_esd_tb.pexspice
+xschem/gpio/netlists/armleo_gpio_esd_tb.pexspice: xschem/gpio/results/armleo_gpio.pexspice xschem/gpio/netlists/armleo_gpio_esd_tb.spice uncompress Makefile
+	python3 scripts/make_pextb.py armleo_gpio xschem/gpio/results/armleo_gpio.pexspice xschem/gpio/netlists/armleo_gpio_esd_tb.spice xschem/gpio/netlists/armleo_gpio_esd_tb.pexspice
+
+.PRECIOUS: xschem/gpio/results/armleo_gpio_esd_tb.pexsimlog
+xschem/gpio/results/armleo_gpio_esd_tb.pexsimlog: xschem/gpio/netlists/armleo_gpio_esd_tb.pexspice  uncompress Makefile
+	$(CHECKS)
+	cd xschem
+	ngspice -r "../xschem/gpio/results/armleo_gpio_esd_tb.pexraw" -o "../xschem/gpio/results/armleo_gpio_esd_tb.pexsimlog" "../xschem/gpio/netlists/armleo_gpio_esd_tb.pexspice"
+	cd -
+	
+
 lef/armleo_gpio.lef: gds/user_analog_project_wrapper.gds uncompress Makefile scripts/armleo_gpio_lef.tcl
 	cd temp && \
 		MAGIC_GDS_FILE=../gds/user_analog_project_wrapper.gds \
@@ -284,7 +312,7 @@ ARCHIVE_SOURCES := $(basename $(ARCHIVES))
 
 # Needed to compress and split files/archives that are too large
 LARGE_FILES := $(shell find ./gds -type f -name "*.gds")
-LARGE_FILES += $(shell find ./gds -type f -size +$(FILE_SIZE_LIMIT_MB)M -not -path "./.git/*" -not -path "./gds/*" -not -path "./oas/*" -not -path "./openlane/*")
+# LARGE_FILES += $(shell find ./gds -type f -size +$(FILE_SIZE_LIMIT_MB)M -not -path "./.git/*" -not -path "./gds/*" -not -path "./oas/*" -not -path "./openlane/*")
 LARGE_FILES_GZ := $(addsuffix .$(ARCHIVE_EXT), $(LARGE_FILES))
 LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
 # consider splitting existing archives
