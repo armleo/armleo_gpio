@@ -20,7 +20,7 @@ source $script_dir/../carrack_wrapper/fixed_wrapper_cfgs.tcl
 set ::env(CURRENT_SDC) $::env(BASE_SDC_FILE)
 set ::env(DESIGN_NAME) carrack_wrapper
 
-set ::env(PL_BASIC_PLACEMENT) 1
+# set ::env(PL_BASIC_PLACEMENT) 1
 
 set ::env(FP_DEF_TEMPLATE) $script_dir/../carrack_wrapper/carrack_wrapper.fp.def
 
@@ -33,7 +33,7 @@ set ::env(FP_DEF_TEMPLATE) $script_dir/../carrack_wrapper/carrack_wrapper.fp.def
 set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET)  "wb_clk_i"
 
-set ::env(CLOCK_PERIOD) "10"
+set ::env(CLOCK_PERIOD) "100"
 
 # Note: Dont have vccd1/vssd1 in verilog
 
