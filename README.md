@@ -16,6 +16,9 @@ Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34
 4. Place it the wrapper at (189.52um, 137um).
 5. Connect power rings
 6. Run the DRC check below. You will have to pass DRC check for tape-out afterwards anyway.
+7. Make a caravel_user_analog_project workspace
+8. Copy netgen's content to workspace and final GDS to gds folder of workspce.
+9. Pass the precheck
 
 To monitor resource usage:
 ```

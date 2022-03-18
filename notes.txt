@@ -64,3 +64,12 @@ cp gds/user_analog_project_wrapper.gds ../OpenLane_mpw5a/designs/carrack_wrapper
 3. Run LVS
 ./flow.tcl -design carrack_wrapper_lvs -lvs -gds ./designs/carrack_wrapper_lvs/user_analog_project_wrapper.gds -net ./designs/carrack_wrapper_lvs/lvs_netlist.v
 
+
+
+export OPENLANE_ROOT=/home/armleo/Desktop/OpenLane_mpw5a
+export PDK_ROOT=/home/armleo/Desktop/OpenLane_mpw5a/pdks
+cp ../armleo_sky130_ip/gds/user_analog_project_wrapper.gds ./gds/
+
+
+
+

@@ -1,0 +1,1609 @@
+* NGSPICE file created from user_analog_project_wrapper.ext - technology: sky130A
+
+.subckt armleo_gpio_lv2hv A_N A VSSH VDDH Y VDDH a_217_2223# a_481_358# a_481_2165#
+X0 a_481_358# Y VDDH VDDH sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=500000u
+X1 VDDH a_217_2223# a_481_2165# VDDH sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=500000u
+X2 VSSH A a_217_2223# VSSH sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=500000u
+X3 a_481_2165# A_N Y VDDH sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=500000u
+X4 a_217_2223# A a_481_358# VDDH sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=500000u
+X5 Y A_N VSSH VSSH sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=500000u
+.ends
+
+.subckt armleo_gpio_pfet_driver_x6 a_258_200# w_0_0# a_358_487#
+X0 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X1 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X2 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X3 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X4 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X5 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+.ends
+
+.subckt armleo_gpio_pfet_driver_x21 a_258_200# w_0_0# a_358_487#
+X0 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X1 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X2 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X3 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X4 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X5 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X6 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X7 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X8 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X9 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X10 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X11 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X12 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X13 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X14 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X15 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X16 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X17 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X18 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X19 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X20 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X21 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+.ends
+
+.subckt sky130_fd_sc_hd__nand2_4 VGND VPWR Y A B VPB VNB a_27_47#
+X0 a_27_47# A Y VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X1 Y A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X2 VPWR B Y VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X3 Y B VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X4 VPWR B Y VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X5 a_27_47# B VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X6 a_27_47# B VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X7 VPWR A Y VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X8 VGND B a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X9 Y A a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X10 Y A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X11 Y A a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X12 VPWR A Y VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X13 Y B VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X14 VGND B a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X15 a_27_47# A Y VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+.ends
+
+.subckt sky130_fd_sc_hvl__inv_4 VGND VNB VPWR VPB Y A
+X0 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X1 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X2 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X3 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X4 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X5 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X6 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X7 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+.ends
+
+.subckt sky130_fd_sc_hd__inv_4 VPWR VGND Y A VPB VNB
+X0 Y A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 Y A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X2 VPWR A Y VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X3 VGND A Y VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X4 VGND A Y VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X5 Y A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X6 Y A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X7 VPWR A Y VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+.ends
+
+.subckt armleo_gpio_ggnmos IN VGND NWELLRING
+X0 VGND VGND IN VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X1 IN VGND VGND VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X2 IN VGND VGND VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X3 VGND VGND IN VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X4 VGND VGND IN VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X5 VGND VGND IN VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X6 IN VGND VGND VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X7 IN VGND VGND VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X8 IN VGND VGND VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X9 IN VGND VGND VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X10 VGND VGND IN VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+X11 VGND VGND IN VGND sky130_fd_pr__esd_nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5.4e+06u l=600000u
+.ends
+
+.subckt armleo_gpio_pfet_driver_x9 a_258_200# w_0_0# a_358_487#
+X0 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X1 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X2 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X3 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X4 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X5 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X6 w_0_0# a_258_200# a_358_487# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X7 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+X8 a_358_487# a_258_200# w_0_0# w_0_0# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u
+.ends
+
+.subckt sky130_fd_sc_hd__nor2_4 VGND VPWR Y A B VPB VNB a_27_297#
+X0 VPWR A a_27_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 Y A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X2 a_27_297# A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X3 VGND A Y VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X4 a_27_297# B Y VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X5 Y A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X6 VGND A Y VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X7 VGND B Y VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X8 VGND B Y VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X9 Y B a_27_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X10 VPWR A a_27_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X11 Y B VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X12 Y B VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X13 a_27_297# B Y VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X14 Y B a_27_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X15 a_27_297# A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+.ends
+
+.subckt sky130_fd_sc_hvl__inv_16 Y A VNB VPWR VPB VGND
+X0 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X1 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X2 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X3 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X4 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X5 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X6 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X7 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X8 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X9 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X10 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X11 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X12 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X13 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X14 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X15 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X16 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X17 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X18 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X19 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X20 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X21 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X22 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X23 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X24 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X25 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X26 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X27 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X28 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X29 Y A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X30 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X31 Y A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+.ends
+
+.subckt armleo_gpio_nfet_driver_x6 gate vssio pad
+X0 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X1 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X2 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X3 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X4 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X5 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+.ends
+
+.subckt sky130_fd_pr__res_generic_l1_J5CL4C li_n100_1000# li_n100_n1000# li_n100_n1200#
+R0 li_n100_n1200# li_n100_1000# sky130_fd_pr__res_generic_l1 w=1e+06u l=1e+07u
+.ends
+
+.subckt armleo_gpio_nfet_driver_x21 gate vssio pad
+X0 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X1 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X2 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X3 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X4 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X5 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X6 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X7 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X8 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X9 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X10 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X11 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X12 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X13 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X14 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X15 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X16 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X17 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X18 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X19 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X20 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+.ends
+
+.subckt armleo_gpio_nfet_driver_x9 gate vssio pad
+X0 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X1 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X2 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X3 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X4 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X5 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X6 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X7 vssio gate pad vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+X8 pad gate vssio vssio sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=4.5e+06u l=500000u
+.ends
+
+.subckt sky130_fd_sc_hvl__buf_16 VGND VNB X VPWR VPB A a_183_141#
+X0 VPWR A a_183_141# VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X1 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X2 VGND A a_183_141# VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X3 VPWR a_183_141# X VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X4 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X5 a_183_141# A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X6 VGND a_183_141# X VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X7 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X8 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X9 VPWR a_183_141# X VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X10 VGND A a_183_141# VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X11 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X12 a_183_141# A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X13 VPWR a_183_141# X VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X14 VPWR a_183_141# X VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X15 VGND a_183_141# X VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X16 a_183_141# A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X17 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X18 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X19 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X20 VPWR a_183_141# X VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X21 VGND a_183_141# X VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X22 a_183_141# A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X23 VPWR a_183_141# X VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X24 VGND a_183_141# X VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X25 VGND a_183_141# X VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X26 a_183_141# A VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X27 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X28 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X29 VPWR A a_183_141# VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X30 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X31 VGND a_183_141# X VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X32 VPWR a_183_141# X VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X33 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X34 VGND a_183_141# X VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X35 a_183_141# A VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X36 VPWR A a_183_141# VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X37 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X38 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X39 VGND A a_183_141# VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X40 VPWR a_183_141# X VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X41 VGND a_183_141# X VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+X42 X a_183_141# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=500000u
+X43 X a_183_141# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u
+.ends
+
+.subckt armleo_gpio vddio vssio vss vdd out_l in pad oe_l strong_enable med_enable
++ armleo_gpio_lv2hv_1/A sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_lv2hv_4/a_217_2223#
++ sky130_fd_sc_hvl__inv_4_4/Y sky130_fd_sc_hd__nor2_4_0/a_27_297# armleo_gpio_lv2hv_5/a_217_2223#
++ sky130_fd_sc_hvl__inv_16_2/Y armleo_gpio_lv2hv_4/Y armleo_gpio_lv2hv_3/Y armleo_gpio_lv2hv_1/A_N
++ sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_lv2hv_3/A_N sky130_fd_sc_hvl__inv_4_2/Y
++ sky130_fd_sc_hvl__inv_16_4/Y armleo_gpio_lv2hv_5/Y armleo_gpio_lv2hv_5/A sky130_fd_sc_hd__inv_4_4/Y
++ sky130_fd_sc_hd__inv_4_1/A armleo_gpio_lv2hv_3/A sky130_fd_sc_hvl__inv_16_0/Y armleo_gpio_lv2hv_1/Y
++ armleo_gpio_lv2hv_2/Y armleo_gpio_lv2hv_2/A armleo_gpio_lv2hv_4/A sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ sky130_fd_sc_hd__nor2_4_1/a_27_297# sky130_fd_sc_hvl__inv_16_1/Y armleo_gpio_lv2hv_4/A_N
++ sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_lv2hv_0/A_N sky130_fd_sc_hd__inv_4_1/Y sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_lv2hv_2/A_N sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_lv2hv_0/A sky130_fd_sc_hvl__inv_4_3/Y
++ armleo_gpio_lv2hv_0/a_481_358# sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_lv2hv_0/a_481_2165#
++ sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_lv2hv_1/a_481_2165# sky130_fd_sc_hvl__inv_4_5/Y
++ sky130_fd_sc_hvl__inv_16_3/Y sky130_fd_sc_hd__inv_4_4/A sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_lv2hv_2/a_481_2165# armleo_gpio_lv2hv_3/a_481_2165#
++ sky130_fd_sc_hvl__buf_16_0/a_183_141# armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_lv2hv_2/a_481_358# sky130_fd_sc_hd__nand2_4_0/a_27_47# armleo_gpio_lv2hv_0/Y
++ armleo_gpio_lv2hv_3/a_481_358# armleo_gpio_lv2hv_5/A_N armleo_gpio_lv2hv_4/a_481_358#
++ sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_lv2hv_0/a_217_2223# armleo_gpio_lv2hv_5/a_481_358#
++ armleo_gpio_lv2hv_1/a_217_2223# armleo_gpio_lv2hv_2/a_217_2223# sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ VSUBS armleo_gpio_lv2hv_3/a_217_2223#
+Xarmleo_gpio_lv2hv_4 armleo_gpio_lv2hv_4/A_N armleo_gpio_lv2hv_4/A vssio vddio armleo_gpio_lv2hv_4/Y
++ vddio armleo_gpio_lv2hv_4/a_217_2223# armleo_gpio_lv2hv_4/a_481_358# armleo_gpio_lv2hv_4/a_481_2165#
++ armleo_gpio_lv2hv
+Xarmleo_gpio_lv2hv_5 armleo_gpio_lv2hv_5/A_N armleo_gpio_lv2hv_5/A vssio vddio armleo_gpio_lv2hv_5/Y
++ vddio armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_lv2hv
+Xarmleo_gpio_pfet_driver_x6_0 sky130_fd_sc_hvl__inv_16_1/Y vddio pad armleo_gpio_pfet_driver_x6
+Xarmleo_gpio_pfet_driver_x21_0 sky130_fd_sc_hvl__inv_16_5/Y vddio pad armleo_gpio_pfet_driver_x21
+Xsky130_fd_sc_hd__nand2_4_0 vss vdd sky130_fd_sc_hd__inv_4_1/A oe_l strong_enable
++ vdd vss sky130_fd_sc_hd__nand2_4_0/a_27_47# sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hvl__inv_4_0 vssio vssio vddio vddio sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_lv2hv_2/Y
++ sky130_fd_sc_hvl__inv_4
+Xsky130_fd_sc_hd__nand2_4_1 vss vdd armleo_gpio_lv2hv_1/A sky130_fd_sc_hd__inv_4_1/Y
++ out_l vdd vss sky130_fd_sc_hd__nand2_4_1/a_27_47# sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hvl__inv_4_1 vssio vssio vddio vddio sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_lv2hv_3/Y
++ sky130_fd_sc_hvl__inv_4
+Xsky130_fd_sc_hd__nand2_4_3 vss vdd sky130_fd_sc_hd__inv_4_4/A oe_l med_enable vdd
++ vss sky130_fd_sc_hd__nand2_4_3/a_27_47# sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hd__nand2_4_2 vss vdd armleo_gpio_lv2hv_2/A sky130_fd_sc_hd__inv_4_4/Y
++ out_l vdd vss sky130_fd_sc_hd__nand2_4_2/a_27_47# sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hvl__inv_4_2 vssio vssio vddio vddio sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_lv2hv_4/Y
++ sky130_fd_sc_hvl__inv_4
+Xsky130_fd_sc_hd__nand2_4_4 vss vdd armleo_gpio_lv2hv_3/A oe_l out_l vdd vss sky130_fd_sc_hd__nand2_4_4/a_27_47#
++ sky130_fd_sc_hd__nand2_4
+Xsky130_fd_sc_hvl__inv_4_4 vssio vssio vddio vddio sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_lv2hv_0/Y
++ sky130_fd_sc_hvl__inv_4
+Xsky130_fd_sc_hvl__inv_4_3 vssio vssio vddio vddio sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_lv2hv_5/Y
++ sky130_fd_sc_hvl__inv_4
+Xsky130_fd_sc_hd__inv_4_0 vdd vss armleo_gpio_lv2hv_5/A_N armleo_gpio_lv2hv_5/A vdd
++ vss sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hvl__inv_4_5 vssio vssio vddio vddio sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_lv2hv_1/Y
++ sky130_fd_sc_hvl__inv_4
+Xsky130_fd_sc_hd__inv_4_1 vdd vss sky130_fd_sc_hd__inv_4_1/Y sky130_fd_sc_hd__inv_4_1/A
++ vdd vss sky130_fd_sc_hd__inv_4
+Xarmleo_gpio_ggnmos_0 pad vssio vddio armleo_gpio_ggnmos
+Xsky130_fd_sc_hd__inv_4_2 vdd vss armleo_gpio_lv2hv_1/A_N armleo_gpio_lv2hv_1/A vdd
++ vss sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__inv_4_3 vdd vss armleo_gpio_lv2hv_2/A_N armleo_gpio_lv2hv_2/A vdd
++ vss sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__inv_4_4 vdd vss sky130_fd_sc_hd__inv_4_4/Y sky130_fd_sc_hd__inv_4_4/A
++ vdd vss sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__inv_4_5 vdd vss sky130_fd_sc_hd__inv_4_5/Y oe_l vdd vss sky130_fd_sc_hd__inv_4
+Xarmleo_gpio_pfet_driver_x9_0 sky130_fd_sc_hvl__inv_16_0/Y vddio pad armleo_gpio_pfet_driver_x9
+Xsky130_fd_sc_hd__inv_4_6 vdd vss armleo_gpio_lv2hv_3/A_N armleo_gpio_lv2hv_3/A vdd
++ vss sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__inv_4_8 vdd vss armleo_gpio_lv2hv_4/A_N armleo_gpio_lv2hv_4/A vdd
++ vss sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__inv_4_7 vdd vss armleo_gpio_lv2hv_0/A_N armleo_gpio_lv2hv_0/A vdd
++ vss sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__nor2_4_0 vss vdd armleo_gpio_lv2hv_5/A out_l sky130_fd_sc_hd__inv_4_4/A
++ vdd vss sky130_fd_sc_hd__nor2_4_0/a_27_297# sky130_fd_sc_hd__nor2_4
+Xsky130_fd_sc_hvl__inv_16_1 sky130_fd_sc_hvl__inv_16_1/Y sky130_fd_sc_hvl__inv_4_1/Y
++ vssio vddio vddio vssio sky130_fd_sc_hvl__inv_16
+Xsky130_fd_sc_hvl__inv_16_0 sky130_fd_sc_hvl__inv_16_0/Y sky130_fd_sc_hvl__inv_4_0/Y
++ vssio vddio vddio vssio sky130_fd_sc_hvl__inv_16
+Xsky130_fd_sc_hd__nor2_4_1 vss vdd armleo_gpio_lv2hv_0/A out_l sky130_fd_sc_hd__inv_4_5/Y
++ vdd vss sky130_fd_sc_hd__nor2_4_1/a_27_297# sky130_fd_sc_hd__nor2_4
+Xsky130_fd_sc_hvl__inv_16_2 sky130_fd_sc_hvl__inv_16_2/Y sky130_fd_sc_hvl__inv_4_2/Y
++ vssio vddio vddio vssio sky130_fd_sc_hvl__inv_16
+Xsky130_fd_sc_hd__nor2_4_2 vss vdd armleo_gpio_lv2hv_4/A out_l sky130_fd_sc_hd__inv_4_1/A
++ vdd vss sky130_fd_sc_hd__nor2_4_2/a_27_297# sky130_fd_sc_hd__nor2_4
+Xsky130_fd_sc_hvl__inv_16_3 sky130_fd_sc_hvl__inv_16_3/Y sky130_fd_sc_hvl__inv_4_3/Y
++ vssio vddio vddio vssio sky130_fd_sc_hvl__inv_16
+Xarmleo_gpio_nfet_driver_x6_0 sky130_fd_sc_hvl__inv_16_4/Y vssio pad armleo_gpio_nfet_driver_x6
+Xsky130_fd_sc_hvl__inv_16_4 sky130_fd_sc_hvl__inv_16_4/Y sky130_fd_sc_hvl__inv_4_4/Y
++ vssio vddio vddio vssio sky130_fd_sc_hvl__inv_16
+Xsky130_fd_pr__res_generic_l1_J5CL4C_0 sky130_fd_sc_hvl__buf_16_0/A sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ pad sky130_fd_pr__res_generic_l1_J5CL4C
+Xsky130_fd_sc_hvl__inv_16_5 sky130_fd_sc_hvl__inv_16_5/Y sky130_fd_sc_hvl__inv_4_5/Y
++ vssio vddio vddio vssio sky130_fd_sc_hvl__inv_16
+Xarmleo_gpio_nfet_driver_x21_0 sky130_fd_sc_hvl__inv_16_2/Y vssio pad armleo_gpio_nfet_driver_x21
+Xarmleo_gpio_lv2hv_0 armleo_gpio_lv2hv_0/A_N armleo_gpio_lv2hv_0/A vssio vddio armleo_gpio_lv2hv_0/Y
++ vddio armleo_gpio_lv2hv_0/a_217_2223# armleo_gpio_lv2hv_0/a_481_358# armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_lv2hv
+Xarmleo_gpio_lv2hv_1 armleo_gpio_lv2hv_1/A_N armleo_gpio_lv2hv_1/A vssio vddio armleo_gpio_lv2hv_1/Y
++ vddio armleo_gpio_lv2hv_1/a_217_2223# armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_lv2hv
+Xarmleo_gpio_lv2hv_2 armleo_gpio_lv2hv_2/A_N armleo_gpio_lv2hv_2/A vssio vddio armleo_gpio_lv2hv_2/Y
++ vddio armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_lv2hv
+Xarmleo_gpio_lv2hv_3 armleo_gpio_lv2hv_3/A_N armleo_gpio_lv2hv_3/A vssio vddio armleo_gpio_lv2hv_3/Y
++ vddio armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio_lv2hv_3/a_481_358# armleo_gpio_lv2hv_3/a_481_2165#
++ armleo_gpio_lv2hv
+Xarmleo_gpio_nfet_driver_x9_0 sky130_fd_sc_hvl__inv_16_3/Y vssio pad armleo_gpio_nfet_driver_x9
+Xsky130_fd_sc_hvl__buf_16_0 vss vss in vdd vdd sky130_fd_sc_hvl__buf_16_0/A sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ sky130_fd_sc_hvl__buf_16
+.ends
+
+.subckt sky130_fd_sc_hd__decap_12 VGND VPWR VPB VNB
+X0 VPWR VGND VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=870000u l=4.73e+06u
+X1 VGND VPWR VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=550000u l=4.73e+06u
+.ends
+
+.subckt sky130_fd_sc_hd__decap_6 VPWR VGND VPB VNB
+X0 VPWR VGND VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=870000u l=1.97e+06u
+X1 VGND VPWR VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=550000u l=1.97e+06u
+.ends
+
+.subckt sky130_fd_sc_hd__decap_3 VPWR VGND VPB VNB
+X0 VPWR VGND VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=870000u l=590000u
+X1 VGND VPWR VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=550000u l=590000u
+.ends
+
+.subckt sky130_fd_sc_hd__decap_4 VGND VPWR VPB VNB
+X0 VPWR VGND VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=870000u l=1.05e+06u
+X1 VGND VPWR VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=550000u l=1.05e+06u
+.ends
+
+.subckt sky130_fd_sc_hd__decap_8 VPWR VGND VPB VNB
+X0 VPWR VGND VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=870000u l=2.89e+06u
+X1 VGND VPWR VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=550000u l=2.89e+06u
+.ends
+
+.subckt sky130_fd_sc_hd__buf_2 VPWR VGND X A VPB VNB
+X0 VPWR a_27_47# X VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 X a_27_47# VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X2 VPWR A a_27_47# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=640000u l=150000u
+X3 X a_27_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X4 VGND a_27_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X5 VGND A a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+.ends
+
+.subckt sky130_fd_sc_hd__conb_1 LO HI VGND VPWR VPB VNB
+R0 HI VPWR sky130_fd_pr__res_generic_po w=480000u l=45000u
+R1 VGND LO sky130_fd_pr__res_generic_po w=480000u l=45000u
+.ends
+
+.subckt sky130_fd_sc_hd__buf_4 X VPWR VGND A VPB VNB
+X0 VPWR a_27_47# X VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 X a_27_47# VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X2 VPWR a_27_47# X VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X3 X a_27_47# VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X4 X a_27_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X5 X a_27_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X6 VGND a_27_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X7 VGND a_27_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X8 VPWR A a_27_47# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X9 VGND A a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+.ends
+
+.subckt sky130_fd_sc_hd__clkbuf_4 X A VGND VPWR VPB VNB
+X0 VPWR A a_27_47# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 VGND a_27_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X2 VGND a_27_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X3 X a_27_47# VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X4 X a_27_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X5 VGND A a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X6 VPWR a_27_47# X VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X7 X a_27_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X8 X a_27_47# VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X9 VPWR a_27_47# X VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+.ends
+
+.subckt sky130_fd_sc_hd__clkbuf_1 X A VGND VPWR VPB VNB
+X0 VPWR a_75_212# X VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=790000u l=150000u
+X1 a_75_212# A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=520000u l=150000u
+X2 a_75_212# A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=790000u l=150000u
+X3 VGND a_75_212# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=520000u l=150000u
+.ends
+
+.subckt sky130_fd_sc_hd__clkbuf_2 A X VGND VPWR VPB VNB
+X0 VPWR A a_27_47# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 VPWR a_27_47# X VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X2 VGND A a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X3 X a_27_47# VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X4 X a_27_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X5 VGND a_27_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+.ends
+
+.subckt carrack_wrapper fastio_in[10] fastio_in[11] fastio_in[2] fastio_in[3] fastio_in[4]
++ fastio_in[5] fastio_in[6] fastio_in[7] fastio_in[8] fastio_in[9] fastio_med_enable[10]
++ fastio_med_enable[11] fastio_med_enable[2] fastio_med_enable[3] fastio_med_enable[4]
++ fastio_med_enable[5] fastio_med_enable[6] fastio_med_enable[7] fastio_med_enable[8]
++ fastio_med_enable[9] fastio_oe_l[10] fastio_oe_l[11] fastio_oe_l[2] fastio_oe_l[3]
++ fastio_oe_l[4] fastio_oe_l[5] fastio_oe_l[6] fastio_oe_l[7] fastio_oe_l[8] fastio_oe_l[9]
++ fastio_out_l[10] fastio_out_l[11] fastio_out_l[2] fastio_out_l[3] fastio_out_l[4]
++ fastio_out_l[5] fastio_out_l[6] fastio_out_l[7] fastio_out_l[8] fastio_out_l[9]
++ fastio_strong_enable[10] fastio_strong_enable[11] fastio_strong_enable[2] fastio_strong_enable[3]
++ fastio_strong_enable[4] fastio_strong_enable[5] fastio_strong_enable[6] fastio_strong_enable[7]
++ fastio_strong_enable[8] fastio_strong_enable[9] fastio_oe_l[20] fastio_oe_l[21]
++ fastio_med_enable[12] fastio_med_enable[13] fastio_med_enable[14] fastio_med_enable[15]
++ fastio_med_enable[16] fastio_med_enable[17] fastio_med_enable[18] fastio_med_enable[19]
++ fastio_med_enable[20] fastio_med_enable[21] fastio_out_l[12] fastio_out_l[13] fastio_out_l[14]
++ fastio_out_l[15] fastio_out_l[16] fastio_out_l[17] fastio_out_l[18] fastio_out_l[19]
++ fastio_out_l[20] fastio_out_l[21] fastio_in[12] fastio_in[13] fastio_in[14] fastio_in[15]
++ fastio_in[16] fastio_in[17] fastio_in[18] fastio_in[19] fastio_in[20] fastio_in[21]
++ fastio_strong_enable[12] fastio_strong_enable[13] fastio_strong_enable[14] fastio_strong_enable[15]
++ fastio_strong_enable[16] fastio_strong_enable[17] fastio_strong_enable[18] fastio_strong_enable[19]
++ fastio_strong_enable[20] fastio_strong_enable[21] fastio_oe_l[12] fastio_oe_l[13]
++ fastio_oe_l[14] fastio_oe_l[15] fastio_oe_l[16] fastio_oe_l[17] fastio_oe_l[18]
++ fastio_oe_l[19] fastio_in[22] fastio_in[23] fastio_med_enable[22] fastio_med_enable[23]
++ fastio_oe_l[22] fastio_oe_l[23] fastio_oe_l[24] fastio_med_enable[24] fastio_out_l[22]
++ fastio_out_l[23] fastio_strong_enable[22] fastio_strong_enable[23] fastio_strong_enable[24]
++ fastio_out_l[24] fastio_in[24] fastio_oe_l[25] fastio_strong_enable[25] fastio_med_enable[25]
++ fastio_out_l[25] fastio_in[25] fastio_strong_enable[26] fastio_strong_enable[27]
++ fastio_oe_l[27] fastio_in[27] fastio_out_l[26] fastio_out_l[27] fastio_med_enable[26]
++ fastio_med_enable[27] fastio_in[26] fastio_oe_l[26] wbs_adr_i[11] wbs_adr_i[12]
++ wbs_adr_i[13] wbs_adr_i[14] wbs_adr_i[15] wbs_adr_i[16] wbs_adr_i[17] wbs_adr_i[18]
++ wbs_adr_i[19] wbs_adr_i[20] wbs_adr_i[21] wbs_adr_i[22] wbs_adr_i[23] wbs_adr_i[24]
++ wbs_adr_i[25] wbs_dat_i[11] wbs_dat_i[12] wbs_dat_i[13] wbs_dat_i[14] wbs_dat_i[15]
++ wbs_dat_i[16] wbs_dat_i[17] wbs_dat_i[18] wbs_dat_i[19] wbs_dat_i[20] wbs_dat_i[21]
++ wbs_dat_i[22] wbs_dat_i[23] wbs_dat_i[24] wbs_dat_o[11] wbs_dat_o[12] wbs_dat_o[13]
++ wbs_dat_o[14] wbs_dat_o[15] wbs_dat_o[16] wbs_dat_o[17] wbs_dat_o[18] wbs_dat_o[19]
++ wbs_dat_o[20] wbs_dat_o[21] wbs_dat_o[22] wbs_dat_o[23] wbs_dat_o[24] wbs_dat_i[1]
++ wbs_adr_i[2] wbs_adr_i[30] wbs_adr_i[31] wbs_adr_i[3] wbs_adr_i[4] wbs_dat_i[25]
++ wbs_dat_i[26] wbs_dat_i[27] wbs_dat_i[28] wbs_dat_i[29] wbs_dat_i[2] wbs_dat_i[30]
++ wbs_dat_i[31] wbs_dat_i[3] wbs_dat_i[4] wbs_dat_i[5] wbs_dat_i[6] wbs_dat_i[7] wbs_dat_o[0]
++ wbs_adr_i[5] wbs_adr_i[6] wbs_adr_i[7] wbs_cyc_i wbs_dat_i[0] wbs_ack_o wbs_adr_i[0]
++ wb_clk_i wbs_adr_i[1] wbs_dat_o[1] wb_rst_i wbs_adr_i[26] wbs_adr_i[27] wbs_adr_i[28]
++ wbs_adr_i[29] wbs_dat_o[25] wbs_dat_o[26] wbs_dat_o[27] wbs_dat_o[28] wbs_dat_o[29]
++ wbs_dat_o[2] wbs_dat_o[30] wbs_dat_o[31] wbs_dat_o[3] wbs_dat_o[4] wbs_dat_o[5]
++ wbs_dat_o[6] wbs_dat_o[7] wbs_sel_i[0] wbs_sel_i[1] wbs_sel_i[2] wbs_sel_i[3] wbs_stb_i
++ wbs_we_i io_in[24] io_in[25] io_in[26] wbs_adr_i[8] wbs_adr_i[9] io_oeb[24] wbs_adr_i[10]
++ wbs_dat_i[10] io_oeb[25] io_oeb[26] wbs_dat_o[8] wbs_dat_o[9] wbs_dat_i[8] wbs_dat_i[9]
++ io_out[24] wbs_dat_o[10] io_out[25] io_out[26] io_in[2] io_in[3] io_in[4] io_oeb[0]
++ io_oeb[1] fastio_strong_enable[1] fastio_in[0] fastio_med_enable[1] io_oeb[2] io_oeb[3]
++ io_oeb[4] io_out[0] io_out[1] fastio_out_l[0] fastio_oe_l[0] fastio_oe_l[1] io_out[2]
++ io_out[3] io_out[4] fastio_in[1] io_in[0] io_in[1] fastio_out_l[1] fastio_strong_enable[0]
++ fastio_med_enable[0] io_in[10] io_in[11] io_in[12] io_in[13] io_in[14] io_in[15]
++ io_in[16] io_in[17] io_in[18] io_in[19] io_in[20] io_in[21] io_in[22] io_in[23]
++ io_in[5] io_in[6] io_in[7] io_in[8] io_in[9] io_oeb[10] io_oeb[11] io_oeb[12] io_oeb[13]
++ io_oeb[14] io_oeb[15] io_oeb[16] io_oeb[17] io_oeb[18] io_oeb[19] io_oeb[20] io_oeb[21]
++ io_oeb[22] io_oeb[23] io_oeb[5] io_oeb[6] io_oeb[7] io_oeb[8] io_oeb[9] io_out[10]
++ io_out[11] io_out[12] io_out[13] io_out[14] io_out[15] io_out[16] io_out[17] io_out[18]
++ io_out[19] io_out[20] io_out[21] io_out[22] io_out[23] io_out[5] io_out[6] io_out[7]
++ io_out[8] io_out[9] user_clock2 user_irq[0] user_irq[1] user_irq[2] vccd1 vssd1
++
+
+.ends
+
+.subckt user_analog_project_wrapper gpio_analog[0] gpio_analog[10] gpio_analog[11]
++ gpio_analog[12] gpio_analog[13] gpio_analog[14] gpio_analog[15] gpio_analog[16]
++ gpio_analog[17] gpio_analog[1] gpio_analog[2] gpio_analog[3] gpio_analog[4] gpio_analog[5]
++ gpio_analog[6] gpio_analog[7] gpio_analog[8] gpio_analog[9] gpio_noesd[0] gpio_noesd[10]
++ gpio_noesd[11] gpio_noesd[12] gpio_noesd[13] gpio_noesd[14] gpio_noesd[15] gpio_noesd[16]
++ gpio_noesd[17] gpio_noesd[1] gpio_noesd[2] gpio_noesd[3] gpio_noesd[4] gpio_noesd[5]
++ gpio_noesd[6] gpio_noesd[7] gpio_noesd[8] gpio_noesd[9] io_analog[0] io_analog[10]
++ io_analog[1] io_analog[2] io_analog[3] io_analog[4] io_analog[7] io_analog[8] io_analog[9]
++ io_analog[5] io_analog[6] io_clamp_high[0] io_clamp_high[1] io_clamp_high[2] io_clamp_low[0]
++ io_clamp_low[1] io_clamp_low[2] io_in[0] io_in[10] io_in[11] io_in[12] io_in[13]
++ io_in[14] io_in[15] io_in[16] io_in[17] io_in[18] io_in[19] io_in[1] io_in[20] io_in[21]
++ io_in[22] io_in[23] io_in[24] io_in[25] io_in[26] io_in[2] io_in[3] io_in[4] io_in[5]
++ io_in[6] io_in[7] io_in[8] io_in[9] io_in_3v3[0] io_in_3v3[10] io_in_3v3[11] io_in_3v3[12]
++ io_in_3v3[13] io_in_3v3[14] io_in_3v3[15] io_in_3v3[16] io_in_3v3[17] io_in_3v3[18]
++ io_in_3v3[19] io_in_3v3[1] io_in_3v3[20] io_in_3v3[21] io_in_3v3[22] io_in_3v3[23]
++ io_in_3v3[24] io_in_3v3[25] io_in_3v3[26] io_in_3v3[2] io_in_3v3[3] io_in_3v3[4]
++ io_in_3v3[5] io_in_3v3[6] io_in_3v3[7] io_in_3v3[8] io_in_3v3[9] io_oeb[0] io_oeb[10]
++ io_oeb[11] io_oeb[12] io_oeb[13] io_oeb[14] io_oeb[15] io_oeb[16] io_oeb[17] io_oeb[18]
++ io_oeb[19] io_oeb[1] io_oeb[20] io_oeb[21] io_oeb[22] io_oeb[23] io_oeb[24] io_oeb[25]
++ io_oeb[26] io_oeb[2] io_oeb[3] io_oeb[4] io_oeb[5] io_oeb[6] io_oeb[7] io_oeb[8]
++ io_oeb[9] io_out[0] io_out[10] io_out[11] io_out[12] io_out[13] io_out[14] io_out[15]
++ io_out[16] io_out[17] io_out[18] io_out[19] io_out[1] io_out[20] io_out[21] io_out[22]
++ io_out[23] io_out[24] io_out[25] io_out[26] io_out[2] io_out[3] io_out[4] io_out[5]
++ io_out[6] io_out[7] io_out[8] io_out[9] la_data_in[0] la_data_in[100] la_data_in[101]
++ la_data_in[102] la_data_in[103] la_data_in[104] la_data_in[105] la_data_in[106]
++ la_data_in[107] la_data_in[108] la_data_in[109] la_data_in[10] la_data_in[110] la_data_in[111]
++ la_data_in[112] la_data_in[113] la_data_in[114] la_data_in[115] la_data_in[116]
++ la_data_in[117] la_data_in[118] la_data_in[119] la_data_in[11] la_data_in[120] la_data_in[121]
++ la_data_in[122] la_data_in[123] la_data_in[124] la_data_in[125] la_data_in[126]
++ la_data_in[127] la_data_in[12] la_data_in[13] la_data_in[14] la_data_in[15] la_data_in[16]
++ la_data_in[17] la_data_in[18] la_data_in[19] la_data_in[1] la_data_in[20] la_data_in[21]
++ la_data_in[22] la_data_in[23] la_data_in[24] la_data_in[25] la_data_in[26] la_data_in[27]
++ la_data_in[28] la_data_in[29] la_data_in[2] la_data_in[30] la_data_in[31] la_data_in[32]
++ la_data_in[33] la_data_in[34] la_data_in[35] la_data_in[36] la_data_in[37] la_data_in[38]
++ la_data_in[39] la_data_in[3] la_data_in[40] la_data_in[41] la_data_in[42] la_data_in[43]
++ la_data_in[44] la_data_in[45] la_data_in[46] la_data_in[47] la_data_in[48] la_data_in[49]
++ la_data_in[4] la_data_in[50] la_data_in[51] la_data_in[52] la_data_in[53] la_data_in[54]
++ la_data_in[55] la_data_in[56] la_data_in[57] la_data_in[58] la_data_in[59] la_data_in[5]
++ la_data_in[60] la_data_in[61] la_data_in[62] la_data_in[63] la_data_in[64] la_data_in[65]
++ la_data_in[66] la_data_in[67] la_data_in[68] la_data_in[69] la_data_in[6] la_data_in[70]
++ la_data_in[71] la_data_in[72] la_data_in[73] la_data_in[74] la_data_in[75] la_data_in[76]
++ la_data_in[77] la_data_in[78] la_data_in[79] la_data_in[7] la_data_in[80] la_data_in[81]
++ la_data_in[82] la_data_in[83] la_data_in[84] la_data_in[85] la_data_in[86] la_data_in[87]
++ la_data_in[88] la_data_in[89] la_data_in[8] la_data_in[90] la_data_in[91] la_data_in[92]
++ la_data_in[93] la_data_in[94] la_data_in[95] la_data_in[96] la_data_in[97] la_data_in[98]
++ la_data_in[99] la_data_in[9] la_data_out[0] la_data_out[100] la_data_out[101] la_data_out[102]
++ la_data_out[103] la_data_out[104] la_data_out[105] la_data_out[106] la_data_out[107]
++ la_data_out[108] la_data_out[109] la_data_out[10] la_data_out[110] la_data_out[111]
++ la_data_out[112] la_data_out[113] la_data_out[114] la_data_out[115] la_data_out[116]
++ la_data_out[117] la_data_out[118] la_data_out[119] la_data_out[11] la_data_out[120]
++ la_data_out[121] la_data_out[122] la_data_out[123] la_data_out[124] la_data_out[125]
++ la_data_out[126] la_data_out[127] la_data_out[12] la_data_out[13] la_data_out[14]
++ la_data_out[15] la_data_out[16] la_data_out[17] la_data_out[18] la_data_out[19]
++ la_data_out[1] la_data_out[20] la_data_out[21] la_data_out[22] la_data_out[23] la_data_out[24]
++ la_data_out[25] la_data_out[26] la_data_out[27] la_data_out[28] la_data_out[29]
++ la_data_out[2] la_data_out[30] la_data_out[31] la_data_out[32] la_data_out[33] la_data_out[34]
++ la_data_out[35] la_data_out[36] la_data_out[37] la_data_out[38] la_data_out[39]
++ la_data_out[3] la_data_out[40] la_data_out[41] la_data_out[42] la_data_out[43] la_data_out[44]
++ la_data_out[45] la_data_out[46] la_data_out[47] la_data_out[48] la_data_out[49]
++ la_data_out[4] la_data_out[50] la_data_out[51] la_data_out[52] la_data_out[53] la_data_out[54]
++ la_data_out[55] la_data_out[56] la_data_out[57] la_data_out[58] la_data_out[59]
++ la_data_out[5] la_data_out[60] la_data_out[61] la_data_out[62] la_data_out[63] la_data_out[64]
++ la_data_out[65] la_data_out[66] la_data_out[67] la_data_out[68] la_data_out[69]
++ la_data_out[6] la_data_out[70] la_data_out[71] la_data_out[72] la_data_out[73] la_data_out[74]
++ la_data_out[75] la_data_out[76] la_data_out[77] la_data_out[78] la_data_out[79]
++ la_data_out[7] la_data_out[80] la_data_out[81] la_data_out[82] la_data_out[83] la_data_out[84]
++ la_data_out[85] la_data_out[86] la_data_out[87] la_data_out[88] la_data_out[89]
++ la_data_out[8] la_data_out[90] la_data_out[91] la_data_out[92] la_data_out[93] la_data_out[94]
++ la_data_out[95] la_data_out[96] la_data_out[97] la_data_out[98] la_data_out[99]
++ la_data_out[9] la_oenb[0] la_oenb[100] la_oenb[101] la_oenb[102] la_oenb[103] la_oenb[104]
++ la_oenb[105] la_oenb[106] la_oenb[107] la_oenb[108] la_oenb[109] la_oenb[10] la_oenb[110]
++ la_oenb[111] la_oenb[112] la_oenb[113] la_oenb[114] la_oenb[115] la_oenb[116] la_oenb[117]
++ la_oenb[118] la_oenb[119] la_oenb[11] la_oenb[120] la_oenb[121] la_oenb[122] la_oenb[123]
++ la_oenb[124] la_oenb[125] la_oenb[126] la_oenb[127] la_oenb[12] la_oenb[13] la_oenb[14]
++ la_oenb[15] la_oenb[16] la_oenb[17] la_oenb[18] la_oenb[19] la_oenb[1] la_oenb[20]
++ la_oenb[21] la_oenb[22] la_oenb[23] la_oenb[24] la_oenb[25] la_oenb[26] la_oenb[27]
++ la_oenb[28] la_oenb[29] la_oenb[2] la_oenb[30] la_oenb[31] la_oenb[32] la_oenb[33]
++ la_oenb[34] la_oenb[35] la_oenb[36] la_oenb[37] la_oenb[38] la_oenb[39] la_oenb[3]
++ la_oenb[40] la_oenb[41] la_oenb[42] la_oenb[43] la_oenb[44] la_oenb[45] la_oenb[46]
++ la_oenb[47] la_oenb[48] la_oenb[49] la_oenb[4] la_oenb[50] la_oenb[51] la_oenb[52]
++ la_oenb[53] la_oenb[54] la_oenb[55] la_oenb[56] la_oenb[57] la_oenb[58] la_oenb[59]
++ la_oenb[5] la_oenb[60] la_oenb[61] la_oenb[62] la_oenb[63] la_oenb[64] la_oenb[65]
++ la_oenb[66] la_oenb[67] la_oenb[68] la_oenb[69] la_oenb[6] la_oenb[70] la_oenb[71]
++ la_oenb[72] la_oenb[73] la_oenb[74] la_oenb[75] la_oenb[76] la_oenb[77] la_oenb[78]
++ la_oenb[79] la_oenb[7] la_oenb[80] la_oenb[81] la_oenb[82] la_oenb[83] la_oenb[84]
++ la_oenb[85] la_oenb[86] la_oenb[87] la_oenb[88] la_oenb[89] la_oenb[8] la_oenb[90]
++ la_oenb[91] la_oenb[92] la_oenb[93] la_oenb[94] la_oenb[95] la_oenb[96] la_oenb[97]
++ la_oenb[98] la_oenb[99] la_oenb[9] user_clock2 user_irq[0] user_irq[1] user_irq[2]
++ vccd1 vccd2 vdda1 vdda2 vssa1 vssa2 vssd1 vssd2 wb_clk_i wb_rst_i wbs_ack_o wbs_adr_i[0]
++ wbs_adr_i[10] wbs_adr_i[11] wbs_adr_i[12] wbs_adr_i[13] wbs_adr_i[14] wbs_adr_i[15]
++ wbs_adr_i[16] wbs_adr_i[17] wbs_adr_i[18] wbs_adr_i[19] wbs_adr_i[1] wbs_adr_i[20]
++ wbs_adr_i[21] wbs_adr_i[22] wbs_adr_i[23] wbs_adr_i[24] wbs_adr_i[25] wbs_adr_i[26]
++ wbs_adr_i[27] wbs_adr_i[28] wbs_adr_i[29] wbs_adr_i[2] wbs_adr_i[30] wbs_adr_i[31]
++ wbs_adr_i[3] wbs_adr_i[4] wbs_adr_i[5] wbs_adr_i[6] wbs_adr_i[7] wbs_adr_i[8] wbs_adr_i[9]
++ wbs_cyc_i wbs_dat_i[0] wbs_dat_i[10] wbs_dat_i[11] wbs_dat_i[12] wbs_dat_i[13] wbs_dat_i[14]
++ wbs_dat_i[15] wbs_dat_i[16] wbs_dat_i[17] wbs_dat_i[18] wbs_dat_i[19] wbs_dat_i[1]
++ wbs_dat_i[20] wbs_dat_i[21] wbs_dat_i[22] wbs_dat_i[23] wbs_dat_i[24] wbs_dat_i[25]
++ wbs_dat_i[26] wbs_dat_i[27] wbs_dat_i[28] wbs_dat_i[29] wbs_dat_i[2] wbs_dat_i[30]
++ wbs_dat_i[31] wbs_dat_i[3] wbs_dat_i[4] wbs_dat_i[5] wbs_dat_i[6] wbs_dat_i[7] wbs_dat_i[8]
++ wbs_dat_i[9] wbs_dat_o[0] wbs_dat_o[10] wbs_dat_o[11] wbs_dat_o[12] wbs_dat_o[13]
++ wbs_dat_o[14] wbs_dat_o[15] wbs_dat_o[16] wbs_dat_o[17] wbs_dat_o[18] wbs_dat_o[19]
++ wbs_dat_o[1] wbs_dat_o[20] wbs_dat_o[21] wbs_dat_o[22] wbs_dat_o[23] wbs_dat_o[24]
++ wbs_dat_o[25] wbs_dat_o[26] wbs_dat_o[27] wbs_dat_o[28] wbs_dat_o[29] wbs_dat_o[2]
++ wbs_dat_o[30] wbs_dat_o[31] wbs_dat_o[3] wbs_dat_o[4] wbs_dat_o[5] wbs_dat_o[6]
++ wbs_dat_o[7] wbs_dat_o[8] wbs_dat_o[9] wbs_sel_i[0] wbs_sel_i[1] wbs_sel_i[2] wbs_sel_i[3]
++ wbs_stb_i wbs_we_i
+
+
+
+
+
+Xarmleo_gpio_26 vdda2 vssa2 vssa2 vccd2 armleo_gpio_26/out_l armleo_gpio_26/in gpio_noesd[2]
++ armleo_gpio_26/oe_l armleo_gpio_26/strong_enable armleo_gpio_26/med_enable armleo_gpio_26/armleo_gpio_lv2hv_1/A
++ armleo_gpio_26/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_26/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_26/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_26/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_26/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_26/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_26/armleo_gpio_lv2hv_4/Y armleo_gpio_26/armleo_gpio_lv2hv_3/Y armleo_gpio_26/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_26/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_26/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_26/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_26/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_26/armleo_gpio_lv2hv_5/Y armleo_gpio_26/armleo_gpio_lv2hv_5/A armleo_gpio_26/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_26/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_26/armleo_gpio_lv2hv_3/A armleo_gpio_26/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_26/armleo_gpio_lv2hv_1/Y armleo_gpio_26/armleo_gpio_lv2hv_2/Y armleo_gpio_26/armleo_gpio_lv2hv_2/A
++ armleo_gpio_26/armleo_gpio_lv2hv_4/A armleo_gpio_26/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_26/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_26/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_26/armleo_gpio_lv2hv_4/A_N armleo_gpio_26/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_26/armleo_gpio_lv2hv_0/A_N armleo_gpio_26/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_26/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_26/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_26/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_26/armleo_gpio_lv2hv_0/A
++ armleo_gpio_26/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_26/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_26/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_26/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_26/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_26/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_26/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_26/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_26/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_26/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_26/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_26/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_26/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_26/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_26/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_26/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_26/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_26/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_26/armleo_gpio_lv2hv_0/Y armleo_gpio_26/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_26/armleo_gpio_lv2hv_5/A_N armleo_gpio_26/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_26/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_26/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_26/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_26/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_26/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_26/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_26/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_15 vdda2 vssa2 vssa2 vccd2 armleo_gpio_15/out_l armleo_gpio_15/in gpio_noesd[12]
++ armleo_gpio_15/oe_l armleo_gpio_15/strong_enable armleo_gpio_15/med_enable armleo_gpio_15/armleo_gpio_lv2hv_1/A
++ armleo_gpio_15/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_15/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_15/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_15/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_15/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_15/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_15/armleo_gpio_lv2hv_4/Y armleo_gpio_15/armleo_gpio_lv2hv_3/Y armleo_gpio_15/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_15/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_15/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_15/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_15/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_15/armleo_gpio_lv2hv_5/Y armleo_gpio_15/armleo_gpio_lv2hv_5/A armleo_gpio_15/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_15/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_15/armleo_gpio_lv2hv_3/A armleo_gpio_15/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_15/armleo_gpio_lv2hv_1/Y armleo_gpio_15/armleo_gpio_lv2hv_2/Y armleo_gpio_15/armleo_gpio_lv2hv_2/A
++ armleo_gpio_15/armleo_gpio_lv2hv_4/A armleo_gpio_15/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_15/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_15/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_15/armleo_gpio_lv2hv_4/A_N armleo_gpio_15/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_15/armleo_gpio_lv2hv_0/A_N armleo_gpio_15/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_15/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_15/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_15/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_15/armleo_gpio_lv2hv_0/A
++ armleo_gpio_15/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_15/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_15/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_15/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_15/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_15/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_15/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_15/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_15/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_15/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_15/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_15/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_15/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_15/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_15/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_15/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_15/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_15/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_15/armleo_gpio_lv2hv_0/Y armleo_gpio_15/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_15/armleo_gpio_lv2hv_5/A_N armleo_gpio_15/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_15/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_15/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_15/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_15/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_15/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_15/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_15/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_27 vdda2 vssa2 vssa2 vccd2 armleo_gpio_27/out_l armleo_gpio_27/in gpio_noesd[1]
++ armleo_gpio_27/oe_l armleo_gpio_27/strong_enable armleo_gpio_27/med_enable armleo_gpio_27/armleo_gpio_lv2hv_1/A
++ armleo_gpio_27/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_27/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_27/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_27/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_27/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_27/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_27/armleo_gpio_lv2hv_4/Y armleo_gpio_27/armleo_gpio_lv2hv_3/Y armleo_gpio_27/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_27/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_27/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_27/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_27/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_27/armleo_gpio_lv2hv_5/Y armleo_gpio_27/armleo_gpio_lv2hv_5/A armleo_gpio_27/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_27/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_27/armleo_gpio_lv2hv_3/A armleo_gpio_27/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_27/armleo_gpio_lv2hv_1/Y armleo_gpio_27/armleo_gpio_lv2hv_2/Y armleo_gpio_27/armleo_gpio_lv2hv_2/A
++ armleo_gpio_27/armleo_gpio_lv2hv_4/A armleo_gpio_27/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_27/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_27/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_27/armleo_gpio_lv2hv_4/A_N armleo_gpio_27/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_27/armleo_gpio_lv2hv_0/A_N armleo_gpio_27/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_27/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_27/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_27/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_27/armleo_gpio_lv2hv_0/A
++ armleo_gpio_27/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_27/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_27/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_27/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_27/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_27/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_27/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_27/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_27/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_27/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_27/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_27/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_27/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_27/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_27/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_27/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_27/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_27/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_27/armleo_gpio_lv2hv_0/Y armleo_gpio_27/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_27/armleo_gpio_lv2hv_5/A_N armleo_gpio_27/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_27/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_27/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_27/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_27/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_27/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_27/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_27/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_16 vdda2 vssa2 vssa2 vccd2 armleo_gpio_16/out_l armleo_gpio_16/in gpio_noesd[9]
++ armleo_gpio_16/oe_l armleo_gpio_16/strong_enable armleo_gpio_16/med_enable armleo_gpio_16/armleo_gpio_lv2hv_1/A
++ armleo_gpio_16/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_16/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_16/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_16/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_16/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_16/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_16/armleo_gpio_lv2hv_4/Y armleo_gpio_16/armleo_gpio_lv2hv_3/Y armleo_gpio_16/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_16/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_16/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_16/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_16/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_16/armleo_gpio_lv2hv_5/Y armleo_gpio_16/armleo_gpio_lv2hv_5/A armleo_gpio_16/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_16/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_16/armleo_gpio_lv2hv_3/A armleo_gpio_16/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_16/armleo_gpio_lv2hv_1/Y armleo_gpio_16/armleo_gpio_lv2hv_2/Y armleo_gpio_16/armleo_gpio_lv2hv_2/A
++ armleo_gpio_16/armleo_gpio_lv2hv_4/A armleo_gpio_16/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_16/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_16/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_16/armleo_gpio_lv2hv_4/A_N armleo_gpio_16/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_16/armleo_gpio_lv2hv_0/A_N armleo_gpio_16/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_16/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_16/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_16/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_16/armleo_gpio_lv2hv_0/A
++ armleo_gpio_16/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_16/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_16/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_16/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_16/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_16/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_16/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_16/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_16/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_16/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_16/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_16/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_16/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_16/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_16/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_16/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_16/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_16/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_16/armleo_gpio_lv2hv_0/Y armleo_gpio_16/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_16/armleo_gpio_lv2hv_5/A_N armleo_gpio_16/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_16/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_16/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_16/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_16/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_16/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_16/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_16/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_0 vdda2 vssa2 vssa2 vccd2 armleo_gpio_0/out_l armleo_gpio_0/in gpio_analog[10]
++ armleo_gpio_0/oe_l armleo_gpio_0/strong_enable armleo_gpio_0/med_enable armleo_gpio_0/armleo_gpio_lv2hv_1/A
++ armleo_gpio_0/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_0/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_0/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_0/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_0/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_0/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_0/armleo_gpio_lv2hv_4/Y armleo_gpio_0/armleo_gpio_lv2hv_3/Y armleo_gpio_0/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_0/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_0/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_0/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_0/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_0/armleo_gpio_lv2hv_5/Y armleo_gpio_0/armleo_gpio_lv2hv_5/A armleo_gpio_0/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_0/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_0/armleo_gpio_lv2hv_3/A armleo_gpio_0/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_0/armleo_gpio_lv2hv_1/Y armleo_gpio_0/armleo_gpio_lv2hv_2/Y armleo_gpio_0/armleo_gpio_lv2hv_2/A
++ armleo_gpio_0/armleo_gpio_lv2hv_4/A armleo_gpio_0/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_0/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_0/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_0/armleo_gpio_lv2hv_4/A_N armleo_gpio_0/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_0/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_0/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_0/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_0/armleo_gpio_lv2hv_2/A_N armleo_gpio_0/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_0/armleo_gpio_lv2hv_0/A armleo_gpio_0/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_0/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_0/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_0/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_0/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_0/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_0/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_0/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_0/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_0/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_0/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_0/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_0/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_0/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_0/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_0/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_0/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_0/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_0/armleo_gpio_lv2hv_0/Y armleo_gpio_0/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_0/armleo_gpio_lv2hv_5/A_N armleo_gpio_0/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_0/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_0/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_0/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_0/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_0/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_0/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_0/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xcarrack_wrapper_0 armleo_gpio_22/in carrack_wrapper_0/fastio_in[11] armleo_gpio_26/in
++ armleo_gpio_25/in armleo_gpio_24/in armleo_gpio_23/in armleo_gpio_21/in armleo_gpio_1/in
++ armleo_gpio_2/in armleo_gpio_20/in armleo_gpio_22/med_enable carrack_wrapper_0/fastio_med_enable[11]
++ armleo_gpio_26/med_enable armleo_gpio_25/med_enable armleo_gpio_24/med_enable armleo_gpio_23/med_enable
++ armleo_gpio_21/med_enable armleo_gpio_1/med_enable armleo_gpio_2/med_enable armleo_gpio_20/med_enable
++ armleo_gpio_22/oe_l carrack_wrapper_0/fastio_oe_l[11] armleo_gpio_26/oe_l armleo_gpio_25/oe_l
++ armleo_gpio_24/oe_l armleo_gpio_23/oe_l armleo_gpio_21/oe_l armleo_gpio_1/oe_l armleo_gpio_2/oe_l
++ armleo_gpio_20/oe_l armleo_gpio_22/out_l carrack_wrapper_0/fastio_out_l[11] armleo_gpio_26/out_l
++ armleo_gpio_25/out_l armleo_gpio_24/out_l armleo_gpio_23/out_l armleo_gpio_21/out_l
++ armleo_gpio_1/out_l armleo_gpio_2/out_l armleo_gpio_20/out_l armleo_gpio_22/strong_enable
++ carrack_wrapper_0/fastio_strong_enable[11] armleo_gpio_26/strong_enable armleo_gpio_25/strong_enable
++ armleo_gpio_24/strong_enable armleo_gpio_23/strong_enable armleo_gpio_21/strong_enable
++ armleo_gpio_1/strong_enable armleo_gpio_2/strong_enable armleo_gpio_20/strong_enable
++ armleo_gpio_16/oe_l armleo_gpio_0/oe_l armleo_gpio_7/med_enable armleo_gpio_8/med_enable
++ armleo_gpio_9/med_enable armleo_gpio_14/med_enable armleo_gpio_3/med_enable armleo_gpio_5/med_enable
++ armleo_gpio_18/med_enable armleo_gpio_17/med_enable armleo_gpio_16/med_enable armleo_gpio_0/med_enable
++ armleo_gpio_7/out_l armleo_gpio_8/out_l armleo_gpio_9/out_l armleo_gpio_14/out_l
++ armleo_gpio_3/out_l armleo_gpio_5/out_l armleo_gpio_18/out_l armleo_gpio_17/out_l
++ armleo_gpio_16/out_l armleo_gpio_0/out_l armleo_gpio_7/in armleo_gpio_8/in armleo_gpio_9/in
++ armleo_gpio_14/in armleo_gpio_3/in armleo_gpio_5/in armleo_gpio_18/in armleo_gpio_17/in
++ armleo_gpio_16/in armleo_gpio_0/in armleo_gpio_7/strong_enable armleo_gpio_8/strong_enable
++ armleo_gpio_9/strong_enable armleo_gpio_14/strong_enable armleo_gpio_3/strong_enable
++ armleo_gpio_5/strong_enable armleo_gpio_18/strong_enable armleo_gpio_17/strong_enable
++ armleo_gpio_16/strong_enable armleo_gpio_0/strong_enable armleo_gpio_7/oe_l armleo_gpio_8/oe_l
++ armleo_gpio_9/oe_l armleo_gpio_14/oe_l armleo_gpio_3/oe_l armleo_gpio_5/oe_l armleo_gpio_18/oe_l
++ armleo_gpio_17/oe_l armleo_gpio_10/in armleo_gpio_15/in armleo_gpio_10/med_enable
++ armleo_gpio_15/med_enable armleo_gpio_10/oe_l armleo_gpio_15/oe_l armleo_gpio_13/oe_l
++ armleo_gpio_13/med_enable armleo_gpio_10/out_l armleo_gpio_15/out_l armleo_gpio_10/strong_enable
++ armleo_gpio_15/strong_enable armleo_gpio_13/strong_enable armleo_gpio_13/out_l armleo_gpio_13/in
++ armleo_gpio_12/oe_l armleo_gpio_12/strong_enable armleo_gpio_12/med_enable armleo_gpio_12/out_l
++ armleo_gpio_12/in armleo_gpio_11/strong_enable armleo_gpio_4/strong_enable armleo_gpio_4/oe_l
++ armleo_gpio_4/in armleo_gpio_11/out_l armleo_gpio_4/out_l armleo_gpio_11/med_enable
++ armleo_gpio_4/med_enable armleo_gpio_11/in armleo_gpio_11/oe_l wbs_adr_i[11] wbs_adr_i[12]
++ wbs_adr_i[13] wbs_adr_i[14] wbs_adr_i[15] wbs_adr_i[16] wbs_adr_i[17] wbs_adr_i[18]
++ wbs_adr_i[19] wbs_adr_i[20] wbs_adr_i[21] wbs_adr_i[22] wbs_adr_i[23] wbs_adr_i[24]
++ wbs_adr_i[25] wbs_dat_i[11] wbs_dat_i[12] wbs_dat_i[13] wbs_dat_i[14] wbs_dat_i[15]
++ wbs_dat_i[16] wbs_dat_i[17] wbs_dat_i[18] wbs_dat_i[19] wbs_dat_i[20] wbs_dat_i[21]
++ wbs_dat_i[22] wbs_dat_i[23] wbs_dat_i[24] wbs_dat_o[11] wbs_dat_o[12] wbs_dat_o[13]
++ wbs_dat_o[14] wbs_dat_o[15] wbs_dat_o[16] wbs_dat_o[17] wbs_dat_o[18] wbs_dat_o[19]
++ wbs_dat_o[20] wbs_dat_o[21] wbs_dat_o[22] wbs_dat_o[23] wbs_dat_o[24] wbs_dat_i[1]
++ wbs_adr_i[2] wbs_adr_i[30] wbs_adr_i[31] wbs_adr_i[3] wbs_adr_i[4] wbs_dat_i[25]
++ wbs_dat_i[26] wbs_dat_i[27] wbs_dat_i[28] wbs_dat_i[29] wbs_dat_i[2] wbs_dat_i[30]
++ wbs_dat_i[31] wbs_dat_i[3] wbs_dat_i[4] wbs_dat_i[5] wbs_dat_i[6] wbs_dat_i[7] wbs_dat_o[0]
++ wbs_adr_i[5] wbs_adr_i[6] wbs_adr_i[7] wbs_cyc_i wbs_dat_i[0] wbs_ack_o wbs_adr_i[0]
++ wb_clk_i wbs_adr_i[1] wbs_dat_o[1] wb_rst_i wbs_adr_i[26] wbs_adr_i[27] wbs_adr_i[28]
++ wbs_adr_i[29] wbs_dat_o[25] wbs_dat_o[26] wbs_dat_o[27] wbs_dat_o[28] wbs_dat_o[29]
++ wbs_dat_o[2] wbs_dat_o[30] wbs_dat_o[31] wbs_dat_o[3] wbs_dat_o[4] wbs_dat_o[5]
++ wbs_dat_o[6] wbs_dat_o[7] wbs_sel_i[0] wbs_sel_i[1] wbs_sel_i[2] wbs_sel_i[3] wbs_stb_i
++ wbs_we_i io_in[24] io_in[25] io_in[26] wbs_adr_i[8] wbs_adr_i[9] io_oeb[24] wbs_adr_i[10]
++ wbs_dat_i[10] io_oeb[25] io_oeb[26] wbs_dat_o[8] wbs_dat_o[9] wbs_dat_i[8] wbs_dat_i[9]
++ io_out[24] wbs_dat_o[10] io_out[25] io_out[26] io_in[2] io_in[3] io_in[4] io_oeb[0]
++ io_oeb[1] armleo_gpio_27/strong_enable armleo_gpio_28/in armleo_gpio_27/med_enable
++ io_oeb[2] io_oeb[3] io_oeb[4] io_out[0] io_out[1] armleo_gpio_28/out_l armleo_gpio_28/oe_l
++ armleo_gpio_27/oe_l io_out[2] io_out[3] io_out[4] armleo_gpio_27/in io_in[0] io_in[1]
++ armleo_gpio_27/out_l armleo_gpio_28/strong_enable armleo_gpio_28/med_enable io_in[10]
++ io_in[11] io_in[12] io_in[13] io_in[14] io_in[15] io_in[16] carrack_wrapper_0/io_in[17]
++ io_in[18] io_in[19] io_in[20] io_in[21] carrack_wrapper_0/io_in[22] io_in[23] io_in[5]
++ io_in[6] io_in[7] io_in[8] io_in[9] io_oeb[10] io_oeb[11] io_oeb[12] io_oeb[13]
++ io_oeb[14] io_oeb[15] io_oeb[16] carrack_wrapper_0/io_oeb[17] io_oeb[18] io_oeb[19]
++ io_oeb[20] io_oeb[21] carrack_wrapper_0/io_oeb[22] io_oeb[23] io_oeb[5] io_oeb[6]
++ io_oeb[7] io_oeb[8] io_oeb[9] io_out[10] io_out[11] io_out[12] io_out[13] io_out[14]
++ io_out[15] io_out[16] carrack_wrapper_0/io_out[17] io_out[18] io_out[19] io_out[20]
++ io_out[21] carrack_wrapper_0/io_out[22] io_out[23] io_out[5] io_out[6] io_out[7]
++ io_out[8] io_out[9] user_clock2 user_irq[0] user_irq[1] user_irq[2] carrack_wrapper_0/vccd1
++ vssa2 carrack_wrapper
+Xarmleo_gpio_28 vdda2 vssa2 vssa2 vccd2 armleo_gpio_28/out_l armleo_gpio_28/in gpio_analog[0]
++ armleo_gpio_28/oe_l armleo_gpio_28/strong_enable armleo_gpio_28/med_enable armleo_gpio_28/armleo_gpio_lv2hv_1/A
++ armleo_gpio_28/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_28/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_28/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_28/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_28/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_28/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_28/armleo_gpio_lv2hv_4/Y armleo_gpio_28/armleo_gpio_lv2hv_3/Y armleo_gpio_28/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_28/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_28/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_28/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_28/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_28/armleo_gpio_lv2hv_5/Y armleo_gpio_28/armleo_gpio_lv2hv_5/A armleo_gpio_28/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_28/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_28/armleo_gpio_lv2hv_3/A armleo_gpio_28/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_28/armleo_gpio_lv2hv_1/Y armleo_gpio_28/armleo_gpio_lv2hv_2/Y armleo_gpio_28/armleo_gpio_lv2hv_2/A
++ armleo_gpio_28/armleo_gpio_lv2hv_4/A armleo_gpio_28/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_28/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_28/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_28/armleo_gpio_lv2hv_4/A_N armleo_gpio_28/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_28/armleo_gpio_lv2hv_0/A_N armleo_gpio_28/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_28/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_28/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_28/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_28/armleo_gpio_lv2hv_0/A
++ armleo_gpio_28/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_28/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_28/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_28/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_28/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_28/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_28/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_28/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_28/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_28/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_28/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_28/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_28/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_28/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_28/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_28/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_28/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_28/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_28/armleo_gpio_lv2hv_0/Y armleo_gpio_28/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_28/armleo_gpio_lv2hv_5/A_N armleo_gpio_28/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_28/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_28/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_28/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_28/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_28/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_28/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_28/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_17 vdda2 vssa2 vssa2 vccd2 armleo_gpio_17/out_l armleo_gpio_17/in gpio_analog[8]
++ armleo_gpio_17/oe_l armleo_gpio_17/strong_enable armleo_gpio_17/med_enable armleo_gpio_17/armleo_gpio_lv2hv_1/A
++ armleo_gpio_17/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_17/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_17/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_17/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_17/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_17/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_17/armleo_gpio_lv2hv_4/Y armleo_gpio_17/armleo_gpio_lv2hv_3/Y armleo_gpio_17/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_17/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_17/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_17/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_17/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_17/armleo_gpio_lv2hv_5/Y armleo_gpio_17/armleo_gpio_lv2hv_5/A armleo_gpio_17/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_17/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_17/armleo_gpio_lv2hv_3/A armleo_gpio_17/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_17/armleo_gpio_lv2hv_1/Y armleo_gpio_17/armleo_gpio_lv2hv_2/Y armleo_gpio_17/armleo_gpio_lv2hv_2/A
++ armleo_gpio_17/armleo_gpio_lv2hv_4/A armleo_gpio_17/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_17/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_17/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_17/armleo_gpio_lv2hv_4/A_N armleo_gpio_17/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_17/armleo_gpio_lv2hv_0/A_N armleo_gpio_17/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_17/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_17/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_17/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_17/armleo_gpio_lv2hv_0/A
++ armleo_gpio_17/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_17/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_17/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_17/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_17/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_17/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_17/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_17/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_17/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_17/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_17/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_17/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_17/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_17/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_17/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_17/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_17/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_17/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_17/armleo_gpio_lv2hv_0/Y armleo_gpio_17/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_17/armleo_gpio_lv2hv_5/A_N armleo_gpio_17/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_17/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_17/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_17/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_17/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_17/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_17/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_17/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_2 vdda2 vssa2 vssa2 vccd2 armleo_gpio_2/out_l armleo_gpio_2/in io_analog[1]
++ armleo_gpio_2/oe_l armleo_gpio_2/strong_enable armleo_gpio_2/med_enable armleo_gpio_2/armleo_gpio_lv2hv_1/A
++ armleo_gpio_2/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_2/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_2/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_2/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_2/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_2/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_2/armleo_gpio_lv2hv_4/Y armleo_gpio_2/armleo_gpio_lv2hv_3/Y armleo_gpio_2/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_2/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_2/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_2/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_2/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_2/armleo_gpio_lv2hv_5/Y armleo_gpio_2/armleo_gpio_lv2hv_5/A armleo_gpio_2/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_2/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_2/armleo_gpio_lv2hv_3/A armleo_gpio_2/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_2/armleo_gpio_lv2hv_1/Y armleo_gpio_2/armleo_gpio_lv2hv_2/Y armleo_gpio_2/armleo_gpio_lv2hv_2/A
++ armleo_gpio_2/armleo_gpio_lv2hv_4/A armleo_gpio_2/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_2/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_2/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_2/armleo_gpio_lv2hv_4/A_N armleo_gpio_2/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_2/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_2/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_2/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_2/armleo_gpio_lv2hv_2/A_N armleo_gpio_2/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_2/armleo_gpio_lv2hv_0/A armleo_gpio_2/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_2/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_2/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_2/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_2/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_2/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_2/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_2/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_2/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_2/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_2/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_2/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_2/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_2/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_2/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_2/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_2/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_2/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_2/armleo_gpio_lv2hv_0/Y armleo_gpio_2/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_2/armleo_gpio_lv2hv_5/A_N armleo_gpio_2/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_2/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_2/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_2/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_2/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_2/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_2/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_2/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_1 vdda2 vssa2 vssa2 vccd2 armleo_gpio_1/out_l armleo_gpio_1/in io_analog[0]
++ armleo_gpio_1/oe_l armleo_gpio_1/strong_enable armleo_gpio_1/med_enable armleo_gpio_1/armleo_gpio_lv2hv_1/A
++ armleo_gpio_1/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_1/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_1/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_1/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_1/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_1/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_1/armleo_gpio_lv2hv_4/Y armleo_gpio_1/armleo_gpio_lv2hv_3/Y armleo_gpio_1/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_1/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_1/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_1/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_1/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_1/armleo_gpio_lv2hv_5/Y armleo_gpio_1/armleo_gpio_lv2hv_5/A armleo_gpio_1/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_1/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_1/armleo_gpio_lv2hv_3/A armleo_gpio_1/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_1/armleo_gpio_lv2hv_1/Y armleo_gpio_1/armleo_gpio_lv2hv_2/Y armleo_gpio_1/armleo_gpio_lv2hv_2/A
++ armleo_gpio_1/armleo_gpio_lv2hv_4/A armleo_gpio_1/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_1/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_1/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_1/armleo_gpio_lv2hv_4/A_N armleo_gpio_1/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_1/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_1/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_1/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_1/armleo_gpio_lv2hv_2/A_N armleo_gpio_1/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_1/armleo_gpio_lv2hv_0/A armleo_gpio_1/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_1/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_1/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_1/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_1/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_1/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_1/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_1/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_1/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_1/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_1/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_1/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_1/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_1/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_1/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_1/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_1/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_1/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_1/armleo_gpio_lv2hv_0/Y armleo_gpio_1/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_1/armleo_gpio_lv2hv_5/A_N armleo_gpio_1/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_1/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_1/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_1/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_1/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_1/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_1/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_1/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_18 vdda2 vssa2 vssa2 vccd2 armleo_gpio_18/out_l armleo_gpio_18/in gpio_analog[7]
++ armleo_gpio_18/oe_l armleo_gpio_18/strong_enable armleo_gpio_18/med_enable armleo_gpio_18/armleo_gpio_lv2hv_1/A
++ armleo_gpio_18/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_18/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_18/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_18/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_18/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_18/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_18/armleo_gpio_lv2hv_4/Y armleo_gpio_18/armleo_gpio_lv2hv_3/Y armleo_gpio_18/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_18/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_18/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_18/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_18/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_18/armleo_gpio_lv2hv_5/Y armleo_gpio_18/armleo_gpio_lv2hv_5/A armleo_gpio_18/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_18/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_18/armleo_gpio_lv2hv_3/A armleo_gpio_18/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_18/armleo_gpio_lv2hv_1/Y armleo_gpio_18/armleo_gpio_lv2hv_2/Y armleo_gpio_18/armleo_gpio_lv2hv_2/A
++ armleo_gpio_18/armleo_gpio_lv2hv_4/A armleo_gpio_18/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_18/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_18/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_18/armleo_gpio_lv2hv_4/A_N armleo_gpio_18/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_18/armleo_gpio_lv2hv_0/A_N armleo_gpio_18/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_18/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_18/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_18/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_18/armleo_gpio_lv2hv_0/A
++ armleo_gpio_18/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_18/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_18/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_18/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_18/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_18/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_18/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_18/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_18/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_18/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_18/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_18/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_18/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_18/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_18/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_18/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_18/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_18/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_18/armleo_gpio_lv2hv_0/Y armleo_gpio_18/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_18/armleo_gpio_lv2hv_5/A_N armleo_gpio_18/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_18/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_18/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_18/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_18/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_18/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_18/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_18/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_3 vdda2 vssa2 vssa2 vccd2 armleo_gpio_3/out_l armleo_gpio_3/in io_analog[9]
++ armleo_gpio_3/oe_l armleo_gpio_3/strong_enable armleo_gpio_3/med_enable armleo_gpio_3/armleo_gpio_lv2hv_1/A
++ armleo_gpio_3/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_3/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_3/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_3/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_3/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_3/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_3/armleo_gpio_lv2hv_4/Y armleo_gpio_3/armleo_gpio_lv2hv_3/Y armleo_gpio_3/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_3/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_3/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_3/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_3/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_3/armleo_gpio_lv2hv_5/Y armleo_gpio_3/armleo_gpio_lv2hv_5/A armleo_gpio_3/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_3/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_3/armleo_gpio_lv2hv_3/A armleo_gpio_3/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_3/armleo_gpio_lv2hv_1/Y armleo_gpio_3/armleo_gpio_lv2hv_2/Y armleo_gpio_3/armleo_gpio_lv2hv_2/A
++ armleo_gpio_3/armleo_gpio_lv2hv_4/A armleo_gpio_3/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_3/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_3/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_3/armleo_gpio_lv2hv_4/A_N armleo_gpio_3/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_3/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_3/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_3/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_3/armleo_gpio_lv2hv_2/A_N armleo_gpio_3/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_3/armleo_gpio_lv2hv_0/A armleo_gpio_3/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_3/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_3/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_3/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_3/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_3/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_3/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_3/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_3/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_3/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_3/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_3/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_3/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_3/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_3/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_3/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_3/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_3/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_3/armleo_gpio_lv2hv_0/Y armleo_gpio_3/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_3/armleo_gpio_lv2hv_5/A_N armleo_gpio_3/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_3/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_3/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_3/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_3/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_3/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_3/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_3/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_19 vdda2 vssa2 vssa2 vccd2 armleo_gpio_9/out_l armleo_gpio_9/in io_analog[7]
++ armleo_gpio_9/oe_l armleo_gpio_9/strong_enable armleo_gpio_9/med_enable armleo_gpio_9/armleo_gpio_lv2hv_1/A
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_9/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_9/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_9/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_9/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_4/Y armleo_gpio_9/armleo_gpio_lv2hv_3/Y armleo_gpio_9/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_9/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_9/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_5/Y armleo_gpio_9/armleo_gpio_lv2hv_5/A armleo_gpio_9/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_9/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_9/armleo_gpio_lv2hv_3/A armleo_gpio_9/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_1/Y armleo_gpio_9/armleo_gpio_lv2hv_2/Y armleo_gpio_9/armleo_gpio_lv2hv_2/A
++ armleo_gpio_9/armleo_gpio_lv2hv_4/A armleo_gpio_9/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_9/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_9/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_4/A_N armleo_gpio_9/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_9/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_9/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_9/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_9/armleo_gpio_lv2hv_2/A_N armleo_gpio_9/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_0/A armleo_gpio_9/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_9/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_9/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_9/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_9/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_9/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_9/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_9/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_9/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_9/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_9/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_9/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_9/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_9/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_9/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_9/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_9/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_9/armleo_gpio_lv2hv_0/Y armleo_gpio_9/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_9/armleo_gpio_lv2hv_5/A_N armleo_gpio_9/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_9/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_9/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_9/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_9/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_9/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_9/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_9/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_4 vdda2 vssa2 vssa2 vccd2 armleo_gpio_4/out_l armleo_gpio_4/in gpio_noesd[16]
++ armleo_gpio_4/oe_l armleo_gpio_4/strong_enable armleo_gpio_4/med_enable armleo_gpio_4/armleo_gpio_lv2hv_1/A
++ armleo_gpio_4/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_4/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_4/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_4/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_4/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_4/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_4/armleo_gpio_lv2hv_4/Y armleo_gpio_4/armleo_gpio_lv2hv_3/Y armleo_gpio_4/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_4/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_4/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_4/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_4/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_4/armleo_gpio_lv2hv_5/Y armleo_gpio_4/armleo_gpio_lv2hv_5/A armleo_gpio_4/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_4/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_4/armleo_gpio_lv2hv_3/A armleo_gpio_4/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_4/armleo_gpio_lv2hv_1/Y armleo_gpio_4/armleo_gpio_lv2hv_2/Y armleo_gpio_4/armleo_gpio_lv2hv_2/A
++ armleo_gpio_4/armleo_gpio_lv2hv_4/A armleo_gpio_4/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_4/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_4/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_4/armleo_gpio_lv2hv_4/A_N armleo_gpio_4/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_4/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_4/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_4/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_4/armleo_gpio_lv2hv_2/A_N armleo_gpio_4/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_4/armleo_gpio_lv2hv_0/A armleo_gpio_4/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_4/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_4/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_4/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_4/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_4/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_4/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_4/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_4/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_4/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_4/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_4/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_4/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_4/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_4/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_4/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_4/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_4/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_4/armleo_gpio_lv2hv_0/Y armleo_gpio_4/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_4/armleo_gpio_lv2hv_5/A_N armleo_gpio_4/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_4/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_4/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_4/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_4/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_4/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_4/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_4/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_5 vdda2 vssa2 vssa2 vccd2 armleo_gpio_5/out_l armleo_gpio_5/in io_analog[10]
++ armleo_gpio_5/oe_l armleo_gpio_5/strong_enable armleo_gpio_5/med_enable armleo_gpio_5/armleo_gpio_lv2hv_1/A
++ armleo_gpio_5/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_5/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_5/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_5/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_5/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_5/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_5/armleo_gpio_lv2hv_4/Y armleo_gpio_5/armleo_gpio_lv2hv_3/Y armleo_gpio_5/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_5/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_5/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_5/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_5/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_5/armleo_gpio_lv2hv_5/Y armleo_gpio_5/armleo_gpio_lv2hv_5/A armleo_gpio_5/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_5/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_5/armleo_gpio_lv2hv_3/A armleo_gpio_5/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_5/armleo_gpio_lv2hv_1/Y armleo_gpio_5/armleo_gpio_lv2hv_2/Y armleo_gpio_5/armleo_gpio_lv2hv_2/A
++ armleo_gpio_5/armleo_gpio_lv2hv_4/A armleo_gpio_5/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_5/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_5/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_5/armleo_gpio_lv2hv_4/A_N armleo_gpio_5/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_5/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_5/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_5/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_5/armleo_gpio_lv2hv_2/A_N armleo_gpio_5/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_5/armleo_gpio_lv2hv_0/A armleo_gpio_5/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_5/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_5/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_5/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_5/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_5/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_5/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_5/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_5/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_5/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_5/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_5/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_5/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_5/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_5/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_5/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_5/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_5/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_5/armleo_gpio_lv2hv_0/Y armleo_gpio_5/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_5/armleo_gpio_lv2hv_5/A_N armleo_gpio_5/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_5/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_5/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_5/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_5/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_5/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_5/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_5/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_6 vdda2 vssa2 vssa2 vccd2 armleo_gpio_6/out_l armleo_gpio_6/in io_analog[4]
++ armleo_gpio_6/oe_l armleo_gpio_6/strong_enable armleo_gpio_6/med_enable armleo_gpio_6/armleo_gpio_lv2hv_1/A
++ armleo_gpio_6/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_6/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_6/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_6/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_6/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_6/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_6/armleo_gpio_lv2hv_4/Y armleo_gpio_6/armleo_gpio_lv2hv_3/Y armleo_gpio_6/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_6/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_6/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_6/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_6/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_6/armleo_gpio_lv2hv_5/Y armleo_gpio_6/armleo_gpio_lv2hv_5/A armleo_gpio_6/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_6/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_6/armleo_gpio_lv2hv_3/A armleo_gpio_6/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_6/armleo_gpio_lv2hv_1/Y armleo_gpio_6/armleo_gpio_lv2hv_2/Y armleo_gpio_6/armleo_gpio_lv2hv_2/A
++ armleo_gpio_6/armleo_gpio_lv2hv_4/A armleo_gpio_6/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_6/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_6/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_6/armleo_gpio_lv2hv_4/A_N armleo_gpio_6/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_6/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_6/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_6/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_6/armleo_gpio_lv2hv_2/A_N armleo_gpio_6/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_6/armleo_gpio_lv2hv_0/A armleo_gpio_6/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_6/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_6/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_6/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_6/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_6/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_6/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_6/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_6/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_6/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_6/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_6/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_6/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_6/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_6/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_6/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_6/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_6/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_6/armleo_gpio_lv2hv_0/Y armleo_gpio_6/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_6/armleo_gpio_lv2hv_5/A_N armleo_gpio_6/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_6/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_6/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_6/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_6/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_6/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_6/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_6/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_7 vdda2 vssa2 vssa2 vccd2 armleo_gpio_7/out_l armleo_gpio_7/in io_analog[5]
++ armleo_gpio_7/oe_l armleo_gpio_7/strong_enable armleo_gpio_7/med_enable armleo_gpio_7/armleo_gpio_lv2hv_1/A
++ armleo_gpio_7/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_7/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_7/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_7/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_7/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_7/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_7/armleo_gpio_lv2hv_4/Y armleo_gpio_7/armleo_gpio_lv2hv_3/Y armleo_gpio_7/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_7/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_7/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_7/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_7/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_7/armleo_gpio_lv2hv_5/Y armleo_gpio_7/armleo_gpio_lv2hv_5/A armleo_gpio_7/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_7/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_7/armleo_gpio_lv2hv_3/A armleo_gpio_7/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_7/armleo_gpio_lv2hv_1/Y armleo_gpio_7/armleo_gpio_lv2hv_2/Y armleo_gpio_7/armleo_gpio_lv2hv_2/A
++ armleo_gpio_7/armleo_gpio_lv2hv_4/A armleo_gpio_7/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_7/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_7/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_7/armleo_gpio_lv2hv_4/A_N armleo_gpio_7/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_7/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_7/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_7/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_7/armleo_gpio_lv2hv_2/A_N armleo_gpio_7/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_7/armleo_gpio_lv2hv_0/A armleo_gpio_7/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_7/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_7/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_7/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_7/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_7/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_7/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_7/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_7/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_7/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_7/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_7/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_7/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_7/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_7/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_7/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_7/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_7/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_7/armleo_gpio_lv2hv_0/Y armleo_gpio_7/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_7/armleo_gpio_lv2hv_5/A_N armleo_gpio_7/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_7/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_7/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_7/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_7/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_7/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_7/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_7/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_8 vdda2 vssa2 vssa2 vccd2 armleo_gpio_8/out_l armleo_gpio_8/in io_analog[6]
++ armleo_gpio_8/oe_l armleo_gpio_8/strong_enable armleo_gpio_8/med_enable armleo_gpio_8/armleo_gpio_lv2hv_1/A
++ armleo_gpio_8/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_8/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_8/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_8/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_8/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_8/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_8/armleo_gpio_lv2hv_4/Y armleo_gpio_8/armleo_gpio_lv2hv_3/Y armleo_gpio_8/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_8/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_8/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_8/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_8/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_8/armleo_gpio_lv2hv_5/Y armleo_gpio_8/armleo_gpio_lv2hv_5/A armleo_gpio_8/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_8/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_8/armleo_gpio_lv2hv_3/A armleo_gpio_8/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_8/armleo_gpio_lv2hv_1/Y armleo_gpio_8/armleo_gpio_lv2hv_2/Y armleo_gpio_8/armleo_gpio_lv2hv_2/A
++ armleo_gpio_8/armleo_gpio_lv2hv_4/A armleo_gpio_8/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_8/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_8/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_8/armleo_gpio_lv2hv_4/A_N armleo_gpio_8/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_8/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_8/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_8/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_8/armleo_gpio_lv2hv_2/A_N armleo_gpio_8/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_8/armleo_gpio_lv2hv_0/A armleo_gpio_8/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_8/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_8/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_8/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_8/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_8/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_8/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_8/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_8/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_8/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_8/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_8/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_8/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_8/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_8/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_8/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_8/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_8/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_8/armleo_gpio_lv2hv_0/Y armleo_gpio_8/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_8/armleo_gpio_lv2hv_5/A_N armleo_gpio_8/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_8/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_8/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_8/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_8/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_8/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_8/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_8/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_9 vdda2 vssa2 vssa2 vccd2 armleo_gpio_9/out_l armleo_gpio_9/in io_analog[7]
++ armleo_gpio_9/oe_l armleo_gpio_9/strong_enable armleo_gpio_9/med_enable armleo_gpio_9/armleo_gpio_lv2hv_1/A
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_9/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_9/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_9/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_9/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_4/Y armleo_gpio_9/armleo_gpio_lv2hv_3/Y armleo_gpio_9/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_9/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_9/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_5/Y armleo_gpio_9/armleo_gpio_lv2hv_5/A armleo_gpio_9/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_9/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_9/armleo_gpio_lv2hv_3/A armleo_gpio_9/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_1/Y armleo_gpio_9/armleo_gpio_lv2hv_2/Y armleo_gpio_9/armleo_gpio_lv2hv_2/A
++ armleo_gpio_9/armleo_gpio_lv2hv_4/A armleo_gpio_9/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_9/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_9/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_4/A_N armleo_gpio_9/sky130_fd_sc_hd__inv_4_5/Y armleo_gpio_9/armleo_gpio_lv2hv_0/A_N
++ armleo_gpio_9/sky130_fd_sc_hd__inv_4_1/Y armleo_gpio_9/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000#
++ armleo_gpio_9/armleo_gpio_lv2hv_2/A_N armleo_gpio_9/sky130_fd_sc_hvl__inv_4_1/Y
++ armleo_gpio_9/armleo_gpio_lv2hv_0/A armleo_gpio_9/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_9/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_9/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_9/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_9/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_9/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_9/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_9/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_9/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_9/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_9/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_9/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_9/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_9/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_9/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_9/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_9/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_9/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_9/armleo_gpio_lv2hv_0/Y armleo_gpio_9/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_9/armleo_gpio_lv2hv_5/A_N armleo_gpio_9/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_9/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_9/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_9/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_9/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_9/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_9/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_9/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_20 vdda2 vssa2 vssa2 vccd2 armleo_gpio_20/out_l armleo_gpio_20/in io_analog[2]
++ armleo_gpio_20/oe_l armleo_gpio_20/strong_enable armleo_gpio_20/med_enable armleo_gpio_20/armleo_gpio_lv2hv_1/A
++ armleo_gpio_20/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_20/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_20/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_20/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_20/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_20/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_20/armleo_gpio_lv2hv_4/Y armleo_gpio_20/armleo_gpio_lv2hv_3/Y armleo_gpio_20/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_20/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_20/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_20/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_20/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_20/armleo_gpio_lv2hv_5/Y armleo_gpio_20/armleo_gpio_lv2hv_5/A armleo_gpio_20/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_20/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_20/armleo_gpio_lv2hv_3/A armleo_gpio_20/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_20/armleo_gpio_lv2hv_1/Y armleo_gpio_20/armleo_gpio_lv2hv_2/Y armleo_gpio_20/armleo_gpio_lv2hv_2/A
++ armleo_gpio_20/armleo_gpio_lv2hv_4/A armleo_gpio_20/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_20/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_20/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_20/armleo_gpio_lv2hv_4/A_N armleo_gpio_20/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_20/armleo_gpio_lv2hv_0/A_N armleo_gpio_20/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_20/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_20/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_20/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_20/armleo_gpio_lv2hv_0/A
++ armleo_gpio_20/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_20/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_20/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_20/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_20/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_20/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_20/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_20/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_20/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_20/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_20/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_20/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_20/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_20/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_20/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_20/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_20/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_20/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_20/armleo_gpio_lv2hv_0/Y armleo_gpio_20/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_20/armleo_gpio_lv2hv_5/A_N armleo_gpio_20/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_20/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_20/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_20/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_20/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_20/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_20/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_20/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_22 vdda2 vssa2 vssa2 vccd2 armleo_gpio_22/out_l armleo_gpio_22/in io_analog[3]
++ armleo_gpio_22/oe_l armleo_gpio_22/strong_enable armleo_gpio_22/med_enable armleo_gpio_22/armleo_gpio_lv2hv_1/A
++ armleo_gpio_22/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_22/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_22/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_22/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_22/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_22/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_22/armleo_gpio_lv2hv_4/Y armleo_gpio_22/armleo_gpio_lv2hv_3/Y armleo_gpio_22/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_22/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_22/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_22/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_22/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_22/armleo_gpio_lv2hv_5/Y armleo_gpio_22/armleo_gpio_lv2hv_5/A armleo_gpio_22/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_22/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_22/armleo_gpio_lv2hv_3/A armleo_gpio_22/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_22/armleo_gpio_lv2hv_1/Y armleo_gpio_22/armleo_gpio_lv2hv_2/Y armleo_gpio_22/armleo_gpio_lv2hv_2/A
++ armleo_gpio_22/armleo_gpio_lv2hv_4/A armleo_gpio_22/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_22/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_22/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_22/armleo_gpio_lv2hv_4/A_N armleo_gpio_22/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_22/armleo_gpio_lv2hv_0/A_N armleo_gpio_22/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_22/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_22/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_22/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_22/armleo_gpio_lv2hv_0/A
++ armleo_gpio_22/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_22/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_22/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_22/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_22/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_22/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_22/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_22/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_22/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_22/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_22/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_22/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_22/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_22/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_22/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_22/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_22/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_22/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_22/armleo_gpio_lv2hv_0/Y armleo_gpio_22/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_22/armleo_gpio_lv2hv_5/A_N armleo_gpio_22/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_22/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_22/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_22/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_22/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_22/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_22/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_22/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_21 vdda2 vssa2 vssa2 vccd2 armleo_gpio_21/out_l armleo_gpio_21/in gpio_noesd[6]
++ armleo_gpio_21/oe_l armleo_gpio_21/strong_enable armleo_gpio_21/med_enable armleo_gpio_21/armleo_gpio_lv2hv_1/A
++ armleo_gpio_21/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_21/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_21/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_21/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_21/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_21/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_21/armleo_gpio_lv2hv_4/Y armleo_gpio_21/armleo_gpio_lv2hv_3/Y armleo_gpio_21/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_21/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_21/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_21/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_21/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_21/armleo_gpio_lv2hv_5/Y armleo_gpio_21/armleo_gpio_lv2hv_5/A armleo_gpio_21/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_21/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_21/armleo_gpio_lv2hv_3/A armleo_gpio_21/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_21/armleo_gpio_lv2hv_1/Y armleo_gpio_21/armleo_gpio_lv2hv_2/Y armleo_gpio_21/armleo_gpio_lv2hv_2/A
++ armleo_gpio_21/armleo_gpio_lv2hv_4/A armleo_gpio_21/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_21/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_21/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_21/armleo_gpio_lv2hv_4/A_N armleo_gpio_21/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_21/armleo_gpio_lv2hv_0/A_N armleo_gpio_21/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_21/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_21/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_21/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_21/armleo_gpio_lv2hv_0/A
++ armleo_gpio_21/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_21/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_21/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_21/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_21/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_21/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_21/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_21/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_21/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_21/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_21/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_21/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_21/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_21/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_21/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_21/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_21/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_21/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_21/armleo_gpio_lv2hv_0/Y armleo_gpio_21/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_21/armleo_gpio_lv2hv_5/A_N armleo_gpio_21/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_21/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_21/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_21/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_21/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_21/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_21/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_21/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_11 vdda2 vssa2 vssa2 vccd2 armleo_gpio_11/out_l armleo_gpio_11/in gpio_noesd[15]
++ armleo_gpio_11/oe_l armleo_gpio_11/strong_enable armleo_gpio_11/med_enable armleo_gpio_11/armleo_gpio_lv2hv_1/A
++ armleo_gpio_11/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_11/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_11/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_11/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_11/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_11/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_11/armleo_gpio_lv2hv_4/Y armleo_gpio_11/armleo_gpio_lv2hv_3/Y armleo_gpio_11/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_11/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_11/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_11/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_11/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_11/armleo_gpio_lv2hv_5/Y armleo_gpio_11/armleo_gpio_lv2hv_5/A armleo_gpio_11/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_11/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_11/armleo_gpio_lv2hv_3/A armleo_gpio_11/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_11/armleo_gpio_lv2hv_1/Y armleo_gpio_11/armleo_gpio_lv2hv_2/Y armleo_gpio_11/armleo_gpio_lv2hv_2/A
++ armleo_gpio_11/armleo_gpio_lv2hv_4/A armleo_gpio_11/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_11/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_11/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_11/armleo_gpio_lv2hv_4/A_N armleo_gpio_11/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_11/armleo_gpio_lv2hv_0/A_N armleo_gpio_11/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_11/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_11/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_11/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_11/armleo_gpio_lv2hv_0/A
++ armleo_gpio_11/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_11/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_11/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_11/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_11/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_11/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_11/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_11/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_11/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_11/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_11/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_11/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_11/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_11/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_11/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_11/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_11/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_11/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_11/armleo_gpio_lv2hv_0/Y armleo_gpio_11/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_11/armleo_gpio_lv2hv_5/A_N armleo_gpio_11/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_11/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_11/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_11/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_11/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_11/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_11/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_11/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_10 vdda2 vssa2 vssa2 vccd2 armleo_gpio_10/out_l armleo_gpio_10/in gpio_noesd[11]
++ armleo_gpio_10/oe_l armleo_gpio_10/strong_enable armleo_gpio_10/med_enable armleo_gpio_10/armleo_gpio_lv2hv_1/A
++ armleo_gpio_10/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_10/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_10/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_10/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_10/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_10/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_10/armleo_gpio_lv2hv_4/Y armleo_gpio_10/armleo_gpio_lv2hv_3/Y armleo_gpio_10/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_10/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_10/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_10/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_10/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_10/armleo_gpio_lv2hv_5/Y armleo_gpio_10/armleo_gpio_lv2hv_5/A armleo_gpio_10/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_10/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_10/armleo_gpio_lv2hv_3/A armleo_gpio_10/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_10/armleo_gpio_lv2hv_1/Y armleo_gpio_10/armleo_gpio_lv2hv_2/Y armleo_gpio_10/armleo_gpio_lv2hv_2/A
++ armleo_gpio_10/armleo_gpio_lv2hv_4/A armleo_gpio_10/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_10/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_10/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_10/armleo_gpio_lv2hv_4/A_N armleo_gpio_10/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_10/armleo_gpio_lv2hv_0/A_N armleo_gpio_10/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_10/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_10/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_10/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_10/armleo_gpio_lv2hv_0/A
++ armleo_gpio_10/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_10/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_10/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_10/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_10/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_10/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_10/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_10/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_10/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_10/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_10/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_10/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_10/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_10/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_10/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_10/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_10/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_10/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_10/armleo_gpio_lv2hv_0/Y armleo_gpio_10/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_10/armleo_gpio_lv2hv_5/A_N armleo_gpio_10/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_10/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_10/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_10/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_10/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_10/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_10/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_10/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_23 vdda2 vssa2 vssa2 vccd2 armleo_gpio_23/out_l armleo_gpio_23/in gpio_noesd[5]
++ armleo_gpio_23/oe_l armleo_gpio_23/strong_enable armleo_gpio_23/med_enable armleo_gpio_23/armleo_gpio_lv2hv_1/A
++ armleo_gpio_23/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_23/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_23/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_23/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_23/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_23/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_23/armleo_gpio_lv2hv_4/Y armleo_gpio_23/armleo_gpio_lv2hv_3/Y armleo_gpio_23/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_23/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_23/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_23/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_23/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_23/armleo_gpio_lv2hv_5/Y armleo_gpio_23/armleo_gpio_lv2hv_5/A armleo_gpio_23/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_23/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_23/armleo_gpio_lv2hv_3/A armleo_gpio_23/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_23/armleo_gpio_lv2hv_1/Y armleo_gpio_23/armleo_gpio_lv2hv_2/Y armleo_gpio_23/armleo_gpio_lv2hv_2/A
++ armleo_gpio_23/armleo_gpio_lv2hv_4/A armleo_gpio_23/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_23/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_23/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_23/armleo_gpio_lv2hv_4/A_N armleo_gpio_23/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_23/armleo_gpio_lv2hv_0/A_N armleo_gpio_23/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_23/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_23/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_23/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_23/armleo_gpio_lv2hv_0/A
++ armleo_gpio_23/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_23/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_23/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_23/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_23/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_23/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_23/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_23/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_23/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_23/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_23/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_23/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_23/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_23/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_23/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_23/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_23/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_23/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_23/armleo_gpio_lv2hv_0/Y armleo_gpio_23/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_23/armleo_gpio_lv2hv_5/A_N armleo_gpio_23/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_23/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_23/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_23/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_23/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_23/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_23/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_23/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_12 vdda2 vssa2 vssa2 vccd2 armleo_gpio_12/out_l armleo_gpio_12/in gpio_analog[14]
++ armleo_gpio_12/oe_l armleo_gpio_12/strong_enable armleo_gpio_12/med_enable armleo_gpio_12/armleo_gpio_lv2hv_1/A
++ armleo_gpio_12/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_12/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_12/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_12/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_12/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_12/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_12/armleo_gpio_lv2hv_4/Y armleo_gpio_12/armleo_gpio_lv2hv_3/Y armleo_gpio_12/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_12/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_12/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_12/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_12/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_12/armleo_gpio_lv2hv_5/Y armleo_gpio_12/armleo_gpio_lv2hv_5/A armleo_gpio_12/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_12/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_12/armleo_gpio_lv2hv_3/A armleo_gpio_12/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_12/armleo_gpio_lv2hv_1/Y armleo_gpio_12/armleo_gpio_lv2hv_2/Y armleo_gpio_12/armleo_gpio_lv2hv_2/A
++ armleo_gpio_12/armleo_gpio_lv2hv_4/A armleo_gpio_12/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_12/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_12/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_12/armleo_gpio_lv2hv_4/A_N armleo_gpio_12/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_12/armleo_gpio_lv2hv_0/A_N armleo_gpio_12/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_12/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_12/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_12/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_12/armleo_gpio_lv2hv_0/A
++ armleo_gpio_12/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_12/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_12/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_12/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_12/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_12/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_12/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_12/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_12/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_12/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_12/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_12/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_12/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_12/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_12/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_12/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_12/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_12/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_12/armleo_gpio_lv2hv_0/Y armleo_gpio_12/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_12/armleo_gpio_lv2hv_5/A_N armleo_gpio_12/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_12/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_12/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_12/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_12/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_12/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_12/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_12/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_24 vdda2 vssa2 vssa2 vccd2 armleo_gpio_24/out_l armleo_gpio_24/in gpio_noesd[4]
++ armleo_gpio_24/oe_l armleo_gpio_24/strong_enable armleo_gpio_24/med_enable armleo_gpio_24/armleo_gpio_lv2hv_1/A
++ armleo_gpio_24/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_24/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_24/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_24/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_24/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_24/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_24/armleo_gpio_lv2hv_4/Y armleo_gpio_24/armleo_gpio_lv2hv_3/Y armleo_gpio_24/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_24/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_24/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_24/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_24/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_24/armleo_gpio_lv2hv_5/Y armleo_gpio_24/armleo_gpio_lv2hv_5/A armleo_gpio_24/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_24/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_24/armleo_gpio_lv2hv_3/A armleo_gpio_24/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_24/armleo_gpio_lv2hv_1/Y armleo_gpio_24/armleo_gpio_lv2hv_2/Y armleo_gpio_24/armleo_gpio_lv2hv_2/A
++ armleo_gpio_24/armleo_gpio_lv2hv_4/A armleo_gpio_24/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_24/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_24/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_24/armleo_gpio_lv2hv_4/A_N armleo_gpio_24/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_24/armleo_gpio_lv2hv_0/A_N armleo_gpio_24/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_24/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_24/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_24/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_24/armleo_gpio_lv2hv_0/A
++ armleo_gpio_24/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_24/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_24/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_24/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_24/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_24/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_24/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_24/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_24/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_24/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_24/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_24/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_24/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_24/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_24/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_24/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_24/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_24/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_24/armleo_gpio_lv2hv_0/Y armleo_gpio_24/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_24/armleo_gpio_lv2hv_5/A_N armleo_gpio_24/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_24/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_24/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_24/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_24/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_24/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_24/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_24/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_13 vdda2 vssa2 vssa2 vccd2 armleo_gpio_13/out_l armleo_gpio_13/in gpio_analog[13]
++ armleo_gpio_13/oe_l armleo_gpio_13/strong_enable armleo_gpio_13/med_enable armleo_gpio_13/armleo_gpio_lv2hv_1/A
++ armleo_gpio_13/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_13/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_13/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_13/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_13/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_13/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_13/armleo_gpio_lv2hv_4/Y armleo_gpio_13/armleo_gpio_lv2hv_3/Y armleo_gpio_13/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_13/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_13/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_13/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_13/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_13/armleo_gpio_lv2hv_5/Y armleo_gpio_13/armleo_gpio_lv2hv_5/A armleo_gpio_13/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_13/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_13/armleo_gpio_lv2hv_3/A armleo_gpio_13/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_13/armleo_gpio_lv2hv_1/Y armleo_gpio_13/armleo_gpio_lv2hv_2/Y armleo_gpio_13/armleo_gpio_lv2hv_2/A
++ armleo_gpio_13/armleo_gpio_lv2hv_4/A armleo_gpio_13/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_13/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_13/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_13/armleo_gpio_lv2hv_4/A_N armleo_gpio_13/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_13/armleo_gpio_lv2hv_0/A_N armleo_gpio_13/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_13/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_13/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_13/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_13/armleo_gpio_lv2hv_0/A
++ armleo_gpio_13/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_13/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_13/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_13/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_13/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_13/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_13/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_13/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_13/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_13/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_13/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_13/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_13/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_13/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_13/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_13/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_13/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_13/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_13/armleo_gpio_lv2hv_0/Y armleo_gpio_13/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_13/armleo_gpio_lv2hv_5/A_N armleo_gpio_13/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_13/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_13/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_13/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_13/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_13/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_13/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_13/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_25 vdda2 vssa2 vssa2 vccd2 armleo_gpio_25/out_l armleo_gpio_25/in gpio_noesd[3]
++ armleo_gpio_25/oe_l armleo_gpio_25/strong_enable armleo_gpio_25/med_enable armleo_gpio_25/armleo_gpio_lv2hv_1/A
++ armleo_gpio_25/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_25/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_25/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_25/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_25/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_25/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_25/armleo_gpio_lv2hv_4/Y armleo_gpio_25/armleo_gpio_lv2hv_3/Y armleo_gpio_25/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_25/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_25/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_25/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_25/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_25/armleo_gpio_lv2hv_5/Y armleo_gpio_25/armleo_gpio_lv2hv_5/A armleo_gpio_25/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_25/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_25/armleo_gpio_lv2hv_3/A armleo_gpio_25/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_25/armleo_gpio_lv2hv_1/Y armleo_gpio_25/armleo_gpio_lv2hv_2/Y armleo_gpio_25/armleo_gpio_lv2hv_2/A
++ armleo_gpio_25/armleo_gpio_lv2hv_4/A armleo_gpio_25/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_25/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_25/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_25/armleo_gpio_lv2hv_4/A_N armleo_gpio_25/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_25/armleo_gpio_lv2hv_0/A_N armleo_gpio_25/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_25/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_25/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_25/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_25/armleo_gpio_lv2hv_0/A
++ armleo_gpio_25/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_25/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_25/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_25/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_25/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_25/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_25/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_25/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_25/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_25/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_25/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_25/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_25/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_25/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_25/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_25/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_25/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_25/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_25/armleo_gpio_lv2hv_0/Y armleo_gpio_25/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_25/armleo_gpio_lv2hv_5/A_N armleo_gpio_25/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_25/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_25/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_25/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_25/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_25/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_25/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_25/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+Xarmleo_gpio_14 vdda2 vssa2 vssa2 vccd2 armleo_gpio_14/out_l armleo_gpio_14/in io_analog[8]
++ armleo_gpio_14/oe_l armleo_gpio_14/strong_enable armleo_gpio_14/med_enable armleo_gpio_14/armleo_gpio_lv2hv_1/A
++ armleo_gpio_14/sky130_fd_sc_hvl__inv_4_0/Y armleo_gpio_14/armleo_gpio_lv2hv_4/a_217_2223#
++ armleo_gpio_14/sky130_fd_sc_hvl__inv_4_4/Y armleo_gpio_14/sky130_fd_sc_hd__nor2_4_0/a_27_297#
++ armleo_gpio_14/armleo_gpio_lv2hv_5/a_217_2223# armleo_gpio_14/sky130_fd_sc_hvl__inv_16_2/Y
++ armleo_gpio_14/armleo_gpio_lv2hv_4/Y armleo_gpio_14/armleo_gpio_lv2hv_3/Y armleo_gpio_14/armleo_gpio_lv2hv_1/A_N
++ armleo_gpio_14/sky130_fd_sc_hvl__inv_16_5/Y armleo_gpio_14/armleo_gpio_lv2hv_3/A_N
++ armleo_gpio_14/sky130_fd_sc_hvl__inv_4_2/Y armleo_gpio_14/sky130_fd_sc_hvl__inv_16_4/Y
++ armleo_gpio_14/armleo_gpio_lv2hv_5/Y armleo_gpio_14/armleo_gpio_lv2hv_5/A armleo_gpio_14/sky130_fd_sc_hd__inv_4_4/Y
++ armleo_gpio_14/sky130_fd_sc_hd__inv_4_1/A armleo_gpio_14/armleo_gpio_lv2hv_3/A armleo_gpio_14/sky130_fd_sc_hvl__inv_16_0/Y
++ armleo_gpio_14/armleo_gpio_lv2hv_1/Y armleo_gpio_14/armleo_gpio_lv2hv_2/Y armleo_gpio_14/armleo_gpio_lv2hv_2/A
++ armleo_gpio_14/armleo_gpio_lv2hv_4/A armleo_gpio_14/sky130_fd_sc_hd__nand2_4_2/a_27_47#
++ armleo_gpio_14/sky130_fd_sc_hd__nor2_4_1/a_27_297# armleo_gpio_14/sky130_fd_sc_hvl__inv_16_1/Y
++ armleo_gpio_14/armleo_gpio_lv2hv_4/A_N armleo_gpio_14/sky130_fd_sc_hd__inv_4_5/Y
++ armleo_gpio_14/armleo_gpio_lv2hv_0/A_N armleo_gpio_14/sky130_fd_sc_hd__inv_4_1/Y
++ armleo_gpio_14/sky130_fd_pr__res_generic_l1_J5CL4C_0/li_n100_n1000# armleo_gpio_14/armleo_gpio_lv2hv_2/A_N
++ armleo_gpio_14/sky130_fd_sc_hvl__inv_4_1/Y armleo_gpio_14/armleo_gpio_lv2hv_0/A
++ armleo_gpio_14/sky130_fd_sc_hvl__inv_4_3/Y armleo_gpio_14/armleo_gpio_lv2hv_0/a_481_358#
++ armleo_gpio_14/sky130_fd_sc_hd__nor2_4_2/a_27_297# armleo_gpio_14/armleo_gpio_lv2hv_0/a_481_2165#
++ armleo_gpio_14/sky130_fd_sc_hvl__buf_16_0/A armleo_gpio_14/armleo_gpio_lv2hv_1/a_481_2165#
++ armleo_gpio_14/sky130_fd_sc_hvl__inv_4_5/Y armleo_gpio_14/sky130_fd_sc_hvl__inv_16_3/Y
++ armleo_gpio_14/sky130_fd_sc_hd__inv_4_4/A armleo_gpio_14/sky130_fd_sc_hd__nand2_4_3/a_27_47#
++ armleo_gpio_14/armleo_gpio_lv2hv_1/a_481_358# armleo_gpio_14/armleo_gpio_lv2hv_2/a_481_2165#
++ armleo_gpio_14/armleo_gpio_lv2hv_3/a_481_2165# armleo_gpio_14/sky130_fd_sc_hvl__buf_16_0/a_183_141#
++ armleo_gpio_14/armleo_gpio_lv2hv_4/a_481_2165# armleo_gpio_14/armleo_gpio_lv2hv_5/a_481_2165#
++ armleo_gpio_14/armleo_gpio_lv2hv_2/a_481_358# armleo_gpio_14/sky130_fd_sc_hd__nand2_4_0/a_27_47#
++ armleo_gpio_14/armleo_gpio_lv2hv_0/Y armleo_gpio_14/armleo_gpio_lv2hv_3/a_481_358#
++ armleo_gpio_14/armleo_gpio_lv2hv_5/A_N armleo_gpio_14/armleo_gpio_lv2hv_4/a_481_358#
++ armleo_gpio_14/sky130_fd_sc_hd__nand2_4_4/a_27_47# armleo_gpio_14/armleo_gpio_lv2hv_0/a_217_2223#
++ armleo_gpio_14/armleo_gpio_lv2hv_5/a_481_358# armleo_gpio_14/armleo_gpio_lv2hv_1/a_217_2223#
++ armleo_gpio_14/armleo_gpio_lv2hv_2/a_217_2223# armleo_gpio_14/sky130_fd_sc_hd__nand2_4_1/a_27_47#
++ vssa2 armleo_gpio_14/armleo_gpio_lv2hv_3/a_217_2223# armleo_gpio
+.ends
+
