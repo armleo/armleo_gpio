@@ -53,3 +53,8 @@ set ::env(FP_PDN_CORE_RING) 1
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
 set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
+
+
+# Workaround for LI1 not dense enough
+# set ::env(DECAP_CELL) {sky130_ef_sc_hd__decap_12 sky130_fd_sc_hd__decap_8 sky130_fd_sc_hd__decap_4 sky130_fd_sc_hd__decap_3}
+

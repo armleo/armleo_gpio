@@ -14,7 +14,7 @@ Copy both designs from OpenLane/designs to designs folder of 2021.11.23_01.42.34
 2. Run: `make uncompress` to decompress GDS. Use `make compress` to then compress it before sending to git.
 3. Then copy from final GDS to the user_analog_project_wrapper manualy.
 4. Place it the wrapper at (189.52um, 137um).
-5. Connect power rings
+5. Replace `sky130_fd_sc_hd__decap_12` with `sky130_ef_sc_hd__decap_12`, to make sure that LI1 density is low enough to pass precheck
 6. Run the DRC check below. You will have to pass DRC check for tape-out afterwards anyway.
 7. Make a caravel_user_analog_project workspace
 8. Copy netgen's content to workspace and final GDS to gds folder of workspce.

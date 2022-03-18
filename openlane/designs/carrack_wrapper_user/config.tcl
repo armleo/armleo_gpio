@@ -33,7 +33,9 @@ set ::env(FP_DEF_TEMPLATE) $script_dir/../carrack_wrapper/carrack_wrapper.fp.def
 set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET)  "wb_clk_i"
 
-set ::env(CLOCK_PERIOD) "100"
+
+
+set ::env(CLOCK_PERIOD) "40"
 
 # Note: Dont have vccd1/vssd1 in verilog
 
