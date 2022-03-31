@@ -1,5 +1,5 @@
 # Armleo IP Repository
-Armleo's IP repository. Currently includes GPIO cell.
+Armleo's IP repository. The cells are not tested agains ESD protection yet, use it at your own risk. Currently includes GPIO cell.
 
 ![Cell Picture](docs/cell.png)
 
